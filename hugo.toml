@@ -4,6 +4,11 @@ theme = "congo"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   colorScheme = "slate"
   defaultAppearance = "light" # light, dark, or auto
@@ -20,7 +25,7 @@ defaultContentLanguageInSubdir = false
     title = "JE Tech Holdings"
     [languages.en.params]
       description = "Premier Security Consulting & Tech Holdings"
-      footer = "Securing Your Digital Future."
+      # footer = "Securing Your Digital Future." 
 
   [languages.ko]
     languageName = "한국어"
@@ -28,7 +33,7 @@ defaultContentLanguageInSubdir = false
     title = "JE Tech Holdings"
     [languages.ko.params]
       description = "최고의 보안 컨설팅 및 기술 지주회사"
-      footer = "디지털 미래를 안전하게 지킵니다."
+      # footer = "디지털 미래를 안전하게 지킵니다."
 
 [menu]
   # English Menu
