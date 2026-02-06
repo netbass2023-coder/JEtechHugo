@@ -1,0 +1,20 @@
+baseURL = 'https://example.org/'
+languageCode = 'ko-kr'
+title = 'JE Tech Holdings'
+theme = 'congo'
+
+[params]
+  colorScheme = 'slate'
+  defaultAppearance = 'light' # or 'dark' / 'auto'
+
+[languages.ko]
+  languageName = 'Korean'
+  contentDir = 'content/ko'
+  weight = 1
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
