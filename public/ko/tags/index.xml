@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on JE Tech Holdings</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://localhost:1313/ko/tags/</link>
     <description>Recent content in Tags on JE Tech Holdings</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>ko</language>
     <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ko/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ISO27001</title>
-      <link>http://localhost:1313/tags/iso27001/</link>
+      <link>http://localhost:1313/ko/tags/iso27001/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/iso27001/</guid>
+      <guid>http://localhost:1313/ko/tags/iso27001/</guid>
       <description></description>
     </item>
     <item>
-      <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
+      <title>보안</title>
+      <link>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
+      <guid>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</guid>
       <description></description>
     </item>
     <item>
-      <title>Trends</title>
-      <link>http://localhost:1313/tags/trends/</link>
+      <title>트렌드</title>
+      <link>http://localhost:1313/ko/tags/%ED%8A%B8%EB%A0%8C%EB%93%9C/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/trends/</guid>
+      <guid>http://localhost:1313/ko/tags/%ED%8A%B8%EB%A0%8C%EB%93%9C/</guid>
       <description></description>
     </item>
   </channel>
