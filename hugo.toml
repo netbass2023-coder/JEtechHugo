@@ -1,5 +1,4 @@
 baseURL = "https://jetechholdings.com/"
-#baseURL = "https://jetech.pages.dev/"
 title = "JE Tech Holdings"
 theme = "congo"
 defaultContentLanguage = "en"
@@ -36,31 +35,26 @@ defaultContentLanguageInSubdir = false
       description = "최고의 보안 컨설팅 및 기술 지주회사"
       # footer = "디지털 미래를 안전하게 지킵니다."
 
-[menu]
-  # English Menu
-  [[menu.main]]
-    identifier = "services"
-    name = "Services"
-    url = "/#services"
-    weight = 10
-    languages = ["en"]
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 20
-    languages = ["en"]
+# English Menu
+[[languages.en.menu.main]]
+  identifier = "services"
+  name = "Services"
+  url = "/#services"
+  weight = 10
+[[languages.en.menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 20
 
-  # Korean Menu
-  [[menu.main]]
-    identifier = "services"
-    name = "서비스"
-    url = "/#services"
-    weight = 10
-    languages = ["ko"]
-  [[menu.main]]
-    identifier = "blog"
-    name = "블로그"
-    url = "/blog/"
-    weight = 20
-    languages = ["ko"]
+# Korean Menu
+[[languages.ko.menu.main]]
+  identifier = "services"
+  name = "서비스"
+  url = "/#services"
+  weight = 10
+[[languages.ko.menu.main]]
+  identifier = "blog"
+  name = "블로그"
+  url = "/blog/"
+  weight = 20
