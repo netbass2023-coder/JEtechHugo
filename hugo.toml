@@ -1,20 +1,60 @@
-baseURL = 'https://example.org/'
-languageCode = 'ko-kr'
-title = 'JE Tech Holdings'
-theme = 'congo'
+baseURL = "https://jetechhugo.pages.dev/"
+title = "JE Tech Holdings"
+theme = "congo"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 [params]
-  colorScheme = 'slate'
-  defaultAppearance = 'light' # or 'dark' / 'auto'
+  colorScheme = "slate"
+  defaultAppearance = "light" # light, dark, or auto
+  enableSearch = true
+  
+  # Homepage Configuration
+  showProjectList = true # We will use this for "Services"
+  projectsMax = 3
 
-[languages.ko]
-  languageName = 'Korean'
-  contentDir = 'content/ko'
-  weight = 1
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    title = "JE Tech Holdings"
+    [languages.en.params]
+      description = "Premier Security Consulting & Tech Holdings"
+      footer = "Securing Your Digital Future."
+
+  [languages.ko]
+    languageName = "한국어"
+    weight = 2
+    title = "JE Tech Holdings"
+    [languages.ko.params]
+      description = "최고의 보안 컨설팅 및 기술 지주회사"
+      footer = "디지털 미래를 안전하게 지킵니다."
 
 [menu]
+  # English Menu
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
+    identifier = "services"
+    name = "Services"
+    url = "/#services"
     weight = 10
+    languages = ["en"]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 20
+    languages = ["en"]
+
+  # Korean Menu
+  [[menu.main]]
+    identifier = "services"
+    name = "서비스"
+    url = "/#services"
+    weight = 10
+    languages = ["ko"]
+  [[menu.main]]
+    identifier = "blog"
+    name = "블로그"
+    url = "/blog/"
+    weight = 20
+    languages = ["ko"]
