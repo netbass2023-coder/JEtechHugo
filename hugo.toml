@@ -1,4 +1,5 @@
-baseURL = "https://jetech.pages.dev/"
+baseURL = "https://jetechholdings.com/"
+#baseURL = "https://jetech.pages.dev/"
 title = "JE Tech Holdings"
 theme = "congo"
 defaultContentLanguage = "en"
