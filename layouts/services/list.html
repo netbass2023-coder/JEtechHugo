@@ -11,22 +11,21 @@
         </div>
     </header>
 
-    <section class="flex flex-col gap-6 mt-10">
+    <section class="flex flex-col gap-12 mt-16">
         {{/* Range over pages by weight and reverse the order */}}
         {{ range .Pages.ByWeight.Reverse }}
-        <a href="{{ .RelPermalink }}" class="block group no-underline">
-            <div
-                class="flex flex-col gap-2 p-6 border rounded-lg border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 hover:border-primary-500 dark:hover:border-primary-400 transition-colors shadow-sm hover:shadow-md">
-                <h2
-                    class="text-2xl font-bold m-0 text-neutral-900 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                    {{ .Title }}
-                </h2>
-                {{/* Metadata removed completely */}}
-                <div class="text-lg text-neutral-600 dark:text-neutral-300 mt-2">
-                    {{ .Summary }}
-                </div>
+        <div class="flex flex-col gap-6 p-8 border rounded-xl border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 shadow-sm"
+            id="{{ .File.TranslationBaseName }}">
+            <h2
+                class="text-3xl font-bold m-0 text-neutral-900 dark:text-neutral border-b pb-4 border-neutral-200 dark:border-neutral-700">
+                {{ .Title }}
+            </h2>
+
+            {{/* Full Content Display */}}
+            <div class="prose dark:prose-invert max-w-none">
+                {{ .Content }}
             </div>
-        </a>
+        </div>
         {{ end }}
     </section>
 </article>
