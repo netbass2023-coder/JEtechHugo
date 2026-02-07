@@ -46,6 +46,23 @@
   
     
       <url>
+            <loc>http://localhost:1313/contact/</loc>
+            <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+            <xhtml:link
+              rel="alternate"
+              hreflang="ko"
+              href="http://localhost:1313/ko/contact/"
+              />
+            <xhtml:link
+              rel="alternate"
+              hreflang="en"
+              href="http://localhost:1313/contact/"
+              />
+          </url>
+    
+  
+    
+      <url>
             <loc>http://localhost:1313/posts/welcome/</loc>
             <lastmod>2023-10-27T10:00:00+09:00</lastmod>
           </url>

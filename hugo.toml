@@ -46,6 +46,11 @@ defaultContentLanguageInSubdir = false
   name = "Blog"
   url = "/blog/"
   weight = 20
+[[languages.en.menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 30
 
 # Korean Menu
 [[languages.ko.menu.main]]
@@ -58,3 +63,8 @@ defaultContentLanguageInSubdir = false
   name = "블로그"
   url = "/blog/"
   weight = 20
+[[languages.ko.menu.main]]
+  identifier = "contact"
+  name = "문의"
+  url = "/contact/"
+  weight = 30

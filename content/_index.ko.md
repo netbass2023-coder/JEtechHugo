@@ -11,7 +11,7 @@ showTableOfContents: false
 현대 기업을 위한 엘리트 보안 컨설팅과 전략적 기술 투자를 제공합니다.
 {{< /lead >}}
 
-{{< button href="mailto:contact@jetechholdings.com" >}}
+{{< button href="/ko/contact/" >}}
 문의하기
 {{< /button >}}
 

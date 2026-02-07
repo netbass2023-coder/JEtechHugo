@@ -11,7 +11,7 @@ showTableOfContents: false
 We provide elite security consulting and strategic technology investments for modern enterprises.
 {{< /lead >}}
 
-{{< button href="mailto:contact@jetechholdings.com" >}}
+{{< button href="/contact/" >}}
 Contact Us
 {{< /button >}}
 
