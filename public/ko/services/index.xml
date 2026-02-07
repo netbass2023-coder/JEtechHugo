@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>서비스 소개 on JE Tech Holdings</title>
+    <link>http://localhost:1313/ko/services/</link>
+    <description>Recent content in 서비스 소개 on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ko/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>전략적 컴플라이언스 및 거버넌스</title>
+      <link>http://localhost:1313/ko/services/compliance-governance/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/services/compliance-governance/</guid>
+      <description>단순한 체크리스트 통과를 넘어, 실전 중심의 기술적 해석을 제공합니다.</description>
+    </item>
+    <item>
+      <title>SOC 및 SIEM 엔지니어링</title>
+      <link>http://localhost:1313/ko/services/soc-siem/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/services/soc-siem/</guid>
+      <description>데이터 중심의 보안 운영. 글로벌 벤더 기술력과 MSSP/SOC 실무 경험을 결합한 인프라 최적화.</description>
+    </item>
+    <item>
+      <title>지능형 보안 운영 및 위협 헌팅</title>
+      <link>http://localhost:1313/ko/services/threat-hunting/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/services/threat-hunting/</guid>
+      <description>수동적 모니터링을 넘어선 능동적 방어. 데이터와 실무 노하우를 통한 위협 식별.</description>
+    </item>
+    <item>
+      <title>기술 전문 서비스</title>
+      <link>http://localhost:1313/ko/services/professional-services/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/services/professional-services/</guid>
+      <description>통찰력을 담은 신뢰할 수 있는 장비 도입. 업계 베스트 프랙티스에 맞춘 포괄적인 구축 서비스.</description>
+    </item>
+  </channel>
+</rss>

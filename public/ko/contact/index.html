@@ -160,7 +160,7 @@
             <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
               
                 <a
-                  href="/#services"
+                  href="/services/"
                   title=""
                   
                   
@@ -237,74 +237,86 @@
       </h1>
     </header>
     <section class="prose mt-6 max-w-full dark:prose-invert">
-      <div class="contact-form-container">
-  <p class="text-lg mb-6">질문이 있거나 프로젝트에 대해 논의하고 싶으신가요? 아래 양식을 작성해 주시면 24시간 이내에 연락드리겠습니다.</p>
-  <form id="contact-form" action="https://formspree.io/f/xqedkeja" method="POST" class="space-y-4">
-<pre><code>&lt;div&gt;
-  &lt;label for=&quot;email&quot; class=&quot;block text-sm font-medium mb-1&quot;&gt;이메일 주소 &lt;span class=&quot;text-red-500&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-  &lt;input 
-    type=&quot;email&quot; 
-    id=&quot;email&quot; 
-    name=&quot;email&quot; 
-    required 
-    placeholder=&quot;your@email.com&quot;
-    class=&quot;w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600&quot;
-  /&gt;
-  &lt;p id=&quot;email-error&quot; class=&quot;text-red-500 text-sm mt-1 hidden&quot;&gt;올바른 이메일 주소를 입력해 주세요.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;label for=&quot;subject&quot; class=&quot;block text-sm font-medium mb-1&quot;&gt;제목 &lt;span class=&quot;text-red-500&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-  &lt;input 
-    type=&quot;text&quot; 
-    id=&quot;subject&quot; 
-    name=&quot;subject&quot; 
-    required 
-    placeholder=&quot;무엇을 도와드릴까요?&quot;
-    class=&quot;w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600&quot;
-  /&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;label for=&quot;message&quot; class=&quot;block text-sm font-medium mb-1&quot;&gt;메시지 &lt;span class=&quot;text-red-500&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-  &lt;textarea 
-    id=&quot;message&quot; 
-    name=&quot;message&quot; 
-    rows=&quot;5&quot; 
-    required 
-    placeholder=&quot;프로젝트나 문의 사항에 대해 알려주세요...&quot;
-    class=&quot;w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600&quot;
-  &gt;&lt;/textarea&gt;
-&lt;/div&gt;
-
-&lt;button 
-  type=&quot;submit&quot; 
-  class=&quot;w-full bg-primary-600 text-white py-3 px-6 rounded-md hover:bg-primary-500 transition-colors font-medium&quot;
-&gt;
-  메시지 보내기
-&lt;/button&gt;
-</code></pre>
+      <p>질문이 있거나 프로젝트에 대해 논의하고 싶으신가요? 아래 양식을 작성해 주시면 24시간 이내에 연락드리겠습니다.</p>
+<div class="contact-form-container">
+  <form id="contact-form" action="https://formspree.io/f/xqedkeja" method="POST">
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="email" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        이메일 주소 <span style="color: #ef4444;">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="your@email.com"
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"
+      />
+      <p id="email-error" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem; display: none;">
+        올바른 이메일 주소를 입력해 주세요.
+      </p>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="subject" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        제목 <span style="color: #ef4444;">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="subject" 
+        name="subject" 
+        required 
+        placeholder="무엇을 도와드릴까요?"
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"
+      />
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="message" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        메시지 <span style="color: #ef4444;">*</span>
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="5" 
+        required 
+        placeholder="프로젝트나 문의 사항에 대해 알려주세요..."
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; resize: vertical;"
+      ></textarea>
+    </div>
+    
+    <button 
+      type="submit" 
+      style="width: 100%; background-color: #7c3aed; color: white; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 500; border: none; cursor: pointer; font-size: 1rem;"
+      onmouseover="this.style.backgroundColor='#6d28d9'" 
+      onmouseout="this.style.backgroundColor='#7c3aed'"
+    >
+      메시지 보내기
+    </button>
   </form>
 </div>
+
 <script>
 document.getElementById('contact-form').addEventListener('submit', function(e) {
-  const email = document.getElementById('email').value;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const errorEl = document.getElementById('email-error');
+  var email = document.getElementById('email').value;
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var errorEl = document.getElementById('email-error');
   
   if (!emailRegex.test(email)) {
     e.preventDefault();
-    errorEl.classList.remove('hidden');
+    errorEl.style.display = 'block';
     document.getElementById('email').focus();
     return false;
   }
-  errorEl.classList.add('hidden');
+  errorEl.style.display = 'none';
 });
 
 document.getElementById('email').addEventListener('input', function() {
-  document.getElementById('email-error').classList.add('hidden');
+  document.getElementById('email-error').style.display = 'none';
 });
 </script>
+
 
     </section>
     <footer class="pt-8">

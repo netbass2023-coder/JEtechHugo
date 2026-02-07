@@ -1,5 +1,5 @@
 ---
-title: "JE Tech Holdings"
+title: ""
 description: "Advanced Security Consulting & Technology Investment"
 date: 2023-10-27
 layout: "simple"
@@ -16,7 +16,7 @@ Contact Us
 {{< /button >}}
 
 ---
-
+`
 ## <a id="services"></a> Our Services
 
 ### 🛡️ Security Consulting
@@ -27,7 +27,7 @@ Secure cloud migration and architecture design for AWS, Azure, and Google Cloud.
 
 ### 🚀 Tech Investment
 Strategic investment and incubation for promising early-stage technology startups in the cybersecurity and AI sectors.
-
+`
 ---
 
 ## Latest Insights

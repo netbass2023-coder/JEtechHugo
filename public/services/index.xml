@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Our Services on JE Tech Holdings</title>
+    <link>http://localhost:1313/services/</link>
+    <description>Recent content in Our Services on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strategic Compliance &amp; Governance</title>
+      <link>http://localhost:1313/services/compliance-governance/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/compliance-governance/</guid>
+      <description>Beyond mere check-box compliance. Battle-tested technical interpretation of international security standards.</description>
+    </item>
+    <item>
+      <title>SOC &amp; SIEM Engineering</title>
+      <link>http://localhost:1313/services/soc-siem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/soc-siem/</guid>
+      <description>Data-driven security operations. Optimization of security infrastructure leveraging global vendor insights.</description>
+    </item>
+    <item>
+      <title>Intelligence-Driven Operations &amp; Hunting</title>
+      <link>http://localhost:1313/services/threat-hunting/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/threat-hunting/</guid>
+      <description>Proactive defense, not reactive monitoring. Identifying hidden threats through real-world operational know-how.</description>
+    </item>
+    <item>
+      <title>Technical Professional Services</title>
+      <link>http://localhost:1313/services/professional-services/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/professional-services/</guid>
+      <description>Reliable deployment with actionable insights. Comprehensive implementation services configured to industry best practices.</description>
+    </item>
+  </channel>
+</rss>
