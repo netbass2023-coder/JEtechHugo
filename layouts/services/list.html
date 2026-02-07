@@ -14,7 +14,7 @@
     <section class="flex flex-col gap-12 mt-16">
         {{/* Range over pages by weight and reverse the order */}}
         {{ range .Pages.ByWeight.Reverse }}
-        <div class="flex flex-col gap-6 p-8 border rounded-xl border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 shadow-sm"
+        <div class="flex flex-col gap-6 p-8 rounded-xl bg-neutral-50 dark:bg-neutral-800 shadow-sm"
             id="{{ .File.TranslationBaseName }}">
             <h2
                 class="text-3xl font-bold m-0 text-neutral-900 dark:text-neutral border-b pb-4 border-neutral-200 dark:border-neutral-700">
