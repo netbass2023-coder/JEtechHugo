@@ -8,7 +8,7 @@ layout: "simple"
 <div class="contact-form-container">
   <p class="text-lg mb-6">Have a question or want to discuss a project? Fill out the form below and we'll get back to you within 24 hours.</p>
   
-  <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+  <form id="contact-form" action="https://formspree.io/f/xqedkeja" method="POST" class="space-y-4">
     
     <div>
       <label for="email" class="block text-sm font-medium mb-1">Email Address <span class="text-red-500">*</span></label>

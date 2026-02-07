@@ -8,7 +8,7 @@ layout: "simple"
 <div class="contact-form-container">
   <p class="text-lg mb-6">질문이 있거나 프로젝트에 대해 논의하고 싶으신가요? 아래 양식을 작성해 주시면 24시간 이내에 연락드리겠습니다.</p>
   
-  <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+  <form id="contact-form" action="https://formspree.io/f/xqedkeja" method="POST" class="space-y-4">
     
     <div>
       <label for="email" class="block text-sm font-medium mb-1">이메일 주소 <span class="text-red-500">*</span></label>
