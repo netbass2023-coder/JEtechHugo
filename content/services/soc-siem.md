@@ -1,6 +1,5 @@
 ---
 title: "SOC & SIEM Engineering"
-date: 2024-01-01
 weight: 20
 summary: "Data-driven security operations. Optimization of security infrastructure leveraging global vendor insights."
 ---
