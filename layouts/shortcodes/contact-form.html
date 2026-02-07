@@ -1,0 +1,78 @@
+<div class="contact-form-container">
+  <form id="contact-form" action="https://formspree.io/f/xqedkeja" method="POST">
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="email" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        {{ if eq .Page.Language.Lang "ko" }}이메일 주소{{ else }}Email Address{{ end }} <span style="color: #ef4444;">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="{{ if eq .Page.Language.Lang "ko" }}your@email.com{{ else }}your@email.com{{ end }}"
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"
+      />
+      <p id="email-error" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem; display: none;">
+        {{ if eq .Page.Language.Lang "ko" }}올바른 이메일 주소를 입력해 주세요.{{ else }}Please enter a valid email address.{{ end }}
+      </p>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="subject" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        {{ if eq .Page.Language.Lang "ko" }}제목{{ else }}Subject{{ end }} <span style="color: #ef4444;">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="subject" 
+        name="subject" 
+        required 
+        placeholder="{{ if eq .Page.Language.Lang "ko" }}무엇을 도와드릴까요?{{ else }}How can we help?{{ end }}"
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"
+      />
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="message" style="display: block; font-weight: 500; margin-bottom: 0.25rem;">
+        {{ if eq .Page.Language.Lang "ko" }}메시지{{ else }}Message{{ end }} <span style="color: #ef4444;">*</span>
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="5" 
+        required 
+        placeholder="{{ if eq .Page.Language.Lang "ko" }}프로젝트나 문의 사항에 대해 알려주세요...{{ else }}Tell us about your project or inquiry...{{ end }}"
+        style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; resize: vertical;"
+      ></textarea>
+    </div>
+    
+    <button 
+      type="submit" 
+      style="width: 100%; background-color: #7c3aed; color: white; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 500; border: none; cursor: pointer; font-size: 1rem;"
+      onmouseover="this.style.backgroundColor='#6d28d9'" 
+      onmouseout="this.style.backgroundColor='#7c3aed'"
+    >
+      {{ if eq .Page.Language.Lang "ko" }}메시지 보내기{{ else }}Send Message{{ end }}
+    </button>
+  </form>
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  var email = document.getElementById('email').value;
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var errorEl = document.getElementById('email-error');
+  
+  if (!emailRegex.test(email)) {
+    e.preventDefault();
+    errorEl.style.display = 'block';
+    document.getElementById('email').focus();
+    return false;
+  }
+  errorEl.style.display = 'none';
+});
+
+document.getElementById('email').addEventListener('input', function() {
+  document.getElementById('email-error').style.display = 'none';
+});
+</script>
