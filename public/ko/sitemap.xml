@@ -71,23 +71,6 @@
     
   
     
-      <url>
-            <loc>http://localhost:1313/ko/blog/intro-bridging-the-gap/</loc>
-            <lastmod>2026-02-10T00:00:00+00:00</lastmod>
-            <xhtml:link
-              rel="alternate"
-              hreflang="en"
-              href="http://localhost:1313/blog/intro-bridging-the-gap/"
-              />
-            <xhtml:link
-              rel="alternate"
-              hreflang="ko"
-              href="http://localhost:1313/ko/blog/intro-bridging-the-gap/"
-              />
-          </url>
-    
-  
-    
   
     
   
@@ -95,34 +78,51 @@
   
     
       <url>
-            <loc>http://localhost:1313/ko/blog/</loc>
+            <loc>http://localhost:1313/ko/insights/intro-bridging-the-gap/</loc>
             <lastmod>2026-02-10T00:00:00+00:00</lastmod>
             <xhtml:link
               rel="alternate"
               hreflang="en"
-              href="http://localhost:1313/blog/"
+              href="http://localhost:1313/insights/intro-bridging-the-gap/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="ko"
-              href="http://localhost:1313/ko/blog/"
+              href="http://localhost:1313/ko/insights/intro-bridging-the-gap/"
               />
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/ko/blog/security-trends-2024/</loc>
+            <loc>http://localhost:1313/ko/insights/</loc>
+            <lastmod>2026-02-10T00:00:00+00:00</lastmod>
+            <xhtml:link
+              rel="alternate"
+              hreflang="en"
+              href="http://localhost:1313/insights/"
+              />
+            <xhtml:link
+              rel="alternate"
+              hreflang="ko"
+              href="http://localhost:1313/ko/insights/"
+              />
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/ko/insights/security-trends-2024/</loc>
             <lastmod>2024-01-15T00:00:00+00:00</lastmod>
             <xhtml:link
               rel="alternate"
               hreflang="en"
-              href="http://localhost:1313/blog/security-trends-2024/"
+              href="http://localhost:1313/insights/security-trends-2024/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="ko"
-              href="http://localhost:1313/ko/blog/security-trends-2024/"
+              href="http://localhost:1313/ko/insights/security-trends-2024/"
               />
           </url>
     

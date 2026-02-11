@@ -1,0 +1,583 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="ko"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  
+  <title>기술의 홍수 속에서 &#39;기본&#39;과 &#39;경험&#39;을 기록하는 이유 &middot; JE Tech Holdings</title>
+    <meta name="title" content="기술의 홍수 속에서 &#39;기본&#39;과 &#39;경험&#39;을 기록하는 이유 &middot; JE Tech Holdings" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="http://localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
+    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="http://localhost:1313/css/main.bundle.min.d0d8a9689b0af4e232471b4614241ed6f32316c390eac351cf5a74f1c586f25a.css"
+    integrity="sha256-0NipaJsK9OIyRxtGFCQe1vMjFsOQ6sNRz1p08cWG8lo="
+  />
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="http://localhost:1313/js/main.bundle.min.eab7645deeb66154f816f18f195e0835d5c656537107f289d186dcfb33593756.js"
+      integrity="sha256-6rdkXe62YVT4FvGPGV4INdXGVlNxB/KJ0Ybc&#43;zNZN1Y="
+      data-copy="복사"
+      data-copied="복사됨"
+    ></script>
+  
+  
+  <meta
+    name="description"
+    content="
+      최신 트렌드엔 빠삭하지만 정작 &#39;기본 원리&#39;를 놓치고 있는 스마트한 인재들을 보며 결심했습니다. 원리를 모른 채 적용된 기술은 불필요한 리소스 낭비와 치명적인 장애의 씨앗이 됩니다. 제가 현장에서 직접 몸으로 부딪히며 겪었던 사건들(Incidents)과 실무적인 노하우를 공개하려는 이유, 그리고 왜 &#39;옛날 기술&#39;이 여전히 중요한지 그 전략적 이유를 공유합니다
+[전체 내용 보기: 기술의 홍수 속에서 기본과 경험을 기록하는 이유]
+    "
+  />
+  
+  
+  
+  
+    <link rel="canonical" href="http://localhost:1313/ko/insights/intro-bridging-the-gap/" />
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/ko/insights/intro-bridging-the-gap/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="기술의 홍수 속에서 &#39;기본&#39;과 &#39;경험&#39;을 기록하는 이유">
+  <meta property="og:description" content="최신 트렌드엔 빠삭하지만 정작 &#39;기본 원리&#39;를 놓치고 있는 스마트한 인재들을 보며 결심했습니다. 원리를 모른 채 적용된 기술은 불필요한 리소스 낭비와 치명적인 장애의 씨앗이 됩니다. 제가 현장에서 직접 몸으로 부딪히며 겪었던 사건들(Incidents)과 실무적인 노하우를 공개하려는 이유, 그리고 왜 &#39;옛날 기술&#39;이 여전히 중요한지 그 전략적 이유를 공유합니다
+[전체 내용 보기: 기술의 홍수 속에서 기본과 경험을 기록하는 이유]">
+  <meta property="og:locale" content="ko">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-10T00:00:00+00:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Intro">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="기술의 홍수 속에서 &#39;기본&#39;과 &#39;경험&#39;을 기록하는 이유">
+  <meta name="twitter:description" content="최신 트렌드엔 빠삭하지만 정작 &#39;기본 원리&#39;를 놓치고 있는 스마트한 인재들을 보며 결심했습니다. 원리를 모른 채 적용된 기술은 불필요한 리소스 낭비와 치명적인 장애의 씨앗이 됩니다. 제가 현장에서 직접 몸으로 부딪히며 겪었던 사건들(Incidents)과 실무적인 노하우를 공개하려는 이유, 그리고 왜 &#39;옛날 기술&#39;이 여전히 중요한지 그 전략적 이유를 공유합니다
+[전체 내용 보기: 기술의 홍수 속에서 기본과 경험을 기록하는 이유]">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "인사이트",
+    "name": "기술의 홍수 속에서 \u0027기본\u0027과 \u0027경험\u0027을 기록하는 이유",
+    "headline": "기술의 홍수 속에서 \u0027기본\u0027과 \u0027경험\u0027을 기록하는 이유",
+    "description": "최신 트렌드엔 빠삭하지만 정작 \u0027기본 원리\u0027를 놓치고 있는 스마트한 인재들을 보며 결심했습니다. 원리를 모른 채 적용된 기술은 불필요한 리소스 낭비와 치명적인 장애의 씨앗이 됩니다. 제가 현장에서 직접 몸으로 부딪히며 겪었던 사건들(Incidents)과 실무적인 노하우를 공개하려는 이유, 그리고 왜 \u0027옛날 기술\u0027이 여전히 중요한지 그 전략적 이유를 공유합니다\n[전체 내용 보기: 기술의 홍수 속에서 기본과 경험을 기록하는 이유]",
+    "abstract": "\u003ch2 id=\u0022intro-기술의-홍수-속에서-기본과-경험을-기록하는-이유\u0022 class=\u0022relative group\u0022\u003e[Intro] 기술의 홍수 속에서 \u0026lsquo;기본\u0026rsquo;과 \u0026lsquo;경험\u0026rsquo;을 기록하는 이유 \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#intro-%ea%b8%b0%ec%88%a0%ec%9d%98-%ed%99%8d%ec%88%98-%ec%86%8d%ec%97%90%ec%84%9c-%ea%b8%b0%eb%b3%b8%ea%b3%bc-%ea%b2%bd%ed%97%98%ec%9d%84-%ea%b8%b0%eb%a1%9d%ed%95%98%eb%8a%94-%ec%9d%b4%ec%9c%a0\u0022 aria-label=\u0022앵커\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003ch2 id=\u0022\u0022 class=\u0022relative group\u0022\u003e \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#\u0022 aria-label=\u0022앵커\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003cp\u003e나는 지금까지 맡은 바 임무를 정확하고 빠르게 완수하는 것을 인생의 신조로 삼아왔습니다. 시간적 여유가 주어지면 계획부터 준비, 적용, 테스트, 그리고 검증에 이르기까지 각 프로세스의 완성도를 높이는 데 집착하곤 했습니다.\u003c\/p\u003e\n\u003cp\u003e내가 수행한 모든 작업은 이미 상세한 문서로 남겨두었기에, 굳이 입을 열어 남들에게 설명하는 것은 불필요한 일이라 생각했습니다. \u0026ldquo;결과물과 문서가 모든 것을 말해준다\u0026quot;고 믿었기 때문입니다.\u003c\/p\u003e",
+    "inLanguage": "ko",
+    "url" : "http:\/\/localhost:1313\/ko\/insights\/intro-bridging-the-gap\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-02-10T00:00:00\u002b00:00",
+    "datePublished": "2026-02-10T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-02-10T00:00:00\u002b00:00",
+    
+    "keywords": ["blog","intro"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "279"
+  }
+  </script>
+    
+    <script type="application/ld+json">
+    {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/ko/",
+       "name": "Je Tech Holdings",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/ko/insights/",
+       "name": "인사이트",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "name": "기술의 홍수 속에서 '기본'과 '경험'을 기록하는 이유",
+       "position": 3
+     }
+   ]
+ }
+  </script>
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >메인 콘텐츠로 이동하기</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/ko/"
+    >JE Tech Holdings</a
+  >
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col text-end sm:flex-row">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/services/"
+                  title=""
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >서비스</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/insight/"
+                  title=""
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >인사이트</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/contact/"
+                  title=""
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >문의</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+          
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              <button id="search-button-m0" title="검색 (/)">
+                <span
+                  class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                >
+                  <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+                </span>
+              </button>
+            </li>
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        기술의 홍수 속에서 '기본'과 '경험'을 기록하는 이유
+      </h1>
+      
+        <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+          
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-02-10 00:00:00 &#43;0000 UTC">2026년 2월 10일</time><span class="px-2 text-primary-500">&middot;</span><span title="읽는 데 걸리는 시간">2 분</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+        </div>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <h2 id="intro-기술의-홍수-속에서-기본과-경험을-기록하는-이유" class="relative group">[Intro] 기술의 홍수 속에서 &lsquo;기본&rsquo;과 &lsquo;경험&rsquo;을 기록하는 이유 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro-%ea%b8%b0%ec%88%a0%ec%9d%98-%ed%99%8d%ec%88%98-%ec%86%8d%ec%97%90%ec%84%9c-%ea%b8%b0%eb%b3%b8%ea%b3%bc-%ea%b2%bd%ed%97%98%ec%9d%84-%ea%b8%b0%eb%a1%9d%ed%95%98%eb%8a%94-%ec%9d%b4%ec%9c%a0" aria-label="앵커">#</a></span></h2><h2 id="" class="relative group"> <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#" aria-label="앵커">#</a></span></h2><p>나는 지금까지 맡은 바 임무를 정확하고 빠르게 완수하는 것을 인생의 신조로 삼아왔습니다. 시간적 여유가 주어지면 계획부터 준비, 적용, 테스트, 그리고 검증에 이르기까지 각 프로세스의 완성도를 높이는 데 집착하곤 했습니다.</p>
+<p>내가 수행한 모든 작업은 이미 상세한 문서로 남겨두었기에, 굳이 입을 열어 남들에게 설명하는 것은 불필요한 일이라 생각했습니다. &ldquo;결과물과 문서가 모든 것을 말해준다&quot;고 믿었기 때문입니다.</p>
+<p>하지만 여러 번의 이직을 거치고, 함께 일하는 동료들과의 세대 차이를 경험하며, 무엇보다 기술이 기하급수적으로 발전하는 과정을 지켜보면서 생각의 변화가 생겼습니다. 정보와 경험의 교류가 단절되고 있다는 것을 피부로 느끼게 된 것입니다. 기술은 눈부시게 변하지만, 소위 &lsquo;옛날 기술&rsquo;이라 치부되는 것들은 사라지는 것이 아니라 새로운 기술의 단단한 근간이 됩니다. 기초가 흔들리면 그 위의 화려한 기술도 모래성에 불과합니다.</p>
+<p>최근 아주 스마트한 주니어 직원과 함께 일할 기회가 있었습니다. Cloud Security, AI, MCP 등 최신 트렌드에 밝고 접근 방식도 훌륭해 무척 인상 깊었습니다. 하지만 대화를 나누다 보니, 프로젝트의 성패를 가르는 아주 &lsquo;기본적인 원리&rsquo;에 대해서는 간과하고 있다는 사실을 알게 되었습니다.</p>
+<p>현대 기술은 벤더사가 제공하는 GUI에서 클릭 몇 번으로, 혹은 전문가가 대행해주는 설정만으로도 쉽게 구축할 수 있습니다. 하지만 <strong>올바른 원리에 대한 이해 없이 적용된 기술은 불필요한 리소스를 낭비하고, 운영 비용에 막대한 영향을 주며, 때로는 치명적인 장애의 불씨가 되기도 합니다.</strong> 누군가 가르쳐주지 않으면 놓치기 쉬운, 하지만 실무에서는 뼈아픈 교훈으로 돌아오는 지점들입니다.</p>
+<p>넘쳐나는 동영상 강의와 정보의 바다 속에서도, 실제로 겪어보지 않으면 알 수 없는 &lsquo;실무의 디테일&rsquo;은 여전히 부족합니다. 그래서 나는 내가 현장에서 직접 몸으로 부딪히며 겪었던 사건들(Incidents)과 실무적인 노하우를 기록해 보려 합니다.</p>
+<p>지금의 기준으로는 정답이 아닐지 모릅니다. 하지만 당시에는 우리 팀이 내릴 수 있는 최선의 선택이었고, 그러한 고민의 흔적들이 모여 현재의 기술을 만들었습니다. 이 기록들이 누군가에게는 단순한 정보가 아닌, 함께 나누는 &lsquo;살아있는 경험&rsquo;이 되길 바랍니다. 이제 막 커리어를 시작하는 후배들에게 전하는 선배의 마음으로 이 글들을 써 내려갑니다.</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+  <div class="flex">
+    
+    
+    
+    <div class="place-self-center">
+      
+      
+      <div class="text-2xl sm:text-lg">
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="http://localhost:1313/ko/insights/security-trends-2024/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >2024 사이버 보안 트렌드: 경영진이 알아야 할 것들</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-01-15 00:00:00 &#43;0000 UTC">2024년 1월 15일</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+      </main>
+      
+        <div
+          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
+          id="to-top"
+          hidden="true"
+        >
+          <a
+            href="#the-top"
+            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+            aria-label="위로 스크롤"
+            title="위로 스크롤"
+          >
+            &uarr;
+          </a>
+        </div>
+      <footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2026
+            
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+        <div>
+          
+  
+    
+    
+      <div class="group relative">
+        <button
+          class="group-dark:hover:text-primary-400 flex w-full items-center justify-end transition-colors group-hover:text-primary-600"
+        >
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path fill="currentColor" d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+  <path fill="currentColor" d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+</svg>
+</span><span class="text-sm">KO</span
+          ><span class="text-[0.6rem]"
+            ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+</span></span
+          >
+        </button>
+        
+        <div
+          class=" bottom-7  invisible absolute z-50 flex flex-col whitespace-nowrap rounded border border-neutral-300 bg-neutral text-start text-base shadow group-hover:visible ltr:right-0 rtl:left-0 dark:border-neutral-600 dark:bg-neutral-800"
+        >
+          
+          
+          
+            
+            
+              
+                
+                <div class="flex flex-grow">
+                  
+                    <a
+                      href="http://localhost:1313/insights/intro-bridging-the-gap/"
+                      class="w-full py-1 pe-10 ps-2 decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+                      >English</a
+                    >
+                  
+                </div>
+              
+            
+              
+            
+          
+            
+            
+              
+            
+              
+                
+                <div class="flex flex-grow">
+                  
+                    <a
+                      href="http://localhost:1313/ko/insights/intro-bridging-the-gap/"
+                      class="flex w-full items-center justify-between bg-primary-100 px-2 py-1 dark:bg-primary-900"
+                      >한국어<span
+                        class="ms-2 w-6 text-primary-600 dark:text-primary-400"
+                        ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/></svg>
+</span></span
+                      ></a
+                    >
+                  
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    
+  
+
+
+        </div>
+      
+      
+      
+    </div>
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="http://localhost:1313/ko/"
+>
+  <div
+    id="search-modal"
+    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex flex-none items-center justify-between px-2">
+      <form class="flex min-w-0 flex-auto items-center">
+        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="검색"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="닫기 (Esc)"
+      >
+        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto overflow-auto px-2">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
