@@ -44,7 +44,7 @@ defaultContentLanguageInSubdir = false
 [[languages.en.menu.main]]
   identifier = "insight"
   name = "Insight"
-  url = "/insight/"
+  url = "/insights/"
   weight = 20
 [[languages.en.menu.main]]
   identifier = "contact"
@@ -61,7 +61,7 @@ defaultContentLanguageInSubdir = false
 [[languages.ko.menu.main]]
   identifier = "insight"
   name = "인사이트"
-  url = "/insight/"
+  url = "/insights/"
   weight = 20
 [[languages.ko.menu.main]]
   identifier = "contact"
