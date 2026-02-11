@@ -6,12 +6,9 @@ description: "I recently met a brilliant junior engineer who was an expert in AI
 tags: ["blog", "intro"]
 ---
 
-## 섹션 제목
+## [Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents
 
-[Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents
-
-## 다음 섹션
-
+## 
 Throughout my career, my primary focus has always been on **precision and speed of execution**. I have always been a process-driven person—investing heavily in planning, implementation, and rigorous validation whenever the timeline allowed. Because I ensured every project was backed by comprehensive documentation, I used to believe that further explanation was redundant. I let the **deliverables** speak for themselves.
 
 However, after transitioning through several organizations and navigating the evolving tech landscape, I’ve noticed a growing disconnect in **knowledge transfer**. Technology is advancing at an exponential rate, but "legacy" concepts are not simply disappearing—they are the **bedrock** of modern innovation. When the foundation is overlooked, even the most sophisticated stack becomes a liability.
