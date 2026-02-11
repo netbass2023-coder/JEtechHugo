@@ -42,8 +42,8 @@ defaultContentLanguageInSubdir = false
   url = "/services/"
   weight = 10
 [[languages.en.menu.main]]
-  identifier = "blog"
-  name = "Blog"
+  identifier = "insight"
+  name = "insight"
   url = "/blog/"
   weight = 20
 [[languages.en.menu.main]]
@@ -59,8 +59,8 @@ defaultContentLanguageInSubdir = false
   url = "/services/"
   weight = 10
 [[languages.ko.menu.main]]
-  identifier = "blog"
-  name = "블로그"
+  identifier = "insight"
+  name = "인사이트"
   url = "/blog/"
   weight = 20
 [[languages.ko.menu.main]]
