@@ -1,8 +1,8 @@
 ---
-title: "**Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents**"
+title: **Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents**"
 date: 2026-02-10
 description: "I recently met a brilliant junior engineer who was an expert in AI and Cloud Security but missed one critical element: the underlying architecture. In an era where a few clicks in a GUI can deploy an entire infrastructure, we are losing the "why" behind the "how." I’m opening up my private log of production incidents and "battle scars" to explain why fundamental principles still dictate project success—and how ignoring them leads to bloated costs and outages.
-**[Read more to see why I’m sharing 20 years of field-tested insights.]**"
+**[Read more to see why I’m sharing 20 years of field-tested insights.]**
 tags: ["blog", "intro"]
 ---
 
