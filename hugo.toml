@@ -3,6 +3,7 @@ title = "JE Tech Holdings"
 theme = "congo"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+copyright = "JE Tech Holdings. All rights reserved."
 
 [markup]
   [markup.goldmark]
