@@ -7,19 +7,82 @@
     <generator>Hugo</generator>
     <language>ko</language>
     <copyright>JE Tech Holdings. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/ko/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Sentinel</title>
+      <link>http://localhost:1313/ko/tags/azure-sentinel/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/azure-sentinel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CCF</title>
+      <link>http://localhost:1313/ko/tags/ccf/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/ccf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Security</title>
+      <link>http://localhost:1313/ko/tags/cloud-security/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/cloud-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log Integration</title>
+      <link>http://localhost:1313/ko/tags/log-integration/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/log-integration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prisma Cloud</title>
+      <link>http://localhost:1313/ko/tags/prisma-cloud/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/prisma-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SNMP</title>
+      <link>http://localhost:1313/ko/tags/snmp/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/snmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>네트워크</title>
+      <link>http://localhost:1313/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>보안</title>
+      <link>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>인프라</title>
+      <link>http://localhost:1313/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Blog</title>
       <link>http://localhost:1313/ko/tags/blog/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ko/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Intro</title>
       <link>http://localhost:1313/ko/tags/intro/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ko/tags/intro/</guid>
       <description></description>
     </item>

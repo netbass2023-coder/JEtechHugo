@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CCF on JE Tech Holdings</title>
+    <link>http://localhost:1313/ko/tags/ccf/</link>
+    <description>Recent content in CCF on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <copyright>JE Tech Holdings. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ko/tags/ccf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로</title>
+      <link>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</guid>
+      <description>&lt;p&gt;Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-prisma-cloud-모듈의-이해-cspm-vs-cwpp&#34; class=&#34;relative group&#34;&gt;1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP) &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#1-prisma-cloud-%eb%aa%a8%eb%93%88%ec%9d%98-%ec%9d%b4%ed%95%b4-cspm-vs-cwpp&#34; aria-label=&#34;앵커&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;로그 연동에 앞서, Prisma의 주요 모듈(Blades)과 각 로그의 성격을 파악하는 것이 중요합니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud Security (CSPM):&lt;/strong&gt; 인프라, IAM, 네트워킹, 스토리지 등 클라우드 설정 및 제어 평면(Control-plane)의 구성 오류를 탐지합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Runtime Security (CWPP):&lt;/strong&gt; 가상 머신(VM), 컨테이너, 호스트와 같은 워크로드 내부의 실행 단계 보호와 정책 적용에 집중합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;기타:&lt;/strong&gt; Application Security, Data Security 모듈이 존재합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-과거의-로그-수집-방식-커스텀-개발의-고충&#34; class=&#34;relative group&#34;&gt;2. 과거의 로그 수집 방식: 커스텀 개발의 고충 &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#2-%ea%b3%bc%ea%b1%b0%ec%9d%98-%eb%a1%9c%ea%b7%b8-%ec%88%98%ec%a7%91-%eb%b0%a9%ec%8b%9d-%ec%bb%a4%ec%8a%a4%ed%85%80-%ea%b0%9c%eb%b0%9c%ec%9d%98-%ea%b3%a0%ec%b6%a9&#34; aria-label=&#34;앵커&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;2025년 초까지만 해도 로그 수집 방식은 다소 복잡하고 파편화되어 있었습니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

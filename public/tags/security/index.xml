@@ -6,14 +6,15 @@
     <description>Recent content in Security on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <copyright>JE Tech Holdings. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2024 Cybersecurity Trends: What COOs Need to Know</title>
-      <link>http://localhost:1313/insights/security-trends-2024/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/insights/security-trends-2024/</guid>
-      <description>&lt;p&gt;As we navigate the digital landscape of 2024, the cybersecurity paradigm is shifting rapidly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-ai-driven-attacks&#34; class=&#34;relative group&#34;&gt;1. AI-Driven Attacks &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#1-ai-driven-attacks&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Sophisticated phishing campaigns utilizing Generative AI are becoming indistinguishable from genuine communications.&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-supply-chain-vulnerabilities&#34; class=&#34;relative group&#34;&gt;2. Supply Chain Vulnerabilities &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#2-supply-chain-vulnerabilities&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Third-party risk management is no longer optional.&lt;/p&gt;&#xA;&lt;h2 id=&#34;conclusion&#34; class=&#34;relative group&#34;&gt;Conclusion &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#conclusion&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;JE Tech Holdings recommends an immediate review of your organization&amp;rsquo;s security posture.&lt;/p&gt;</description>
+      <title>SNMP: A Classic Monitoring Tool with Modern Security Depth</title>
+      <link>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
+      <description>&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/insights/img/snmp-image.png&#34; alt=&#34;SNMP-Classic-Tool&#34; class=&#34;mx-auto my-0 rounded-md&#34; /&gt;&#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;In the world of system monitoring, there are two primary pillars: analyzing &lt;strong&gt;system logs&lt;/strong&gt; and utilizing &lt;strong&gt;SNMP (Simple Network Management Protocol)&lt;/strong&gt; to verify system status and configurations.&lt;/p&gt;&#xA;&lt;p&gt;In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

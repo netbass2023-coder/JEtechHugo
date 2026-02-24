@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on JE Tech Holdings</title>
+    <link>http://localhost:1313/tags/network/</link>
+    <description>Recent content in Network on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>JE Tech Holdings. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SNMP: A Classic Monitoring Tool with Modern Security Depth</title>
+      <link>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
+      <description>&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/insights/img/snmp-image.png&#34; alt=&#34;SNMP-Classic-Tool&#34; class=&#34;mx-auto my-0 rounded-md&#34; /&gt;&#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;In the world of system monitoring, there are two primary pillars: analyzing &lt;strong&gt;system logs&lt;/strong&gt; and utilizing &lt;strong&gt;SNMP (Simple Network Management Protocol)&lt;/strong&gt; to verify system status and configurations.&lt;/p&gt;&#xA;&lt;p&gt;In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
