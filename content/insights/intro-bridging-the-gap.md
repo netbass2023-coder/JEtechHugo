@@ -7,7 +7,7 @@ tags: ["blog", "intro"]
 ---
 
 ## [Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents
-![Bridging the Gap](./img/BridgingTheGap.png)
+![Bridging the Gap](/insights/img/BridgingTheGap.png)
 ## 
 Throughout my career, my primary focus has always been on **precision and speed of execution**. I have always been a process-driven person—investing heavily in planning, implementation, and rigorous validation whenever the timeline allowed. Because I ensured every project was backed by comprehensive documentation, I used to believe that further explanation was redundant. I let the **deliverables** speak for themselves.
 
