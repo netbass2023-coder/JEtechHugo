@@ -1,10 +1,10 @@
 ---
 title: "Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF"
-date: 2026-02-23T22:05:00+09:00
+date: 2026-02-20
 draft: false
 tags: ["Azure Sentinel", "Prisma Cloud", "Cloud Security", "CCF", "Log Management"]
 categories: ["Technical Insights"]
-image: "/insights/img/prisma-ccf.png" # 이미지 파일 경로에 맞춰 수정하세요
+image: "/insights/img/prisma-ccf.png"
 ---
 
 Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the **Codeless Connector Framework (CCF)** for a more streamlined log integration.

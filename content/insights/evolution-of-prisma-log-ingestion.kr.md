@@ -1,6 +1,6 @@
 ---
 title: "Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로"
-date: 2026-02-23T22:10:00+09:00
+date: 2026-02-20
 draft: false
 tags: ["Azure Sentinel", "Prisma Cloud", "Cloud Security", "CCF", "Log Integration"]
 categories: ["Technical Insights"]

@@ -1,6 +1,6 @@
 ---
 title: "SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈"
-date: 2026-02-23T21:45:00+09:00
+date: 2026-02-13
 draft: false
 tags: ["네트워크", "보안", "SNMP", "인프라"]
 categories: ["Technical Insights"]
