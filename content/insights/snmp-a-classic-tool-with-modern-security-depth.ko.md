@@ -1,5 +1,5 @@
 ---
-title: "[Insights] SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈"
+title: "SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈"
 date: 2026-02-23T21:45:00+09:00
 draft: false
 tags: ["네트워크", "보안", "SNMP", "인프라"]
@@ -7,7 +7,6 @@ categories: ["Technical Insights"]
 image: "/insights/img/snmp-image.png" 
 ---
 
-## SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈
 ![SNMP-Classic-Tool](/insights/img/snmp-image.png)
 
 시스템 모니터링의 세계에는 두 가지 커다란 기둥이 있습니다. 바로 **시스템 로그를 분석하는 것**, 그리고 **SNMP(Simple Network Management Protocol)**를 이용해 시스템의 상태와 설정값을 확인하는 것이죠.
