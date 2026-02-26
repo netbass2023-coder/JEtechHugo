@@ -1062,77 +1062,80 @@
 
 
         async function syncWithGoogle(forceSave = false) {
-
             if (!GAS_WEB_APP_URL) return;
 
-
-
+            console.log(`[Sync] Starting ${forceSave ? "Save" : "Load"}...`);
             updateSyncBadge("SYNCING...", "#f59e0b");
 
-
+            // Set a timeout to detect hangs
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
 
             try {
-
                 if (forceSave) {
-
-                    // Save to Google
-
-                    const res = await fetch(GAS_WEB_APP_URL, {
-
+                    console.log("[Sync] Sending data to Google Sheets...");
+                    await fetch(GAS_WEB_APP_URL, {
                         method: "POST",
-
-                        mode: "no-cors", // Apps Script works with no-cors for simple POST
-
+                        mode: "no-cors",
                         body: JSON.stringify({
-
                             action: "saveAll",
-
                             products: products,
-
                             transactions: transactions
-
-                        })
-
+                        }),
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+                    updateSyncBadge("SYNCED", "var(--accent)");
+                    console.log("[Sync] Save successful (no-cors).");
+                } else {
+                    console.log("[Sync] Fetching data from Google Sheets...");
+                    const res = await fetch(`${GAS_WEB_APP_URL}?action=getData`, {
+                        signal: controller.signal
                     });
 
-                    updateSyncBadge("SYNCED", "var(--accent)");
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
-                } else {
+                    const text = await res.text();
+                    console.log("[Sync] Received response from Google.");
 
-                    // Fetch from Google
-
-                    const res = await fetch(`${GAS_WEB_APP_URL}?action=getData`);
-
-                    const data = await res.json();
-
-
-
-                    if (data.products && data.products.length > 0) {
-
-                        products = data.products;
-
-                        transactions = data.transactions || [];
-
-                        saveProducts();
-
-                        saveTransactions();
-
-                        renderInventory();
-
-                        updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
-
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.products) {
+                            products = data.products;
+                            transactions = data.transactions || [];
+                            saveProductsLocally(); // Avoid loop
+                            saveTransactionsLocally();
+                            renderInventory();
+                            updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
+                            console.log("[Sync] Data loaded successfully.");
+                        } else {
+                            console.warn("[Sync] No products found in Google response.");
+                            updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
+                        }
+                    } catch (e) {
+                        console.error("[Sync] Failed to parse JSON. Response might be an error page or HTML.");
+                        console.log("[Sync] Response snippet:", text.slice(0, 200));
+                        throw new Error("Invalid JSON response from Google");
                     }
-
+                    clearTimeout(timeoutId);
                 }
-
             } catch (err) {
-
-                console.error("Sync failed:", err);
-
-                updateSyncBadge("SYNC FAILED", "var(--danger)");
-
+                clearTimeout(timeoutId);
+                console.error("[Sync] Sync failed:", err);
+                if (err.name === 'AbortError') {
+                    updateSyncBadge("TIMEOUT", "var(--danger)");
+                } else {
+                    updateSyncBadge("SYNC FAILED", "var(--danger)");
+                }
             }
+        }
 
+        function saveProductsLocally() {
+            localStorage.setItem(STORAGE_KEY_PRODUCTS, JSON.stringify(products));
+        }
+
+        function saveTransactionsLocally() {
+            localStorage.setItem(STORAGE_KEY_TX, JSON.stringify(transactions));
         }
 
 
