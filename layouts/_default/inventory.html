@@ -1,173 +1,91 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8" />
-
     <title>Small Inventory</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
     <style>
         :root {
-
             --bg: #0f172a;
-
             --card-bg: #111827;
-
             --accent: #22c55e;
-
             --accent-soft: #16a34a20;
-
             --text: #f9fafb;
-
             --text-muted: #9ca3af;
-
             --danger: #f97373;
-
             --danger-soft: #f9737320;
-
             --border: #1f2933;
-
         }
-
-
 
         * {
             box-sizing: border-box;
         }
 
-
-
         body {
-
             margin: 0;
-
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-
             background: radial-gradient(circle at top, #1f2937, #020617);
-
             color: var(--text);
-
             display: flex;
-
             justify-content: center;
-
             padding: 16px 8px;
-
         }
-
-
 
         .app-frame {
-
             width: 100%;
-
             max-width: 430px;
             /* iPhone 16 Pro Max width 기준 */
-
             background: linear-gradient(180deg, #020617cc, #020617f2);
-
             border-radius: 32px;
-
             padding: 20px 16px 32px;
-
             border: 1px solid #1f2937;
-
             box-shadow:
-
                 0 24px 80px rgba(0, 0, 0, 0.9),
-
                 0 0 0 1px rgba(148, 163, 184, 0.1);
-
             backdrop-filter: blur(24px);
-
             position: relative;
-
             overflow: hidden;
-
         }
-
-
 
         .status-pill {
-
             position: absolute;
-
             top: 10px;
-
             right: 18px;
-
             font-size: 10px;
-
             color: var(--text-muted);
-
             letter-spacing: 0.08em;
-
             text-transform: uppercase;
-
         }
-
-
 
         .header {
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             margin-bottom: 12px;
-
             padding: 4px 4px 12px;
-
         }
-
-
 
         .title-group {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 2px;
-
         }
-
-
 
         .title {
-
             font-size: 20px;
-
             font-weight: 700;
-
             letter-spacing: 0.02em;
-
         }
-
-
 
         .subtitle {
-
             font-size: 11px;
-
             color: var(--text-muted);
-
         }
 
-
-
         .btn-row {
-
             display: flex;
-
             gap: 6px;
-
         }
 
 
@@ -915,6 +833,134 @@
             letter-spacing: 0.12em;
 
         }
+
+
+
+        /* Stepper buttons for Sell sheet */
+
+        .stepper-group {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 2px;
+
+        }
+
+
+
+        .stepper-btn {
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 50%;
+
+            border: 1px solid #1f2937;
+
+            background: #0f172a;
+
+            color: var(--text);
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            padding: 0;
+
+            user-select: none;
+
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+
+        }
+
+
+
+        .stepper-btn:hover {
+
+            background: #1e293b;
+
+            border-color: #374151;
+
+        }
+
+
+
+        .stepper-btn:active {
+
+            transform: scale(0.9);
+
+        }
+
+
+
+        .stepper-btn.minus {
+
+            color: var(--danger);
+
+            border-color: rgba(249, 115, 115, 0.3);
+
+        }
+
+
+
+        .stepper-btn.minus:hover {
+
+            background: rgba(249, 115, 115, 0.1);
+
+        }
+
+
+
+        .stepper-btn.plus {
+
+            color: var(--accent);
+
+            border-color: rgba(34, 197, 94, 0.3);
+
+        }
+
+
+
+        .stepper-btn.plus:hover {
+
+            background: rgba(34, 197, 94, 0.1);
+
+        }
+
+
+
+        .stepper-value {
+
+            min-width: 32px;
+
+            text-align: center;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            color: var(--text);
+
+        }
+
+
+
+        .stepper-value.has-value {
+
+            color: var(--danger);
+
+        }
     </style>
 
 </head>
@@ -1283,7 +1329,7 @@
 
                 html += `
 
-        <div class="sku-row" data-id="${p.id}">
+        <div class="sku-row" data-id="${p.id}" data-max="${p.quantity}">
 
           <div class="sku-info">
 
@@ -1293,11 +1339,13 @@
 
           </div>
 
-          <div class="qty-input-group">
+          <div class="stepper-group">
 
-            <span class="qty-label">-<span data-role="qty-label">0</span></span>
+            <button class="stepper-btn minus" data-role="sell-minus" type="button">−</button>
 
-            <input class="qty-input" type="number" min="0" max="${p.quantity}" value="0" data-role="qty-input" />
+            <span class="stepper-value" data-role="sell-value">0</span>
+
+            <button class="stepper-btn plus" data-role="sell-plus" type="button">+</button>
 
           </div>
 
@@ -1331,15 +1379,11 @@
 
             document.getElementById("sellResetBtn").onclick = () => {
 
-                sheetEl.querySelectorAll('[data-role="qty-input"]').forEach(inp => {
-
-                    inp.value = "0";
-
-                });
-
-                sheetEl.querySelectorAll('[data-role="qty-label"]').forEach(span => {
+                sheetEl.querySelectorAll('[data-role="sell-value"]').forEach(span => {
 
                     span.textContent = "0";
+
+                    span.classList.remove("has-value");
 
                 });
 
@@ -1359,9 +1403,9 @@
 
                     if (!p) return;
 
-                    const input = row.querySelector('[data-role="qty-input"]');
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
 
-                    const qty = Math.max(0, Math.min(p.quantity, Number(input.value) || 0));
+                    const qty = Math.max(0, Math.min(p.quantity, Number(valueSpan.textContent) || 0));
 
                     if (qty > 0) {
 
@@ -1407,27 +1451,47 @@
 
 
 
-            sheetEl.querySelectorAll('[data-role="qty-input"]').forEach(inp => {
+            // Stepper button handlers
 
-                inp.addEventListener("input", () => {
+            sheetEl.querySelectorAll('[data-role="sell-minus"]').forEach(btn => {
 
-                    const row = inp.closest(".sku-row");
+                btn.addEventListener("click", () => {
 
-                    const id = row.getAttribute("data-id");
+                    const row = btn.closest(".sku-row");
 
-                    const p = products.find(pp => pp.id === id);
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
 
-                    const max = p ? p.quantity : 0;
+                    let v = Number(valueSpan.textContent) || 0;
 
-                    let v = Number(inp.value) || 0;
+                    if (v > 0) v--;
 
-                    if (v < 0) v = 0;
+                    valueSpan.textContent = String(v);
 
-                    if (v > max) v = max;
+                    valueSpan.classList.toggle("has-value", v > 0);
 
-                    inp.value = String(v);
+                });
 
-                    row.querySelector('[data-role="qty-label"]').textContent = String(v);
+            });
+
+
+
+            sheetEl.querySelectorAll('[data-role="sell-plus"]').forEach(btn => {
+
+                btn.addEventListener("click", () => {
+
+                    const row = btn.closest(".sku-row");
+
+                    const max = Number(row.getAttribute("data-max")) || 0;
+
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
+
+                    let v = Number(valueSpan.textContent) || 0;
+
+                    if (v < max) v++;
+
+                    valueSpan.textContent = String(v);
+
+                    valueSpan.classList.toggle("has-value", v > 0);
 
                 });
 
