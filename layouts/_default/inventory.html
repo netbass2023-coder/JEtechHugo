@@ -916,43 +916,25 @@
         <div class="title-group">
 
             <div class="title">Inventory</div>
-
             <div class="subtitle">Single product · 18 SKUs</div>
-
         </div>
-
         <div class="btn-row">
-
             <button class="btn-ghost" id="editBtn">Edit</button>
-
             <button class="btn-primary" id="sellBtn">Sell</button>
-
             <button class="btn-secondary" id="addBtn">Add</button>
-
             <button class="btn-icon" id="historyBtn">⏱</button>
-
+            <button class="btn-icon" id="settingsBtn">🔗</button>
         </div>
-
     </header>
 
-
-
     <main class="inventory-card">
-
         <div class="inventory-header-row">
-
             <span>Current Inventory</span>
-
-            <div class="badge">
-
+            <div class="badge" id="syncStatus">
                 <span>LOCAL STORAGE</span>
-
             </div>
-
         </div>
-
         <ul class="inventory-list" id="inventoryList"></ul>
-
     </main>
 
 
@@ -991,48 +973,28 @@
 
         const STORAGE_KEY_TX = "simple_inv_transactions_v1";
 
+        const STORAGE_KEY_GAS_URL = "simple_inv_gas_url_v1";
+
+
+
+        let GAS_WEB_APP_URL = localStorage.getItem(STORAGE_KEY_GAS_URL) || "https://script.google.com/macros/s/AKfycbzuuyykLHbXSQ5Gv-uVyKNRQycOEohDvayq0U2BxI6sn5Y9xl-FT9WH1ntk8WooZpo7/exec";
+
 
 
         function createDefaultProducts() {
-
-            const baseName = "Main Product";
-
-            const sizes = ["Small", "Medium", "Large"];
-
-            const colors = ["Red", "Blue", "Green", "Yellow", "Black", "White"];
-
+            const baseNames = ["Main Product A", "Main Product B", "Main Product C"];
             const now = new Date().toISOString();
-
             const products = [];
-
             let id = 1;
-
-            for (const size of sizes) {
-
-                for (const color of colors) {
-
-                    products.push({
-
-                        id: "p" + id++,
-
-                        name: baseName,
-
-                        size,
-
-                        color,
-
-                        quantity: 0,
-
-                        createdAt: now
-
-                    });
-
-                }
-
+            for (const name of baseNames) {
+                products.push({
+                    id: "p" + id++,
+                    name,
+                    quantity: 0,
+                    createdAt: now
+                });
             }
-
             return products;
-
         }
 
 
@@ -1095,9 +1057,109 @@
 
 
 
+        // ----- Google Sheets Sync -----
+
+
+
+        async function syncWithGoogle(forceSave = false) {
+
+            if (!GAS_WEB_APP_URL) return;
+
+
+
+            updateSyncBadge("SYNCING...", "#f59e0b");
+
+
+
+            try {
+
+                if (forceSave) {
+
+                    // Save to Google
+
+                    const res = await fetch(GAS_WEB_APP_URL, {
+
+                        method: "POST",
+
+                        mode: "no-cors", // Apps Script works with no-cors for simple POST
+
+                        body: JSON.stringify({
+
+                            action: "saveAll",
+
+                            products: products,
+
+                            transactions: transactions
+
+                        })
+
+                    });
+
+                    updateSyncBadge("SYNCED", "var(--accent)");
+
+                } else {
+
+                    // Fetch from Google
+
+                    const res = await fetch(`${GAS_WEB_APP_URL}?action=getData`);
+
+                    const data = await res.json();
+
+
+
+                    if (data.products && data.products.length > 0) {
+
+                        products = data.products;
+
+                        transactions = data.transactions || [];
+
+                        saveProducts();
+
+                        saveTransactions();
+
+                        renderInventory();
+
+                        updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
+
+                    }
+
+                }
+
+            } catch (err) {
+
+                console.error("Sync failed:", err);
+
+                updateSyncBadge("SYNC FAILED", "var(--danger)");
+
+            }
+
+        }
+
+
+
+        function updateSyncBadge(text, color) {
+
+            const badge = document.getElementById("syncStatus");
+
+            if (!badge) return;
+
+            badge.querySelector("span").textContent = text;
+
+            badge.style.borderColor = color;
+
+            badge.style.color = color;
+
+            badge.style.background = color + "20";
+
+        }
+
+
+
         function saveProducts() {
 
             localStorage.setItem(STORAGE_KEY_PRODUCTS, JSON.stringify(products));
+
+            if (GAS_WEB_APP_URL) syncWithGoogle(true);
 
         }
 
@@ -1107,22 +1169,16 @@
 
             localStorage.setItem(STORAGE_KEY_TX, JSON.stringify(transactions));
 
+            if (GAS_WEB_APP_URL) syncWithGoogle(true);
+
         }
 
 
 
         function sortProducts() {
-
             products.sort((a, b) => {
-
-                if (a.name !== b.name) return a.name.localeCompare(b.name);
-
-                if (a.size !== b.size) return a.size.localeCompare(b.size);
-
-                return a.color.localeCompare(b.color);
-
+                return a.name.localeCompare(b.name);
             });
-
         }
 
 
@@ -1132,37 +1188,20 @@
 
 
         function renderInventory() {
-
             sortProducts();
-
             const list = document.getElementById("inventoryList");
-
             list.innerHTML = "";
-
             for (const p of products) {
-
                 const li = document.createElement("li");
-
                 li.className = "inventory-item";
-
                 li.innerHTML = `
-
         <div class="item-main">
-
           <div class="item-name">${escapeHtml(p.name || "Product")}</div>
-
-          <div class="item-meta">${escapeHtml(p.size)} / ${escapeHtml(p.color)}</div>
-
         </div>
-
         <div class="item-qty">${p.quantity}</div>
-
       `;
-
                 list.appendChild(li);
-
             }
-
         }
 
 
@@ -1208,6 +1247,10 @@
             } else if (kind === "history") {
 
                 renderHistorySheet();
+
+            } else if (kind === "settings") {
+
+                renderSettingsSheet();
 
             }
 
@@ -1264,33 +1307,19 @@
     `;
 
             for (const p of products) {
-
                 html += `
-
         <div class="sku-row" data-id="${p.id}" data-max="${p.quantity}">
-
           <div class="sku-info">
-
             <div class="sku-name">${escapeHtml(p.name)}</div>
-
-            <div class="sku-meta">${escapeHtml(p.size)} / ${escapeHtml(p.color)} · In stock: ${p.quantity}</div>
-
+            <div class="sku-meta">In stock: ${p.quantity}</div>
           </div>
-
           <div class="stepper-group">
-
             <button class="stepper-btn minus" data-role="sell-minus" type="button">−</button>
-
             <span class="stepper-value" data-role="sell-value">0</span>
-
             <button class="stepper-btn plus" data-role="sell-plus" type="button">+</button>
-
           </div>
-
         </div>
-
       `;
-
             }
 
             html += `
@@ -1350,21 +1379,11 @@
                         p.quantity -= qty;
 
                         transactions.push({
-
                             id: "t" + Date.now() + Math.random().toString(16).slice(2),
-
                             date: now,
-
                             type: "sell",
-
                             productName: p.name,
-
-                            size: p.size,
-
-                            color: p.color,
-
                             quantityChange: -qty
-
                         });
 
                         changed = true;
@@ -1464,31 +1483,18 @@
     `;
 
             for (const p of products) {
-
                 html += `
-
         <div class="sku-row" data-id="${p.id}">
-
           <div class="sku-info">
-
             <div class="sku-name">${escapeHtml(p.name)}</div>
-
-            <div class="sku-meta">${escapeHtml(p.size)} / ${escapeHtml(p.color)} · In stock: ${p.quantity}</div>
-
+            <div class="sku-meta">In stock: ${p.quantity}</div>
           </div>
-
           <div class="qty-input-group">
-
             <span class="qty-label">+<span data-role="qty-label">0</span></span>
-
             <input class="qty-input" type="number" min="0" max="9999" value="0" data-role="qty-input" />
-
           </div>
-
         </div>
-
       `;
-
             }
 
             html += `
@@ -1550,21 +1556,11 @@
                         p.quantity += qty;
 
                         transactions.push({
-
                             id: "t" + Date.now() + Math.random().toString(16).slice(2),
-
                             date: now,
-
                             type: "add",
-
                             productName: p.name,
-
-                            size: p.size,
-
-                            color: p.color,
-
                             quantityChange: qty
-
                         });
 
                         changed = true;
@@ -1638,63 +1634,24 @@
     `;
 
             for (const p of products) {
-
                 html += `
-
         <div class="sku-row" data-id="${p.id}">
-
           <div class="sku-info" style="flex:1;">
-
             <input class="text-input" type="text" data-role="name" value="${escapeHtml(p.name)}" />
-
-            <div style="display:flex; gap:6px; margin-top:4px;">
-
-              <input class="text-input" style="flex:1;" type="text" data-role="size" value="${escapeHtml(p.size)}" />
-
-              <input class="text-input" style="flex:1;" type="text" data-role="color" value="${escapeHtml(p.color)}" />
-
-            </div>
-
           </div>
-
           <button class="delete-btn" data-role="delete">Delete</button>
-
         </div>
-
       `;
-
             }
 
             html += `
 
         <div style="height:10px;"></div>
 
-        <div class="sheet-section-title">Add product</div>
-
         <div class="form-row">
-
           <label class="form-label">Name</label>
-
-          <input class="text-input" type="text" id="newName" placeholder="Main Product" />
-
+          <input class="text-input" type="text" id="newName" placeholder="Product Name" />
         </div>
-
-        <div class="form-row">
-
-          <label class="form-label">Size</label>
-
-          <input class="text-input" type="text" id="newSize" placeholder="Small" />
-
-        </div>
-
-        <div class="form-row">
-
-          <label class="form-label">Color</label>
-
-          <input class="text-input" type="text" id="newColor" placeholder="Red" />
-
-        </div>
-
         <button class="btn-primary" id="addProductBtn" style="width:100%; justify-content:center; margin-top:4px;">Add</button>
 
       </div>
@@ -1720,17 +1677,7 @@
                     if (!p) return;
 
                     const name = row.querySelector('[data-role="name"]').value.trim() || "Product";
-
-                    const size = row.querySelector('[data-role="size"]').value.trim() || p.size;
-
-                    const color = row.querySelector('[data-role="color"]').value.trim() || p.color;
-
                     p.name = name;
-
-                    p.size = size;
-
-                    p.color = color;
-
                 });
 
                 saveProducts();
@@ -1770,45 +1717,19 @@
             // add product
 
             document.getElementById("addProductBtn").onclick = () => {
-
                 const nameInput = document.getElementById("newName");
-
-                const sizeInput = document.getElementById("newSize");
-
-                const colorInput = document.getElementById("newColor");
-
                 const name = nameInput.value.trim();
-
-                const size = sizeInput.value.trim();
-
-                const color = colorInput.value.trim();
-
-                if (!name || !size || !color) return;
-
+                if (!name) return;
                 const now = new Date().toISOString();
-
                 products.push({
-
                     id: "p" + Date.now() + Math.random().toString(16).slice(2),
-
                     name,
-
-                    size,
-
-                    color,
-
                     quantity: 0,
-
                     createdAt: now
-
                 });
-
                 saveProducts();
-
                 renderInventory();
-
                 renderEditSheet(); // 재렌더링
-
             };
 
         }
@@ -1888,21 +1809,12 @@
                         html += `
 
             <div class="history-row">
-
               <div class="history-info">
-
                 <div class="history-name">${escapeHtml(tx.productName || "Product")}</div>
-
-                <div class="history-meta">${escapeHtml(tx.size)} / ${escapeHtml(tx.color)}</div>
-
               </div>
-
               <div class="history-change ${isAdd ? "add" : "sell"}">
-
                 ${sign}${tx.quantityChange}
-
               </div>
-
             </div>
 
           `;
@@ -1925,6 +1837,66 @@
 
 
 
+        // ----- Settings Sheet (GAS URL) -----
+
+
+
+        function renderSettingsSheet() {
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">Google Sheets Sync</div>
+
+        <button class="btn-ghost" id="settingsCloseBtn">Close</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="sheet-section-title">Google Apps Script URL</div>
+
+        <div class="form-row">
+
+          <input class="text-input" type="text" id="gasUrlInput" placeholder="https://script.google.com/macros/s/.../exec" value="${GAS_WEB_APP_URL}" />
+
+        </div>
+
+        <p class="subtitle" style="margin-top:8px;">Paste the URL from Depoly > Web App in Apps Script.</p>
+
+        <button class="btn-primary" id="saveSettingsBtn" style="width:100%; justify-content:center; margin-top:12px;">Save & Sync</button>
+
+      </div>
+
+    `;
+
+            sheetEl.innerHTML = html;
+
+
+
+            document.getElementById("settingsCloseBtn").onclick = closeSheet;
+
+            document.getElementById("saveSettingsBtn").onclick = () => {
+
+                const url = document.getElementById("gasUrlInput").value.trim();
+
+                localStorage.setItem(STORAGE_KEY_GAS_URL, url);
+
+                GAS_WEB_APP_URL = url;
+
+                closeSheet();
+
+                syncWithGoogle();
+
+            };
+
+        }
+
+
+
+
+
         // ----- Wiring buttons -----
 
 
@@ -1937,11 +1909,41 @@
 
         document.getElementById("historyBtn").onclick = () => openSheet("history");
 
+        document.getElementById("settingsBtn").onclick = () => openSheet("settings");
+
 
 
         // initial render
 
         renderInventory();
+
+
+
+        if (GAS_WEB_APP_URL) {
+
+            syncWithGoogle();
+
+        } else {
+
+            // Prompt for URL if not set (optional)
+
+            console.log("No Google Apps Script URL set.");
+
+        }
+
+
+
+        // Quick ways to set URL via console or potentially a hidden UI
+
+        window.setGasUrl = (url) => {
+
+            localStorage.setItem(STORAGE_KEY_GAS_URL, url);
+
+            GAS_WEB_APP_URL = url;
+
+            syncWithGoogle();
+
+        };
 
     </script>
 
