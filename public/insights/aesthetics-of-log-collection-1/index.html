@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="Mastering the principles of Log Ingestion and the technical depth of Syslog for SecOps excellence." />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/insights/aesthetics-of-log-collection-1/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog">
+  <meta property="og:description" content="Mastering the principles of Log Ingestion and the technical depth of Syslog for SecOps excellence.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-02-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-27T00:00:00+00:00">
+    <meta property="article:tag" content="Syslog">
+    <meta property="article:tag" content="SIEM">
+    <meta property="article:tag" content="Log-Ingestion">
+    <meta property="article:tag" content="SecOps">
+    <meta property="article:tag" content="Engineering">
+
+    
+  <meta itemprop="name" content="The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog">
+  <meta itemprop="description" content="Mastering the principles of Log Ingestion and the technical depth of Syslog for SecOps excellence.">
+  <meta itemprop="datePublished" content="2026-02-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="885">
+  <meta itemprop="keywords" content="Syslog,SIEM,Log-Ingestion,SecOps,Engineering">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog">
+  <meta name="twitter:description" content="Mastering the principles of Log Ingestion and the technical depth of Syslog for SecOps excellence.">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.4662759f748bffeca6d726deb08c876341912c771fb0e383ad3ed26e379a9df9.css"
+              integrity="sha256-RmJ1n3SL/&#43;ym1ybesIyHY0GRLHcfsOODrT7Sbjeanfk="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="http://localhost:1313/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/services/">Services</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/insights/">Insight</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog</h1>
+        
+        
+          <p class="text-xl xl:leading-loose font-medium text-center text-[#777777]">Mastering the principles of Log Ingestion and the technical depth of Syslog for SecOps excellence.</p>
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Syslog">
+  Syslog
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SIEM">
+  SIEM
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log-Ingestion">
+  Log-Ingestion
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SecOps">
+  SecOps
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Engineering">
+  Engineering
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <p><img src="/insights/img/Aesthetics-of-Log-Collection.png" alt="Aesthetics of Log Collection">
+Regardless of whether a dedicated security department exists or if it&rsquo;s driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the <strong>de facto standard</strong> in building security systems and a fundamental pillar of infrastructure.</p>
+<p>However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—<strong>Log Ingestion</strong>.</p>
+<p>In an era where collection is often automated with a few clicks following a vendor guide, the caliber of a true expert is revealed in the ability to fine-tune the entire process—from ingestion to field mapping and normalization—as if tuning a precision instrument. Only by mastering the principles of data flow can one instinctively pinpoint the exact failure point during troubleshooting.</p>
+<p>Drawing from my experience navigating diverse environments as a SIEM engineer, I am launching a series on optimal collection methodologies by log type. Our first journey begins with the most fundamental yet profound protocol: <strong>Syslog</strong>.</p>
+<hr>
+<h2 id="the-essence-of-data-what-we-must-watch">The Essence of Data: What We Must Watch</h2>
+<p>Before diving into technical details, we must define &lsquo;what&rsquo; to collect. Log collection for security purposes is fundamentally rooted in <strong>Access Logs</strong> and <strong>Audit Logs</strong>. While system errors and process logs are valuable, establishing these two as the core focus is the strategic starting point when communicating with non-experts or reporting to stakeholders.</p>
+<p>Traditional system logs are delivered to external collectors via the syslog daemon. This is a universal method applicable to general servers as well as network appliances. However, for systems with specific format constraints, dedicated agents are used, while API-based ingestion has become the mainstream approach for modern Cloud/SaaS environments.</p>
+<h2 id="syslog-three-identities-behind-the-term">Syslog: Three Identities Behind the Term</h2>
+<p>In the field, the term &lsquo;Syslog&rsquo; is often used interchangeably to mean three different things. Distinguishing these concepts is the first step toward engineering mastery.</p>
+<ol>
+<li><strong>Source Data</strong>: The raw data generated by internal system processes or daemons. Typically located in <code>/var/log/</code>, it is distinct from application logs.</li>
+<li><strong>Forwarder</strong>: The role responsible for sending specific logs externally based on the <strong>Severity</strong> and <strong>Destination</strong> defined in the configuration files (<code>.conf</code>).</li>
+<li><strong>Collector</strong>: The server that receives and processes the transmitted data. This is where an engineer’s design capability truly shines.</li>
+</ol>
+<hr>
+<h2 id="strategic-advice-for-practitioners-choosing-severity-and-protocol">Strategic Advice for Practitioners: Choosing Severity and Protocol</h2>
+<p>From a practical standpoint, I want to emphasize two key points:</p>
+<h3 id="1-ensure-coverage-up-to-informational-level-6">1. Ensure coverage up to &lsquo;Informational (Level 6)&rsquo;</h3>
+<p>Arguments are often made to collect only up to <em>Critical</em> or <em>Error</em> levels to save on storage costs and DB load. However, the Access and Audit records that serve as decisive evidence during security incident investigations are predominantly categorized at the <strong>Informational</strong> level. Optimization should not be achieved by blocking ingestion stages, but through sophisticated tuning that eliminates unnecessary noise (such as certain Warnings).</p>
+<h3 id="2-the-choice-between-udp-and-tcp-is-a-matter-of-data-integrity">2. The choice between UDP and TCP is a matter of &lsquo;Data Integrity&rsquo;</h3>
+<p>UDP is commonly known to be &lsquo;fast but unreliable.&rsquo; However, a more critical issue in log collection is <strong>Truncation</strong>. Due to MTU (Maximum Transmission Unit) limits, UDP runs the risk of losing data when transmitting long logs—such as those from Next-Gen Firewalls (NGFW) containing detailed URLs or threat detection data.</p>
+<p>Conversely, UDP can be efficient for short, repetitive data like DNS logs. Furthermore, in high-security environments, one should consider the flexibility of using <strong>TLS-based Port 6514</strong> instead of the standard Port 514.</p>
+<hr>
+<h2 id="engineering-beyond-mere-collection">Engineering: Beyond Mere Collection</h2>
+<p>A seasoned engineer does not stop at simply &lsquo;stacking&rsquo; Syslog data. They perform filtering based on hostnames or keywords within real-time data streams and maximize pipeline efficiency by stripping unnecessary fields during the <strong>Parsing</strong> stage.</p>
+<p>In multi-tenant environments, or mid-sized setups where the data flow per customer is below 250 EPS (Events Per Second), a <strong>port-based segmentation strategy</strong> is highly effective:</p>
+<ul>
+<li>Logically separate Syslog instances into independent directories.</li>
+<li>Assign unique dedicated ports (e.g., <code>11514</code>, <code>12514</code>, <code>21514</code>) to ensure independence.</li>
+<li>Prevent log mixing and clarify data paths from the ingestion stage.</li>
+</ul>
+<p>This allows for flexible troubleshooting, enabling you to restart or modify a specific port instance without interrupting the entire service. Ultimately, this is a clever design choice that maximizes logical isolation while sharing a single resource.</p>
+<p>Furthermore, experts can perform &ldquo;magic&rdquo; like instantly converting standard Syslog into <strong>CEF (Common Event Format)</strong> or inserting dynamic URLs into logs that redirect to a security product&rsquo;s dashboard upon detecting specific events.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The world of log collection is populated by &ldquo;masters&rdquo; who maintain system visibility through their own sophisticated logic. In the next post, we will explore how they strategically utilize <strong>Agents and APIs</strong> as advanced tools in their methodology.</p>
+<h3 id="trademarks--disclaimer">Trademarks &amp; Disclaimer</h3>
+<blockquote>
+<p><strong>Trademarks:</strong></p>
+<ul>
+<li>Microsoft, Azure, Sentinel, Windows, and Azure Function Apps are registered trademarks of Microsoft Corporation.</li>
+<li>Palo Alto Networks, Prisma Cloud, and CCF (Cloud Connector Framework) are registered trademarks of Palo Alto Networks, Inc.</li>
+<li>ArcSight and CEF (Common Event Format) are trademarks or registered trademarks of OpenText (formerly Hewlett Packard Enterprise).</li>
+<li>All other product names, logos, and brands mentioned in this post are the property of their respective owners.</li>
+</ul>
+<p><strong>Disclaimer:</strong> The views and opinions expressed in this post are those of the author and do not necessarily reflect the official policy or position of any featured companies. This content is provided for informational purposes based on hands-on technical experience and does not replace official product documentation.</p>
+</blockquote>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">Premier Security Consulting &amp; Tech Holdings</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">About Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

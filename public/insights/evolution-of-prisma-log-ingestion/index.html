@@ -1,104 +1,29 @@
-
-
-
-
-
-
-
 <!doctype html>
-<html
-  lang="en"
-  dir="ltr"
-  class="scroll-smooth"
-  data-default-appearance="light"
-  data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FFFFFF" />
-  
-  <title>Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF &middot; JE Tech Holdings</title>
-    <meta name="title" content="Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF &middot; JE Tech Holdings" />
-  
-  
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="http://localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
-    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
-  ></script>
-  
-  
-  
-  
-  
-  
-  
-  
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href="http://localhost:1313/css/main.bundle.min.d0d8a9689b0af4e232471b4614241ed6f32316c390eac351cf5a74f1c586f25a.css"
-    integrity="sha256-0NipaJsK9OIyRxtGFCQe1vMjFsOQ6sNRz1p08cWG8lo="
-  />
-  
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     
+      <title>Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF | JE Tech Holdings</title>
     
-  
-  
-  
-  
-  
-  
+
+
     
-    <script
-      defer
-      type="text/javascript"
-      id="script-bundle"
-      src="http://localhost:1313/js/main.bundle.min.eab7645deeb66154f816f18f195e0835d5c656537107f289d186dcfb33593756.js"
-      integrity="sha256-6rdkXe62YVT4FvGPGV4INdXGVlNxB/KJ0Ybc&#43;zNZN1Y="
-      data-copy="Copy"
-      data-copied="Copied"
-    ></script>
-  
-  
-  <meta
-    name="description"
-    content="
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
       
-        Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the Codeless Connector Framework (CCF) for a more streamlined log integration.
-1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) #Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &ldquo;blades&rdquo;), as they dictate the nature of the logs:
-      
-    "
-  />
-  
-  
-  
-  
-    <link rel="canonical" href="http://localhost:1313/insights/evolution-of-prisma-log-ingestion/" />
-  
-  
-  
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:url" content="http://localhost:1313/insights/evolution-of-prisma-log-ingestion/">
+    
+    <meta name="description" content="" />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/insights/evolution-of-prisma-log-ingestion/">
   <meta property="og:site_name" content="JE Tech Holdings">
   <meta property="og:title" content="Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF">
   <meta property="og:description" content="Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the Codeless Connector Framework (CCF) for a more streamlined log integration.
-1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) #Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called “blades”), as they dictate the nature of the logs:">
+1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called “blades”), as they dictate the nature of the logs:">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="insights">
@@ -110,261 +35,229 @@
     <meta property="article:tag" content="CCF">
     <meta property="article:tag" content="Log Management">
 
-  
+    
+  <meta itemprop="name" content="Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF">
+  <meta itemprop="description" content="Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the Codeless Connector Framework (CCF) for a more streamlined log integration.
+1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called “blades”), as they dictate the nature of the logs:">
+  <meta itemprop="datePublished" content="2026-02-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="572">
+  <meta itemprop="keywords" content="Azure Sentinel,Prisma Cloud,Cloud Security,CCF,Log Management">
+    
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF">
   <meta name="twitter:description" content="Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the Codeless Connector Framework (CCF) for a more streamlined log integration.
-1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) #Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called “blades”), as they dictate the nature of the logs:">
-
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "articleSection": "Insights",
-    "name": "Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF",
-    "headline": "Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF",
-    
-    "abstract": "\u003cp\u003eIntegrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the \u003cstrong\u003eCodeless Connector Framework (CCF)\u003c\/strong\u003e for a more streamlined log integration.\u003c\/p\u003e\n\u003ch2 id=\u00221-understanding-prisma-cloud-modules-cspm-vs-cwpp\u0022 class=\u0022relative group\u0022\u003e1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#1-understanding-prisma-cloud-modules-cspm-vs-cwpp\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003cp\u003eBefore diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called \u0026ldquo;blades\u0026rdquo;), as they dictate the nature of the logs:\u003c\/p\u003e",
-    "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/insights\/evolution-of-prisma-log-ingestion\/",
-    "author" : {
-      "@type": "Person",
-      "name": ""
-    },
-    "copyrightYear": "2026",
-    "dateCreated": "2026-02-20T00:00:00\u002b00:00",
-    "datePublished": "2026-02-20T00:00:00\u002b00:00",
-    
-    "dateModified": "2026-02-20T00:00:00\u002b00:00",
-    
-    "keywords": ["Azure Sentinel","Prisma Cloud","Cloud Security","CCF","Log Management"],
-    
-    "mainEntityOfPage": "true",
-    "wordCount": "573"
-  }
-  </script>
-    
-    <script type="application/ld+json">
-    {
-   "@context": "https://schema.org",
-   "@type": "BreadcrumbList",
-   "itemListElement": [
-     {
-       "@type": "ListItem",
-       "item": "http://localhost:1313/",
-       "name": "",
-       "position": 1
-     },
-     {
-       "@type": "ListItem",
-       "item": "http://localhost:1313/insights/",
-       "name": "Insights",
-       "position": 2
-     },
-     {
-       "@type": "ListItem",
-       "item": "http://localhost:1313/categories/technical-insights/",
-       "name": "Technical Insights",
-       "position": 3
-     },
-     {
-       "@type": "ListItem",
-       "name": "Azure Sentinel, the Evolution of Prisma Cloud Log Integration From Function Apps to Ccf",
-       "position": 4
-     }
-   ]
- }
-  </script>
-
-  
-  
-  
-  
-  
+1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called “blades”), as they dictate the nature of the logs:">
 
 
 
-
-
-
-
-  
-  
-
-  
-  
-</head>
-<body
-    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
-  >
-    <div id="the-top" class="absolute flex self-center">
-      <a
-        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
-        href="#main-content"
-        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
-        >Skip to main content</a
-      >
-    </div>
     
     
-      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
-  <nav class="flex items-start justify-between sm:items-center">
+
     
-    <div class="flex flex-row items-center">
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
       
-  <a
-    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-    rel="me"
-    href="/"
-    >JE Tech Holdings</a
-  >
-
-    </div>
-    
-    
-      <ul class="flex list-none flex-col text-end sm:flex-row">
         
           
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/services/"
-                  title=""
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Services</span
-                    >
-                  </a
-                >
-              
-            </li>
           
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/insights/"
-                  title=""
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Insight</span
-                    >
-                  </a
-                >
-              
-            </li>
+            <link
+              rel="stylesheet"
+              href="/css/styles.4662759f748bffeca6d726deb08c876341912c771fb0e383ad3ed26e379a9df9.css"
+              integrity="sha256-RmJ1n3SL/&#43;ym1ybesIyHY0GRLHcfsOODrT7Sbjeanfk="
+              crossorigin="anonymous"
+            />
           
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/contact/"
-                  title=""
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >Contact</span
-                    >
-                  </a
-                >
-              
-            </li>
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="http://localhost:1313/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
           
-          
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
-              <button id="search-button-m0" title="Search (/)">
-                <span
-                  class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
-                >
-                  <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span>
-                </span>
-              </button>
-            </li>
-          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/services/">Services</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/insights/">Insight</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/contact/">Contact</a>
+          </li>
         
       </ul>
-    
-  </nav>
-</header>
-
-    
-    <div class="relative flex grow flex-col">
-      <main id="main-content" class="grow">
+      <ul class="flex flex-col gap-8 xl:flex-row">
         
-  <article>
-    <header class="max-w-prose">
-      
-      <h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF
-      </h1>
-      
-        <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-          
-
-
-
-
-
-  
-  
-
-
-
-  
-
-  
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2026-02-20 00:00:00 &#43;0000 UTC">20 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
+      </ul>
+    </div>
   </div>
+</nav>
 
-  
-  
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF</h1>
+        
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Azure%20Sentinel">
+  Azure Sentinel
+</a>
 
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Prisma%20Cloud">
+  Prisma Cloud
+</a>
 
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Cloud%20Security">
+  Cloud Security
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/CCF">
+  CCF
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log%20Management">
+  Log Management
+</a>
+
+          
         </div>
       
-      
-    </header>
-    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
-      
-      <div class="min-h-0 min-w-0 max-w-prose grow">
-        <p>Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the <strong>Codeless Connector Framework (CCF)</strong> for a more streamlined log integration.</p>
-<h2 id="1-understanding-prisma-cloud-modules-cspm-vs-cwpp" class="relative group">1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#1-understanding-prisma-cloud-modules-cspm-vs-cwpp" aria-label="Anchor">#</a></span></h2><p>Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &ldquo;blades&rdquo;), as they dictate the nature of the logs:</p>
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <p><img src="/insights/img/prisma-ccf.png%22" alt="Prisma CCF">
+Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the <strong>Codeless Connector Framework (CCF)</strong> for a more streamlined log integration.</p>
+<h2 id="1-understanding-prisma-cloud-modules-cspm-vs-cwpp">1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)</h2>
+<p>Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &ldquo;blades&rdquo;), as they dictate the nature of the logs:</p>
 <ul>
 <li><strong>Cloud Security (CSPM):</strong> Focuses on Cloud Security Posture Management. It detects misconfigurations in infrastructure, IAM, networking, storage, and control-plane activities.</li>
 <li><strong>Runtime Security (CWPP):</strong> Known as the Cloud Workload Protection Platform. It focuses on runtime-level protection, applying detection rules to workloads such as VMs, containers, and hosts.</li>
 </ul>
 <p><em>Note: Other modules include Application Security and Data Security.</em></p>
-<h2 id="2-legacy-log-ingestion-the-challenges-of-custom-development" class="relative group">2. Legacy Log Ingestion: The Challenges of Custom Development <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#2-legacy-log-ingestion-the-challenges-of-custom-development" aria-label="Anchor">#</a></span></h2><p>Until early 2025, log collection was fragmented and operationally heavy:</p>
+<h2 id="2-legacy-log-ingestion-the-challenges-of-custom-development">2. Legacy Log Ingestion: The Challenges of Custom Development</h2>
+<p>Until early 2025, log collection was fragmented and operationally heavy:</p>
 <ul>
 <li><strong>CSPM:</strong> Required manual development and maintenance of <strong>Azure Function Apps</strong> to ingest logs.</li>
 <li><strong>CWPP:</strong> Due to the lack of a standard connector, we had to rely on <strong>Logic Apps</strong> to pull logs via general APIs.</li>
@@ -375,246 +268,61 @@
 <li><strong>Unstructured Schemas:</strong> The JSON payloads were often bloated with metadata, policy definitions, and compliance mappings. This forced engineers to spend excessive time on field mapping and normalization during connector development.</li>
 </ol>
 <hr>
-<h2 id="3-the-shift-to-codeless-connector-framework-ccf" class="relative group">3. The Shift to Codeless Connector Framework (CCF) <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#3-the-shift-to-codeless-connector-framework-ccf" aria-label="Anchor">#</a></span></h2><p>The introduction of the <strong>Codeless Connector Framework (CCF)</strong> for CSPM log ingestion has been a game-changer. From my experience, the primary benefits are:</p>
+<h2 id="3-the-shift-to-codeless-connector-framework-ccf">3. The Shift to Codeless Connector Framework (CCF)</h2>
+<p>The introduction of the <strong>Codeless Connector Framework (CCF)</strong> for CSPM log ingestion has been a game-changer. From my experience, the primary benefits are:</p>
 <ul>
 <li><strong>No-Code &amp; Simplified Auth:</strong> Setup is possible without writing custom code or navigating complex authentication hurdles.</li>
 <li><strong>Vendor-Defined Normalization:</strong> Since the vendor and Microsoft pre-define the mapping, you no longer need to worry about data integrity or manual normalization.</li>
 <li><strong>Leveraging Pre-canned Content:</strong> Using a native connector allows for the immediate application of built-in <strong>Analytics Rules</strong> and <strong>Workbooks</strong> provided by Microsoft and Palo Alto.</li>
 </ul>
-<h2 id="4-practical-insight-efficient-filtering-via-dcr" class="relative group">4. Practical Insight: Efficient Filtering via DCR <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#4-practical-insight-efficient-filtering-via-dcr" aria-label="Anchor">#</a></span></h2><p>One of the most powerful features of CCF is the ability to apply filtering and mapping directly within the <strong>Data Collection Rule (DCR)</strong>.</p>
+<h2 id="4-practical-insight-efficient-filtering-via-dcr">4. Practical Insight: Efficient Filtering via DCR</h2>
+<p>One of the most powerful features of CCF is the ability to apply filtering and mapping directly within the <strong>Data Collection Rule (DCR)</strong>.</p>
 <blockquote>
 <p><strong>Pro Tip:</strong> In environments where Prisma QA and Production tenants are not logically separated, you can use the <strong>DCR</strong> to identify specific identifiers and filter logs at the ingestion point. This ensures you only store necessary data, significantly optimizing both costs and operational efficiency.</p>
 </blockquote>
 <hr>
-<h2 id="5-conclusion" class="relative group">5. Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#5-conclusion" aria-label="Anchor">#</a></span></h2><p>As of January 2026, the CSPM Connector is in Preview mode and utilizes the CCF architecture. I expect this framework to pave the way for even more robust content development in the future.</p>
+<h2 id="5-conclusion">5. Conclusion</h2>
+<p>As of January 2026, the CSPM Connector is in Preview mode and utilizes the CCF architecture. I expect this framework to pave the way for even more robust content development in the future.</p>
 <p>While application log ingestion always requires careful planning, leveraging an API-based CCF maximizes the usability of Azure Sentinel. More importantly, it frees up security professionals from the burden of maintenance, allowing them to focus on what matters most: <strong>developing and deploying high-quality detection content.</strong></p>
 <hr>
-<h3 id="trademarks--disclaimer" class="relative group">Trademarks &amp; Disclaimer <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#trademarks--disclaimer" aria-label="Anchor">#</a></span></h3><ul>
+<h3 id="trademarks--disclaimer">Trademarks &amp; Disclaimer</h3>
+<ul>
 <li><strong>Trademarks:</strong> Microsoft, Azure, and Sentinel are registered trademarks of Microsoft Corporation. Palo Alto Networks and Prisma Cloud are registered trademarks of Palo Alto Networks, Inc. All other product names, logos, and brands are property of their respective owners.</li>
 <li><strong>Disclaimer:</strong> The views and opinions expressed in this post are those of the author and do not necessarily reflect the official policy or position of any featured companies. This content is provided for informational purposes based on hands-on technical experience and does not replace official product documentation.</li>
 </ul>
 
       </div>
-    </section>
-    <footer class="max-w-prose pt-8 print:hidden">
-      
-  <div class="flex">
-    
-    
-    
-    <div class="place-self-center">
-      
-      
-      <div class="text-2xl sm:text-lg">
+    </div>
+  </section>
 </div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">Premier Security Consulting &amp; Tech Holdings</p>
     </div>
-  </div>
-
-
-      
-
-      
-  
-    
-    
-    
-    <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="flex justify-between pt-3">
-        <span>
-          
-            <a class="group flex" href="http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/">
-              <span
-                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
-                ><span class="ltr:inline rtl:hidden">&larr;</span
-                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >SNMP: A Classic Monitoring Tool with Modern Security Depth</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2026-02-13 00:00:00 &#43;0000 UTC">13 February 2026</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-        </span>
-      </div>
-    </div>
-  
-
-
-      
-    </footer>
-  </article>
-
-      </main>
-      
-        <div
-          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
-          id="to-top"
-          hidden="true"
-        >
-          <a
-            href="#the-top"
-            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-            aria-label="Scroll to top"
-            title="Scroll to top"
-          >
-            &uarr;
-          </a>
-        </div>
-      <footer class="py-10 print:hidden">
-  
-  
-  <div class="flex items-center justify-between">
-    <div>
-      
-      
-        <p class="text-sm text-neutral-500 dark:text-neutral-400">
-            JE Tech Holdings. All rights reserved.
-        </p>
-      
-      
-      
-        <p class="text-xs text-neutral-500 dark:text-neutral-400">
-          
-          
-          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
-        </p>
-      
-    </div>
-    <div class="flex flex-row items-center">
-      
-      
-        <div>
-          
-  
-    
-    
-      <div class="group relative">
-        <button
-          class="group-dark:hover:text-primary-400 flex w-full items-center justify-end transition-colors group-hover:text-primary-600"
-        >
-          <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <path fill="currentColor" d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
-  <path fill="currentColor" d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
-</svg>
-</span><span class="text-sm">EN</span
-          ><span class="text-[0.6rem]"
-            ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
-</span></span
-          >
-        </button>
-        
-        <div
-          class=" bottom-7  invisible absolute z-50 flex flex-col whitespace-nowrap rounded border border-neutral-300 bg-neutral text-start text-base shadow group-hover:visible ltr:right-0 rtl:left-0 dark:border-neutral-600 dark:bg-neutral-800"
-        >
-          
-          
-          
-            
-            
-              
-                
-                <div class="flex flex-grow">
-                  
-                    <a
-                      href="http://localhost:1313/insights/evolution-of-prisma-log-ingestion/"
-                      class="flex w-full items-center justify-between bg-primary-100 px-2 py-1 dark:bg-primary-900"
-                      >English<span
-                        class="ms-2 w-6 text-primary-600 dark:text-primary-400"
-                        ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/></svg>
-</span></span
-                      ></a
-                    >
-                  
-                </div>
-              
-            
-              
-            
-          
-            
-            
-              
-            
-              
-                
-                <div class="flex flex-grow">
-                  
-                    <a
-                      href="http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/"
-                      class="w-full py-1 pe-10 ps-2 decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                      >한국어</a
-                    >
-                  
-                </div>
-              
-            
-          
-        </div>
-      </div>
-    
-  
-
-
-        </div>
-      
-      
-      
-    </div>
-  </div>
-  
-  
-</footer>
-<div
-  id="search-wrapper"
-  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="http://localhost:1313/"
->
-  <div
-    id="search-modal"
-    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
-  >
-    <header class="relative z-10 flex flex-none items-center justify-between px-2">
-      <form class="flex min-w-0 flex-auto items-center">
-        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
-          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span>
-        </div>
-        <input
-          type="search"
-          id="search-query"
-          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
-          placeholder="Search"
-          tabindex="0"
-        />
-      </form>
-      <button
-        id="close-search-button"
-        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-        title="Close (Esc)"
-      >
-        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-</span>
-      </button>
-    </header>
-    <section class="flex-auto overflow-auto px-2">
-      <ul id="search-results">
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">About Us</h1>
+      <ul class="">
         
       </ul>
-    </section>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
   </div>
-</div>
+  
+</footer>
 
     </div>
   </body>

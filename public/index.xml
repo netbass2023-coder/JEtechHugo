@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>JE Tech Holdings. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Strategic Compliance &amp; Governance</title>
@@ -38,25 +38,39 @@
       <description>Reliable deployment with actionable insights. Comprehensive implementation services configured to industry best practices.</description>
     </item>
     <item>
+      <title>The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms</title>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-2/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/Aesthetics-of-Log-Collection2.png&#34; alt=&#34;Aesthetics of Log Collection 2&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cef-common-event-format-a-strategic-choice-for-log-standardization&#34;&gt;CEF (Common Event Format): A Strategic Choice for Log Standardization&lt;/h2&gt;&#xA;&lt;p&gt;CEF (Common Event Format), introduced by ArcSight—the longtime leader of the SIEM market—emerged as a powerful solution to the persistent issue of Log Format Inconsistency across different vendors. Standard RFC-defined Syslog specifications often fall short when it comes to fully structuring the complex contexts of modern security events.&lt;/p&gt;&#xA;&lt;p&gt;While formats for general web server logs can be user-defined, it places a massive operational overhead on security engineers to understand the internal logic of every application just to design and deploy custom formats. CEF shifts this paradigm through its structural design. Unlike traditional methods where engineers had to manually calculate the ordinal sequence and offsets of values within raw data, CEF explicitly includes Key-Value Pairs within a &amp;lsquo;One-single Line&amp;rsquo; format.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog</title>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-1/</link>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/Aesthetics-of-Log-Collection.png&#34; alt=&#34;Aesthetics of Log Collection&#34;&gt;&#xA;Regardless of whether a dedicated security department exists or if it&amp;rsquo;s driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the &lt;strong&gt;de facto standard&lt;/strong&gt; in building security systems and a fundamental pillar of infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—&lt;strong&gt;Log Ingestion&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF</title>
       <link>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</guid>
-      <description>&lt;p&gt;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34; class=&#34;relative group&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP) &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/prisma-ccf.png%22&#34; alt=&#34;Prisma CCF&#34;&gt;&#xA;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
     </item>
     <item>
       <title>SNMP: A Classic Monitoring Tool with Modern Security Depth</title>
       <link>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
-      <description>&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/insights/img/snmp-image.png&#34; alt=&#34;SNMP-Classic-Tool&#34; class=&#34;mx-auto my-0 rounded-md&#34; /&gt;&#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;In the world of system monitoring, there are two primary pillars: analyzing &lt;strong&gt;system logs&lt;/strong&gt; and utilizing &lt;strong&gt;SNMP (Simple Network Management Protocol)&lt;/strong&gt; to verify system status and configurations.&lt;/p&gt;&#xA;&lt;p&gt;In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/snmp-image.png&#34; alt=&#34;SNMP-Classic-Tool&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the world of system monitoring, there are two primary pillars: analyzing &lt;strong&gt;system logs&lt;/strong&gt; and utilizing &lt;strong&gt;SNMP (Simple Network Management Protocol)&lt;/strong&gt; to verify system status and configurations.&lt;/p&gt;&#xA;&lt;p&gt;In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents</title>
       <link>http://localhost:1313/insights/intro-bridging-the-gap/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/insights/intro-bridging-the-gap/</guid>
-      <description>&lt;h2 id=&#34;intro-bridging-the-gap-why-i-am-documenting-fundamentals-and-real-world-incidents&#34; class=&#34;relative group&#34;&gt;[Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#intro-bridging-the-gap-why-i-am-documenting-fundamentals-and-real-world-incidents&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/insights/img/BridgingTheGap.png&#34; alt=&#34;Bridging the Gap&#34; class=&#34;mx-auto my-0 rounded-md&#34; /&gt;&#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;&#34; class=&#34;relative group&#34;&gt; &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Throughout my career, my primary focus has always been on &lt;strong&gt;precision and speed of execution&lt;/strong&gt;. I have always been a process-driven person—investing heavily in planning, implementation, and rigorous validation whenever the timeline allowed. Because I ensured every project was backed by comprehensive documentation, I used to believe that further explanation was redundant. I let the &lt;strong&gt;deliverables&lt;/strong&gt; speak for themselves.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;intro-bridging-the-gap-why-i-am-documenting-fundamentals-and-real-world-incidents&#34;&gt;[Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/BridgingTheGap.png&#34; alt=&#34;Bridging the Gap&#34;&gt;&lt;/p&gt;&#xA;&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Throughout my career, my primary focus has always been on &lt;strong&gt;precision and speed of execution&lt;/strong&gt;. I have always been a process-driven person—investing heavily in planning, implementation, and rigorous validation whenever the timeline allowed. Because I ensured every project was backed by comprehensive documentation, I used to believe that further explanation was redundant. I let the &lt;strong&gt;deliverables&lt;/strong&gt; speak for themselves.&lt;/p&gt;</description>
     </item>
     <item>
       <title>JE Tech Holdings에 오신 것을 환영합니다</title>
@@ -64,6 +78,13 @@
       <pubDate>Fri, 27 Oct 2023 10:00:00 +0900</pubDate>
       <guid>http://localhost:1313/posts/welcome/</guid>
       <description>&lt;p&gt;JE Tech Holdings 공식 홈페이지입니다.&#xA;Hugo와 Cloudflare Pages로 구축되었습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Inventory</title>
+      <link>http://localhost:1313/inventory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/inventory/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
