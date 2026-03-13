@@ -1,6 +1,6 @@
 ---
 title: "The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms"
-date: 2026-03-14T09:00:00+09:00
+date: 2026-03-06
 description: "Mastering CEF for standardization and the transition to Agent/API-based ingestion."
 categories: ["Security", "Infrastructure"]
 tags: ["CEF", "SIEM", "Log-Ingestion", "API", "Cloud-Security"]
