@@ -6,7 +6,7 @@ tags: ["Azure Sentinel", "Prisma Cloud", "Cloud Security", "CCF", "Log Integrati
 categories: ["Technical Insights"]
 image: "/insights/img/prisma-ccf.png" 
 ---
-
+![Prisma CCF](/insights/img/prisma-ccf.png")
 Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.
 
 ## 1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP)
