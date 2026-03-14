@@ -1,0 +1,33 @@
+hero:
+  enable: true
+  title: "Precision Security Governance for Your Business"
+  text: "Leveraging battle-tested expertise from global corporations and SOC environments, we build security frameworks that actually work. From the technical interpretation of complex compliance to data-driven proactive defense, we provide customized security roadmaps aligned with your strategic business goals."
+  image: "images/hero/JETechHeader.jpg"
+  buttons:
+    - label: "View Services"
+      link: "/services/"
+    - label: "Contact Us"
+      link: "/contact/"
+  items:
+    - title: "Strategic Compliance & Governance"
+      text: "Battle-tested technical interpretations and resilient security roadmaps."
+      icon: "fas fa-file-contract"
+      color: "#0E76A8"
+    - title: "SOC & SIEM Engineering"
+      text: "Data-driven optimization from log ingestion to advanced detection rules."
+      icon: "fas fa-microchip"
+      color: "#6366F1"
+    # --- Added virtual line ---
+    - title: ""
+      text: ""
+      icon: ""
+      color: "transparent"
+    # ---------------------------
+    - title: "Intelligence-Driven Operations"
+      text: "Proactive threat hunting and custom KPI dashboards."
+      icon: "fas fa-search-plus"
+      color: "#F59E0B"
+    - title: "Technical Professional Services"
+      text: "Precision deployment, reporting, and professional mentorship."
+      icon: "fas fa-user-shield"
+      color: "#10B981"

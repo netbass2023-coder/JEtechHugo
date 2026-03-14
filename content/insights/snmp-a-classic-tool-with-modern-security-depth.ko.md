@@ -4,7 +4,7 @@ date: 2026-02-13
 draft: false
 tags: ["네트워크", "보안", "SNMP", "인프라"]
 categories: ["Technical Insights"]
-image: "/insights/img/snmp-image.png" 
+image: "insights/img/snmp-image.png"
 ---
 
 ![SNMP-Classic-Tool](/insights/img/snmp-image.png)

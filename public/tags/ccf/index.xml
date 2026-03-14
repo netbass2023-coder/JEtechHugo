@@ -6,7 +6,7 @@
     <description>Recent content in CCF on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>JE Tech Holdings. All rights reserved.</copyright>
+    <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ccf/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <link>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/prisma-ccf.png%22&#34; alt=&#34;Prisma CCF&#34;&gt;&#xA;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/prisma-ccf.png&#34; alt=&#34;Prisma CCF&#34;&gt;&#xA;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

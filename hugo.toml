@@ -3,7 +3,7 @@ title = "JE Tech Holdings"
 theme = "agency"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-copyright = "JE Tech Holdings. All rights reserved."
+copyright = "© 2026 JE Tech Holding Inc. All rights reserved"
 
 [markup]
   [markup.goldmark]
@@ -53,6 +53,11 @@ copyright = "JE Tech Holdings. All rights reserved."
   url = "/contact/"
   weight = 30
 
+[[languages.en.menu.buttons]]
+  name = "한국어"
+  url = "/ko/"
+  weight = 10
+
 # Korean Menu
 [[languages.ko.menu.main]]
   identifier = "services"
@@ -69,3 +74,8 @@ copyright = "JE Tech Holdings. All rights reserved."
   name = "문의"
   url = "/contact/"
   weight = 30
+
+[[languages.ko.menu.buttons]]
+  name = "English"
+  url = "/"
+  weight = 10
