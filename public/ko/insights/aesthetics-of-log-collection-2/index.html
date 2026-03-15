@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="ko">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61744&amp;path=livereload" data-no-instant defer></script>
     
     
       <title>로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임 | JE Tech Holdings</title>
@@ -19,7 +19,7 @@
 
     
     
-    <meta property="og:url" content="http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/">
+    <meta property="og:url" content="http://localhost:61744/ko/insights/aesthetics-of-log-collection-2/">
   <meta property="og:site_name" content="JE Tech Holdings">
   <meta property="og:title" content="로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임">
   <meta property="og:description" content="CEF 표준 포맷의 전략적 가치와 에이전트 및 API 수집 기술의 현대화 방향">
@@ -32,7 +32,7 @@
     <meta property="article:tag" content="SIEM">
     <meta property="article:tag" content="Log-Ingestion">
     <meta property="article:tag" content="API">
-    <meta property="article:tag" content="Cloud Security">
+    <meta property="article:tag" content="Cloud-Security">
 
     
   <meta itemprop="name" content="로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임">
@@ -40,7 +40,7 @@
   <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
   <meta itemprop="wordCount" content="582">
-  <meta itemprop="keywords" content="CEF,SIEM,Log-Ingestion,API,Cloud Security">
+  <meta itemprop="keywords" content="CEF,SIEM,Log-Ingestion,API,Cloud-Security">
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임">
@@ -58,7 +58,7 @@
     
 
     
-      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+      <link rel="manifest" href="http://localhost:61744/site.webmanifest" />
     
 
     
@@ -76,8 +76,8 @@
           
             <link
               rel="stylesheet"
-              href="/css/styles.af1fb502b0994e5e40b31a1840f295ac15b1252183100a3993c1216df5dd5b0f.css"
-              integrity="sha256-rx&#43;1ArCZTl5AsxoYQPKVrBWxJSGDEAo5k8EhbfXdWw8="
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
               crossorigin="anonymous"
             />
           
@@ -93,8 +93,8 @@
         
           <link
             rel="stylesheet"
-            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
-            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            href="/css/fonts.f4b1caa6f3a550c58e37420c794421e07be53ba3948c5d976b7551017f710390.css"
+            integrity="sha256-9LHKpvOlUMWON0IMeUQh4HvlO6OUjF2Xa3VRAX9xA5A="
             crossorigin="anonymous"
           />
         
@@ -116,7 +116,7 @@
     <div class="flex min-h-screen flex-col">
       <nav class="z-50">
   <div class="container mx-auto flex items-center justify-between px-4 py-6">
-    <a class="flex items-center" href="http://localhost:1313/">
+    <a class="flex items-center" href="/ko/">
       
       <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
     </a>
@@ -151,7 +151,7 @@
       id="navbarContent"
     >
       <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
-        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+        <a class="flex items-center xl:hidden" href="http://localhost:61744/">
           
           <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
         </a>
@@ -180,28 +180,94 @@
       <ul class="flex flex-col gap-8 xl:flex-row">
         
           <li class="text-center">
-            <a class="text-primary" href="/services/">서비스</a>
+            <a class="text-primary" href="/ko/services/">서비스</a>
           </li>
         
           <li class="text-center">
-            <a class="text-primary" href="/insights/">인사이트</a>
+            <a class="text-primary" href="/ko/insights/">인사이트</a>
           </li>
         
           <li class="text-center">
-            <a class="text-primary" href="/contact/">문의</a>
+            <a class="text-primary" href="/ko/contact/">문의</a>
           </li>
         
       </ul>
-      <ul class="flex flex-col gap-8 xl:flex-row">
+      <div class="relative">
         
-          <li class="text-center">
-            <a class="bg-primary hover:bg-primary/90 rounded-lg px-14 py-2 text-white duration-500" href="/">
-  English
-</a>
+        
+        
+        
+          
+          
+            
+          
+        
 
-          </li>
-        
-      </ul>
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              한국어
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/insights/aesthetics-of-log-collection-2/"
+                >
+                  English
+                </a>
+              
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  한국어
+                </div>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ja/insights/aesthetics-of-log-collection-2/"
+                >
+                  日本語
+                </a>
+              
+            
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </nav>
@@ -220,27 +286,27 @@
       
         <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/CEF">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/CEF">
   CEF
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SIEM">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/SIEM">
   SIEM
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log-Ingestion">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Log-Ingestion">
   Log-Ingestion
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/API">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/API">
   API
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Cloud-Security">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Cloud-Security">
   Cloud-Security
 </a>
 
@@ -253,14 +319,14 @@
     
     <div class="container mx-auto px-4 mb-28">
       <div class="prose-lg prose mx-auto">
-        <p><img src="/insights/img/Aesthetics-of-Log-Collection2.png" alt="Aesthetics of Log Collection 2"></p>
-<h2 id="cefcommon-event-format-로그-표준화를-위한-전략적-선택">CEF(Common Event Format): 로그 표준화를 위한 전략적 선택</h2>
+        <h2 id="cefcommon-event-format-로그-표준화를-위한-전략적-선택">CEF(Common Event Format): 로그 표준화를 위한 전략적 선택</h2>
 <p>과거 SIEM 마켓의 리더였던 ArcSight가 제안한 **CEF(Common Event Format)**는 서로 다른 벤더 간의 Log Format Inconsistency 문제를 해결하기 위한 강력한 대안이었습니다. 표준 RFC에서 정의한 Syslog 규격만으로는 복잡한 보안 이벤트의 컨텍스트를 완벽히 구조화하기 어렵기 때문입니다.</p>
 <p>일반적인 Web Server 로그 등은 사용자가 직접 포맷을 정의할 수 있지만, 보안 엔지니어가 수많은 어플리케이션의 내부 로직을 파악해 매번 Custom Format을 설계하고 배포하는 것은 운영 오버헤드가 매우 큽니다. 하지만 CEF는 데이터의 구조 자체가 다릅니다. 과거에는 엔지니어가 Raw 데이터 내 값의 순서(Ordinal)와 오프셋을 계산해 파싱 로직을 짰다면, CEF는 &lsquo;One-single Line&rsquo; 내에 Key-Value Pair를 명시적으로 포함합니다.</p>
 <p>SIEM은 이 메타데이터를 기반으로 각 컬럼(Column)에 값을 즉시 매핑합니다. 이제 CEF는 업계의 Standard Format으로 자리 잡아, 주요 보안 벤더들은 이를 기본 옵션이나 Recommended Format으로 제공합니다. 덕분에 보안팀은 네트워크팀이나 인프라팀에 &lsquo;CEF 가이드&rsquo;라는 명확한 근거를 바탕으로 로그 변경을 요청할 수 있으며, 이는 유관 부서 간의 기술적 신뢰를 구축하는 실질적인 토대가 됩니다.</p>
 <p><strong>Technical Insight:</strong>
 CEF는 통신 프로토콜의 변화가 아니라, Syslog라는 운송 수단에 담기는 Payload의 규격화입니다. Palo Alto Firewall처럼 OS 버전 업데이트에 따라 필드가 추가되는 경우, 이에 맞춰 CEF 포맷을 동적으로 관리해줘야 합니다. 간혹 SIEM 설정에 따라 정의되지 않은 신규 필드를 &lsquo;Additional Field&rsquo;로 묶어 처리하는 경우도 있으니 데이터 유실 여부를 상시 모니터링해야 합니다.</p>
 <hr>
+<h2 id="aesthetics-of-log-collection-2"><img src="/insights/img/Aesthetics-of-Log-Collection2.png" alt="Aesthetics of Log Collection 2"></h2>
 <h2 id="appliance-하드웨어의-진화와-로그-전송의-메커니즘">Appliance: 하드웨어의 진화와 로그 전송의 메커니즘</h2>
 <p>TCP/IP 확산 초기, Appliance는 라우터와 스위치 중심이었습니다. 당시 방화벽은 일반 서버 OS 커널 위에 여러개의 network interface를 장착하고 소프트웨어 형태로 구동되다, 2000년대 초반에 이르러서야 전용 Network Processor와 Switch Fabric을 탑재한 임베디드 플랫폼 기반의 보안 어플라이언스로 완성되었습니다.</p>
 <p>이러한 장비들은 패킷/프레임 핸들링 성능은 탁월하지만, 폐쇄적인 임베디드 구조상 별도의 에이전트 설치가 원천적으로 불가능합니다. 따라서 현재도 UI나 CLI를 통해 Remote Syslog Collector 정보를 입력하는 고전적인 방식을 유지하고 있습니다.</p>

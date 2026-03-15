@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61744&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>ログ収集の美学 (2): 規格化されたコミュニケーションと進化する Ingestion パラダイム | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="CEF標準フォーマットの戦略的価値と、エージェントおよびAPIを活用したログ収集の最新動向を詳述します。" />
+
+    
+    
+    <meta property="og:url" content="http://localhost:61744/ja/insights/aesthetics-of-log-collection-2/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="ログ収集の美学 (2): 規格化されたコミュニケーションと進化する Ingestion パラダイム">
+  <meta property="og:description" content="CEF標準フォーマットの戦略的価値と、エージェントおよびAPIを活用したログ収集の最新動向を詳述します。">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:tag" content="CEF">
+    <meta property="article:tag" content="SIEM">
+    <meta property="article:tag" content="Log-Ingestion">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="Cloud-Security">
+
+    
+  <meta itemprop="name" content="ログ収集の美学 (2): 規格化されたコミュニケーションと進化する Ingestion パラダイム">
+  <meta itemprop="description" content="CEF標準フォーマットの戦略的価値と、エージェントおよびAPIを活用したログ収集の最新動向を詳述します。">
+  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="wordCount" content="59">
+  <meta itemprop="keywords" content="CEF,SIEM,Log-Ingestion,API,Cloud-Security">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ログ収集の美学 (2): 規格化されたコミュニケーションと進化する Ingestion パラダイム">
+  <meta name="twitter:description" content="CEF標準フォーマットの戦略的価値と、エージェントおよびAPIを活用したログ収集の最新動向を詳述します。">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:61744/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.f4b1caa6f3a550c58e37420c794421e07be53ba3948c5d976b7551017f710390.css"
+            integrity="sha256-9LHKpvOlUMWON0IMeUQh4HvlO6OUjF2Xa3VRAX9xA5A="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="/ja/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:61744/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/services/">サービス</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/insights/">インサイト</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/contact/">お問い合わせ</a>
+          </li>
+        
+      </ul>
+      <div class="relative">
+        
+        
+        
+        
+          
+          
+            
+          
+        
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              日本語
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/insights/aesthetics-of-log-collection-2/"
+                >
+                  English
+                </a>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ko/insights/aesthetics-of-log-collection-2/"
+                >
+                  한국어
+                </a>
+              
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  日本語
+                </div>
+              
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">ログ収集の美学 (2): 規格化されたコミュニケーションと進化する Ingestion パラダイム</h1>
+        
+        
+          <p class="text-xl xl:leading-loose font-medium text-center text-[#777777]">CEF標準フォーマットの戦略的価値と、エージェントおよびAPIを活用したログ収集の最新動向を詳述します。</p>
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/CEF">
+  CEF
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/SIEM">
+  SIEM
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Log-Ingestion">
+  Log-Ingestion
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/API">
+  API
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Cloud-Security">
+  Cloud-Security
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <h2 id="cefcommon-event-formatログ標準化の戦略的選択">CEF（Common Event Format）：ログ標準化の戦略的選択</h2>
+<p>かつてSIEM市場を牽引したArcSightが提唱した**CEF（Common Event Format）**は、ベンダー間のログフォーマットの不整合という大きな課題に対する有力な解となりました。標準RFCで定義されるSyslogフォーマットだけでは、複雑なセキュリティイベントのコンテキストを完全に構造化することは困難だからです。</p>
+<p>一般的なWebサーバーログはフォーマットを自在に定義できますが、セキュリティエンジニアが多数のアプリケーション内部のロジックを紐解きながら毎回カスタムフォーマットを設計・展開するのは現実的ではありません。CEFではデータ構造そのものが異なります。従来はエンジニアが生データ中の値の順序（Ordinal）やオフセットを計算してパーサを組み上げていましたが、CEFでは<strong>1行にKey-Valueペアを明示的に埋め込む</strong>形で記述されます。</p>
+<p>SIEMはこのメタデータをもとに各カラムに値を即座にマッピングできます。CEFは業界標準フォーマットとして定着し、多くのセキュリティベンダーが「推奨フォーマット」や「デフォルトオプション」として提供するようになりました。これにより、セキュリティチームはネットワークチームやインフラチームに対して「CEF準拠でログを出力してください」という明確な技術的根拠を提示でき、部門間の信頼を醸成できます。</p>
+<p><strong>Technical Insight:</strong>
+CEFはプロトコルの変更ではなく、Syslogという輸送手段に乗せるペイロードの<strong>規格化</strong>です。Palo Alto FirewallのようにOSアップデートでフィールドが追加される場合、その都度CEFフォーマットを動的に管理する必要があります。場合によっては、SIEM側で未定義の新規フィールドを「Additional Field」にまとめて扱うなど、<strong>データ欠損の監視</strong>を継続する運用が求められます。</p>
+<hr>
+<h2 id="aesthetics-of-log-collection-2"><img src="/insights/img/Aesthetics-of-Log-Collection2.png" alt="Aesthetics of Log Collection 2"></h2>
+<h2 id="アプライアンスハードウェアの進化とログ送信のメカニズム">アプライアンス：ハードウェアの進化とログ送信のメカニズム</h2>
+<p>TCP/IP普及初期、アプライアンスはルーターやスイッチが中心でした。当時のファイアウォールは一般的なサーバOSカーネル上に複数のネットワークインターフェースを載せたソフトウェア型が主流で、2000年代初頭にようやく専用のネットワークプロセッサとスイッチファブリックを搭載した組込み型セキュリティアプライアンスが登場しました。</p>
+<p>これらの機器はパケット/フレーム処理性能に優れますが、閉じた組込み構造ゆえに外部エージェントのインストールが本質的に不可能です。そのため、現在でもリモートSyslogコレクタの設定はUIやCLI経由で入力する古典的な方式が続いています。</p>
+<p>もちろん内部は、Next-gen FirewallとしてIDS/IPS、AV、URLフィルタリングなどのモジュールが積み重なり肥大化しています。Threat Intel情報は頻繁に更新され、疑わしいファイルのIOCを抽出してベンダークラウドに送信したり、管理コンソールをSaaSとして運用したりします。しかし外観が変わっても、ログの根幹は依然として<strong>エージェントレスなSyslog送信</strong>にあります。</p>
+<hr>
+<h2 id="エージェントとapi技術的難易度と収集の高度化">エージェントとAPI：技術的難易度と収集の高度化</h2>
+<p>すべてのログをSyslogで収集できるわけではないため、エンジニアはより高い技術的難易度の領域に挑む必要があります。</p>
+<ul>
+<li><strong>エージェントベース収集:</strong> 初期のエージェントは主にWindows Event Logを対象としていました。WindowsログはSyslog形式と互換性がなく、XMLベースのマルチライン構造を持つため、当初は特定のコレクタがサーバにCredentialで接続してログファイルを読む方式が採られていました。その後、各ベンダーはシステムリソースの占有を制御しつつ、イベントログを安全に転送する専用エージェントモデルへと進化しました。</li>
+<li><strong>APIベース収集の高度化:</strong> 以前はAPI収集が高度なエンジニアリング領域と見なされていました。単にURLを叩くだけでなく、パスキー管理、ページングを考慮したクエリ設計、受信データの後処理までSOC内部で実装する必要があったからです。Azure環境では、Function AppsやLogic Appsといったサーバレスアーキテクチャを別途構築するケースも多くありました。</li>
+</ul>
+<p>近年では、こうした複雑なIngestionプロセスをパッケージ化して提供する動きが増えています。Prisma CloudのCCF（Cloud Connector Framework）のように、かつては熟練した開発者のみが可能だったログ統合を、ベンダー間の技術連携によって抽象化・単純化する方向に進化しています。</p>
+<h3 id="trademarks--disclaimer">Trademarks &amp; Disclaimer</h3>
+<blockquote>
+<p><strong>Trademarks:</strong></p>
+<ul>
+<li>Microsoft、Azure、Sentinel、Windows、Azure Function AppsはMicrosoft Corporationの登録商標です。</li>
+<li>Palo Alto Networks、Prisma Cloud、CCF（Cloud Connector Framework）はPalo Alto Networks, Inc.の登録商標です。</li>
+<li>ArcSightおよびCEF（Common Event Format）はOpenText（旧Hewlett Packard Enterprise）の商標または登録商標です。</li>
+<li>本投稿で言及されるその他の製品名、ロゴ、ブランドはそれぞれの所有者の財産です。</li>
+</ul>
+<p><strong>Disclaimer:</strong> 本投稿の見解は著者個人のものであり、掲載された企業の公式方針や立場を必ずしも反映するものではありません。本コンテンツは実務的な技術経験に基づいた情報提供を目的としており、公式の製品ドキュメントに代わるものではありません。</p>
+</blockquote>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">© 2026 JE Tech Holding Inc. All rights reserved</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">Contact Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

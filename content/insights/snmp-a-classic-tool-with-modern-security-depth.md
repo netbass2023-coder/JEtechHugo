@@ -6,7 +6,6 @@ tags: ["Network", "Security", "SNMP", "Infrastructure"]
 categories: ["Technical Insights"]
 image: "insights/img/snmp-image.png"
 ---
-![SNMP-Classic-Tool](/insights/img/snmp-image.png)
 
 In the world of system monitoring, there are two primary pillars: analyzing **system logs** and utilizing **SNMP (Simple Network Management Protocol)** to verify system status and configurations.
 
@@ -39,6 +38,8 @@ How is SNMP applied in practice? Imagine a script collecting CPU utilization, me
 
 Based on this technical evidence, we requested a formal fix from the manufacturer. To address these limitations, **64-bit counters** (such as `ifHCInOctets`) were introduced as a standard starting with SNMP v2c.
 
+---
+![SNMP-Classic-Tool](insights/img/snmp-image.png)
 ---
 
 ## Why We Must Still Understand SNMP

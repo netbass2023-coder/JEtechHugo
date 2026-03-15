@@ -6,7 +6,7 @@ tags: ["Azure Sentinel", "Prisma Cloud", "Cloud Security", "CCF", "Log Managemen
 categories: ["Technical Insights"]
 image: "insights/img/prisma-ccf.png"
 ---
-![Prisma CCF](/insights/img/prisma-ccf.png)
+
 Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the **Codeless Connector Framework (CCF)** for a more streamlined log integration.
 
 ## 1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)
@@ -29,6 +29,8 @@ The Function App approach, in particular, presented several pain points:
 1.  **Data Size Limits:** Handling records that exceeded the 32KB row size limit.
 2.  **Unstructured Schemas:** The JSON payloads were often bloated with metadata, policy definitions, and compliance mappings. This forced engineers to spend excessive time on field mapping and normalization during connector development.
 
+---
+![Prisma CCF](insights/img/prisma-ccf.png)
 ---
 
 ## 3. The Shift to Codeless Connector Framework (CCF)

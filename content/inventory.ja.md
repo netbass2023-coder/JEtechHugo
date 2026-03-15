@@ -1,0 +1,4 @@
+---
+title: "インベントリ"
+layout: "inventory"
+---

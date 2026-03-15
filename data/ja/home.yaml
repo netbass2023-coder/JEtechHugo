@@ -1,0 +1,32 @@
+hero:
+  enable: true
+  title: "ビジネスのための精密なセキュリティガバナンス"
+  text: "グローバル企業やSOC環境で実践的に検証された知見を活かし、実際に機能するセキュリティフレームワークを構築します。複雑なコンプライアンスの技術的解釈から、データ駆動の積極的防御まで、戦略的なビジネス目標に一致するカスタマイズされたロードマップを提供します。"
+  image: "images/hero/JETechHeader.jpg"
+  buttons:
+    - label: "サービスを見る"
+      link: "/services/"
+    - label: "お問い合わせ"
+      link: "/contact/"
+  items:
+    - title: "戦略的コンプライアンスとガバナンス"
+      text: "実践的な技術解釈により、現場で機能する堅牢なセキュリティロードマップを構築します。"
+      icon: "fas fa-file-contract"
+      color: "#0E76A8"
+    - title: "SOC & SIEM エンジニアリング"
+      text: "ログ収集から高度な検出ルールまで、データ駆動のセキュリティ基盤を最適化します。"
+      icon: "fas fa-microchip"
+      color: "#6366F1"
+    # --- spacing item ---
+    - title: ""
+      text: ""
+      icon: ""
+      color: "transparent"
+    - title: "インテリジェンス駆動の運用"
+      text: "能動的な脅威ハンティングとカスタムKPIダッシュボードで潜在的脅威を特定します。"
+      icon: "fas fa-search-plus"
+      color: "#F59E0B"
+    - title: "技術的プロフェッショナルサービス"
+      text: "精密な導入、レポーティング、専門的なメンタリングを提供します。"
+      icon: "fas fa-user-shield"
+      color: "#10B981"

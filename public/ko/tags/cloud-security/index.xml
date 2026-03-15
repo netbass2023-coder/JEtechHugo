@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud Security on JE Tech Holdings</title>
-    <link>http://localhost:1313/ko/tags/cloud-security/</link>
-    <description>Recent content in Cloud Security on JE Tech Holdings</description>
+    <title>Cloud-Security on JE Tech Holdings</title>
+    <link>http://localhost:61744/ko/tags/cloud-security/</link>
+    <description>Recent content in Cloud-Security on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ko</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/ko/tags/cloud-security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:61744/ko/tags/cloud-security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임</title>
-      <link>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</link>
+      <link>http://localhost:61744/ko/insights/aesthetics-of-log-collection-2/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/Aesthetics-of-Log-Collection2.png&#34; alt=&#34;Aesthetics of Log Collection 2&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cefcommon-event-format-로그-표준화를-위한-전략적-선택&#34;&gt;CEF(Common Event Format): 로그 표준화를 위한 전략적 선택&lt;/h2&gt;&#xA;&lt;p&gt;과거 SIEM 마켓의 리더였던 ArcSight가 제안한 **CEF(Common Event Format)**는 서로 다른 벤더 간의 Log Format Inconsistency 문제를 해결하기 위한 강력한 대안이었습니다. 표준 RFC에서 정의한 Syslog 규격만으로는 복잡한 보안 이벤트의 컨텍스트를 완벽히 구조화하기 어렵기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;일반적인 Web Server 로그 등은 사용자가 직접 포맷을 정의할 수 있지만, 보안 엔지니어가 수많은 어플리케이션의 내부 로직을 파악해 매번 Custom Format을 설계하고 배포하는 것은 운영 오버헤드가 매우 큽니다. 하지만 CEF는 데이터의 구조 자체가 다릅니다. 과거에는 엔지니어가 Raw 데이터 내 값의 순서(Ordinal)와 오프셋을 계산해 파싱 로직을 짰다면, CEF는 &amp;lsquo;One-single Line&amp;rsquo; 내에 Key-Value Pair를 명시적으로 포함합니다.&lt;/p&gt;</description>
+      <guid>http://localhost:61744/ko/insights/aesthetics-of-log-collection-2/</guid>
+      <description>&lt;h2 id=&#34;cefcommon-event-format-로그-표준화를-위한-전략적-선택&#34;&gt;CEF(Common Event Format): 로그 표준화를 위한 전략적 선택&lt;/h2&gt;&#xA;&lt;p&gt;과거 SIEM 마켓의 리더였던 ArcSight가 제안한 **CEF(Common Event Format)**는 서로 다른 벤더 간의 Log Format Inconsistency 문제를 해결하기 위한 강력한 대안이었습니다. 표준 RFC에서 정의한 Syslog 규격만으로는 복잡한 보안 이벤트의 컨텍스트를 완벽히 구조화하기 어렵기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;일반적인 Web Server 로그 등은 사용자가 직접 포맷을 정의할 수 있지만, 보안 엔지니어가 수많은 어플리케이션의 내부 로직을 파악해 매번 Custom Format을 설계하고 배포하는 것은 운영 오버헤드가 매우 큽니다. 하지만 CEF는 데이터의 구조 자체가 다릅니다. 과거에는 엔지니어가 Raw 데이터 내 값의 순서(Ordinal)와 오프셋을 계산해 파싱 로직을 짰다면, CEF는 &amp;lsquo;One-single Line&amp;rsquo; 내에 Key-Value Pair를 명시적으로 포함합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로</title>
-      <link>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</link>
+      <link>http://localhost:61744/ko/insights/evolution-of-prisma-log-ingestion/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/insights/img/prisma-ccf.png&#34; alt=&#34;Prisma CCF&#34;&gt;&#xA;Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-prisma-cloud-모듈의-이해-cspm-vs-cwpp&#34;&gt;1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;로그 연동에 앞서, Prisma의 주요 모듈(Blades)과 각 로그의 성격을 파악하는 것이 중요합니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud Security (CSPM):&lt;/strong&gt; 인프라, IAM, 네트워킹, 스토리지 등 클라우드 설정 및 제어 평면(Control-plane)의 구성 오류를 탐지합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Runtime Security (CWPP):&lt;/strong&gt; 가상 머신(VM), 컨테이너, 호스트와 같은 워크로드 내부의 실행 단계 보호와 정책 적용에 집중합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;기타:&lt;/strong&gt; Application Security, Data Security 모듈이 존재합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-과거의-로그-수집-방식-커스텀-개발의-고충&#34;&gt;2. 과거의 로그 수집 방식: 커스텀 개발의 고충&lt;/h2&gt;&#xA;&lt;p&gt;2025년 초까지만 해도 로그 수집 방식은 다소 복잡하고 파편화되어 있었습니다.&lt;/p&gt;</description>
+      <guid>http://localhost:61744/ko/insights/evolution-of-prisma-log-ingestion/</guid>
+      <description>&lt;p&gt;Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-prisma-cloud-모듈의-이해-cspm-vs-cwpp&#34;&gt;1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;로그 연동에 앞서, Prisma의 주요 모듈(Blades)과 각 로그의 성격을 파악하는 것이 중요합니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud Security (CSPM):&lt;/strong&gt; 인프라, IAM, 네트워킹, 스토리지 등 클라우드 설정 및 제어 평면(Control-plane)의 구성 오류를 탐지합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Runtime Security (CWPP):&lt;/strong&gt; 가상 머신(VM), 컨테이너, 호스트와 같은 워크로드 내부의 실행 단계 보호와 정책 적용에 집중합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;기타:&lt;/strong&gt; Application Security, Data Security 모듈이 존재합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-과거의-로그-수집-방식-커스텀-개발의-고충&#34;&gt;2. 과거의 로그 수집 방식: 커스텀 개발의 고충&lt;/h2&gt;&#xA;&lt;p&gt;2025년 초까지만 해도 로그 수집 방식은 다소 복잡하고 파편화되어 있었습니다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,8 @@ description: "Mastering CEF for standardization and the transition to Agent/API-
 categories: ["Security", "Infrastructure"]
 tags: ["CEF", "SIEM", "Log-Ingestion", "API", "Cloud-Security"]
 draft: false
+image: "insights/img/Aesthetics-of-Log-Collection2.png"
 ---
-![Aesthetics of Log Collection 2](/insights/img/Aesthetics-of-Log-Collection2.png)
 ## CEF (Common Event Format): A Strategic Choice for Log Standardization
 
 CEF (Common Event Format), introduced by ArcSight—the longtime leader of the SIEM market—emerged as a powerful solution to the persistent issue of Log Format Inconsistency across different vendors. Standard RFC-defined Syslog specifications often fall short when it comes to fully structuring the complex contexts of modern security events.
@@ -19,7 +19,8 @@ SIEM platforms use this metadata to immediately map values to their respective c
 CEF is not a change in communication protocols, but rather a standardization of the payload carried by Syslog. For devices like Palo Alto Firewalls, where OS updates may introduce new fields, the CEF format must be managed dynamically. Since some SIEM configurations might bundle undefined new fields into a catch-all 'Additional Field,' constant monitoring is required to prevent data loss.
 
 ---
-
+![Aesthetics of Log Collection 2](insights/img/Aesthetics-of-Log-Collection2.png)
+---
 ## Appliances: Hardware Evolution and Log Transmission Mechanisms
 
 During the early expansion of TCP/IP, Appliances were primarily routers and switches. Firewalls at the time were essentially software running on general server OSs equipped with multiple network interfaces. It wasn't until the early 2000s that security appliances matured into dedicated embedded platforms powered by specialized Network Processors and Switch Fabrics.

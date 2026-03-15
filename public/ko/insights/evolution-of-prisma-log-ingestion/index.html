@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="ko">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61744&amp;path=livereload" data-no-instant defer></script>
     
     
       <title>Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로 | JE Tech Holdings</title>
@@ -19,7 +19,7 @@
 
     
     
-    <meta property="og:url" content="http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/">
+    <meta property="og:url" content="http://localhost:61744/ko/insights/evolution-of-prisma-log-ingestion/">
   <meta property="og:site_name" content="JE Tech Holdings">
   <meta property="og:title" content="Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로">
   <meta property="og:description" content="Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.
@@ -32,7 +32,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
     <meta property="article:modified_time" content="2026-02-20T00:00:00+00:00">
     <meta property="article:tag" content="Azure Sentinel">
     <meta property="article:tag" content="Prisma Cloud">
-    <meta property="article:tag" content="Cloud Security">
+    <meta property="article:tag" content="Cloud-Security">
     <meta property="article:tag" content="CCF">
     <meta property="article:tag" content="Log Integration">
 
@@ -44,7 +44,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
   <meta itemprop="datePublished" content="2026-02-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-02-20T00:00:00+00:00">
   <meta itemprop="wordCount" content="384">
-  <meta itemprop="keywords" content="Azure Sentinel,Prisma Cloud,Cloud Security,CCF,Log Integration">
+  <meta itemprop="keywords" content="Azure Sentinel,Prisma Cloud,Cloud-Security,CCF,Log Integration">
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로">
@@ -64,7 +64,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
     
 
     
-      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+      <link rel="manifest" href="http://localhost:61744/site.webmanifest" />
     
 
     
@@ -82,8 +82,8 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
           
             <link
               rel="stylesheet"
-              href="/css/styles.af1fb502b0994e5e40b31a1840f295ac15b1252183100a3993c1216df5dd5b0f.css"
-              integrity="sha256-rx&#43;1ArCZTl5AsxoYQPKVrBWxJSGDEAo5k8EhbfXdWw8="
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
               crossorigin="anonymous"
             />
           
@@ -99,8 +99,8 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
         
           <link
             rel="stylesheet"
-            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
-            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            href="/css/fonts.f4b1caa6f3a550c58e37420c794421e07be53ba3948c5d976b7551017f710390.css"
+            integrity="sha256-9LHKpvOlUMWON0IMeUQh4HvlO6OUjF2Xa3VRAX9xA5A="
             crossorigin="anonymous"
           />
         
@@ -122,7 +122,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
     <div class="flex min-h-screen flex-col">
       <nav class="z-50">
   <div class="container mx-auto flex items-center justify-between px-4 py-6">
-    <a class="flex items-center" href="http://localhost:1313/">
+    <a class="flex items-center" href="/ko/">
       
       <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
     </a>
@@ -157,7 +157,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
       id="navbarContent"
     >
       <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
-        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+        <a class="flex items-center xl:hidden" href="http://localhost:61744/">
           
           <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
         </a>
@@ -186,28 +186,94 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
       <ul class="flex flex-col gap-8 xl:flex-row">
         
           <li class="text-center">
-            <a class="text-primary" href="/services/">서비스</a>
+            <a class="text-primary" href="/ko/services/">서비스</a>
           </li>
         
           <li class="text-center">
-            <a class="text-primary" href="/insights/">인사이트</a>
+            <a class="text-primary" href="/ko/insights/">인사이트</a>
           </li>
         
           <li class="text-center">
-            <a class="text-primary" href="/contact/">문의</a>
+            <a class="text-primary" href="/ko/contact/">문의</a>
           </li>
         
       </ul>
-      <ul class="flex flex-col gap-8 xl:flex-row">
+      <div class="relative">
         
-          <li class="text-center">
-            <a class="bg-primary hover:bg-primary/90 rounded-lg px-14 py-2 text-white duration-500" href="/">
-  English
-</a>
+        
+        
+        
+          
+          
+            
+          
+        
 
-          </li>
-        
-      </ul>
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              한국어
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/insights/evolution-of-prisma-log-ingestion/"
+                >
+                  English
+                </a>
+              
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  한국어
+                </div>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ja/insights/evolution-of-prisma-log-ingestion/"
+                >
+                  日本語
+                </a>
+              
+            
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </nav>
@@ -224,27 +290,27 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
       
         <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Azure%20Sentinel">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Azure%20Sentinel">
   Azure Sentinel
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Prisma%20Cloud">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Prisma%20Cloud">
   Prisma Cloud
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Cloud%20Security">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Cloud%20Security">
   Cloud Security
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/CCF">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/CCF">
   CCF
 </a>
 
           
-            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log%20Integration">
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:61744//tags/Log%20Integration">
   Log Integration
 </a>
 
@@ -257,8 +323,7 @@ Cloud Security (CSPM): 인프라, IAM, 네트워킹, 스토리지 등 클라우�
     
     <div class="container mx-auto px-4 mb-28">
       <div class="prose-lg prose mx-auto">
-        <p><img src="/insights/img/prisma-ccf.png" alt="Prisma CCF">
-Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.</p>
+        <p>Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.</p>
 <h2 id="1-prisma-cloud-모듈의-이해-cspm-vs-cwpp">1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP)</h2>
 <p>로그 연동에 앞서, Prisma의 주요 모듈(Blades)과 각 로그의 성격을 파악하는 것이 중요합니다.</p>
 <ul>
@@ -278,6 +343,7 @@ Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 �
 <li><strong>비정형 스키마:</strong> JSON 포맷 내에 Metadata, Policy Definition 등 과도한 정보가 포함되어 필드 매핑 및 정규화 시 많은 리소스가 소모됨.</li>
 </ol>
 <hr>
+<h2 id="prisma-ccf"><img src="/insights/img/prisma-ccf.png" alt="Prisma CCF"></h2>
 <h2 id="3-codeless-connector-frameworkccf의-도입과-이점">3. Codeless Connector Framework(CCF)의 도입과 이점</h2>
 <p>최근 CSPM 로그 수집을 위해 도입된 **CCF(Codeless Connector Framework)**는 이전의 복잡성을 획기적으로 해결해 주었습니다. 제가 체감한 CCF의 주요 장점은 다음과 같습니다.</p>
 <ul>

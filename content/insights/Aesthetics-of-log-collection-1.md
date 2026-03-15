@@ -5,8 +5,8 @@ description: "Mastering the principles of Log Ingestion and the technical depth 
 categories: ["Security", "Infrastructure"]
 tags: ["Syslog", "SIEM", "Log-Ingestion", "SecOps", "Engineering"]
 draft: false
+image: "insights/img/Aesthetics-of-Log-Collection.png"
 ---
-![Aesthetics of Log Collection](/insights/img/Aesthetics-of-Log-Collection.png)
 Regardless of whether a dedicated security department exists or if it's driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the **de facto standard** in building security systems and a fundamental pillar of infrastructure.
 
 However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—**Log Ingestion**.
@@ -16,7 +16,8 @@ In an era where collection is often automated with a few clicks following a vend
 Drawing from my experience navigating diverse environments as a SIEM engineer, I am launching a series on optimal collection methodologies by log type. Our first journey begins with the most fundamental yet profound protocol: **Syslog**.
 
 ---
-
+![Aesthetics of Log Collection](insights/img/Aesthetics-of-Log-Collection.png)
+---
 ## The Essence of Data: What We Must Watch
 
 Before diving into technical details, we must define 'what' to collect. Log collection for security purposes is fundamentally rooted in **Access Logs** and **Audit Logs**. While system errors and process logs are valuable, establishing these two as the core focus is the strategic starting point when communicating with non-experts or reporting to stakeholders.

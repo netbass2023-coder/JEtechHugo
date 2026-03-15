@@ -7,8 +7,6 @@ categories: ["Technical Insights"]
 image: "insights/img/snmp-image.png"
 ---
 
-![SNMP-Classic-Tool](/insights/img/snmp-image.png)
-
 시스템 모니터링의 세계에는 두 가지 커다란 기둥이 있습니다. 바로 **시스템 로그를 분석하는 것**, 그리고 **SNMP(Simple Network Management Protocol)**를 이용해 시스템의 상태와 설정값을 확인하는 것이죠.
 
 보안 관제 초기에는 리소스 사용량(Resource Usage) 모니터링이 핵심이었습니다. 특정 명령어가 실행된 후 CPU 사용률이 치솟거나, 방화벽의 아웃바운드 트래픽이 비정상적으로 급증하는 것은 침해 사고의 중요한 징후입니다. 우리는 이러한 지표들을 여러 장비와 교차 분석(Correlation)함으로써 보안 사고를 식별하고 대응해 왔습니다.
@@ -38,6 +36,8 @@ image: "insights/img/snmp-image.png"
 > 
 > 저는 SNMP 분석을 통해 인터페이스 트래픽 카운터인 `ifOutOctets` 값이 **32-bit 한계치($2^{32}-1$)**에 도달해 0으로 돌아가는 **'Rollover(Overflow)'** 현상이 발생할 때 시스템이 다운된다는 것을 찾아냈습니다. 이 기술적 근거 덕분에 제조사의 정식 수정을 이끌어낼 수 있었습니다. (이후 v2c부터 64-bit 카운터가 표준화되었습니다.)
 
+---
+![SNMP-Classic-Tool](insights/img/snmp-image.png)
 ---
 
 ## 우리가 여전히 SNMP를 이해해야 하는 이유

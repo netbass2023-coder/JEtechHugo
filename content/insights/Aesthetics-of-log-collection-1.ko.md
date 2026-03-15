@@ -6,8 +6,8 @@ categories: ["Security", "Infrastructure"]
 tags: ["Syslog", "SIEM", "Log-Ingestion", "SecOps", "Engineering"]
 toc: true
 draft: false
+image: "insights/img/Aesthetics-of-Log-Collection.png"
 ---
-![Aesthetics of Log Collection](/insights/img/Aesthetics-of-Log-Collection.png)
 보안 부서의 존재 여부나 컴플라이언스 준수라는 외부적 요인을 차치하더라도, 현대 IT 환경에서 로그 수집의 당위성을 논하는 것은 이제 무의미합니다. 로그 수집은 이미 보안 시스템을 구축함에 있어 거부할 수 없는 **디팩토(De facto) 표준**이자, 인프라의 근간으로 자리 잡았기 때문입니다.
 
 하지만 수많은 현장에서 SecOps 분석가들과 협업하며 느낀 점이 하나 있습니다. 의외로 '로그가 어떤 경로로 우리에게 도달하는가'라는 근본적인 메커니즘, 즉 **Log Ingestion(로그 인제스션)**의 심층적인 이면을 명확히 이해하는 엔지니어가 드물다는 사실입니다.
@@ -17,7 +17,8 @@ draft: false
 SIEM 엔지니어로서 현장을 누볐던 경험을 바탕으로, 로그 타입별 최적의 수집 방법론을 시리즈로 연재하고자 합니다. 그 첫 번째 여정은 가장 기본적이면서도 그 깊이가 심오한 **Syslog**입니다.
 
 ---
-
+![Aesthetics of Log Collection](insights/img/Aesthetics-of-Log-Collection.png)
+---
 ## 우리가 주목해야 할 데이터의 본질
 
 기술적인 디테일에 앞서 '무엇을' 수집할 것인지 정의해야 합니다. 보안 목적의 로그 수집은 기본적으로 **Access Log(접근 기록)**와 **Audit Log(감사 기록)**를 그 근간으로 합니다.

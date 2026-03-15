@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on JE Tech Holdings</title>
+    <link>http://localhost:61744/ja/tags/</link>
+    <description>Recent content in Tags on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
+    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:61744/ja/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>http://localhost:61744/ja/tags/api/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CEF</title>
+      <link>http://localhost:61744/ja/tags/cef/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/cef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud-Security</title>
+      <link>http://localhost:61744/ja/tags/cloud-security/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/cloud-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log-Ingestion</title>
+      <link>http://localhost:61744/ja/tags/log-ingestion/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/log-ingestion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SIEM</title>
+      <link>http://localhost:61744/ja/tags/siem/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/siem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Engineering</title>
+      <link>http://localhost:61744/ja/tags/engineering/</link>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SecOps</title>
+      <link>http://localhost:61744/ja/tags/secops/</link>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/secops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Syslog</title>
+      <link>http://localhost:61744/ja/tags/syslog/</link>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/syslog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure Sentinel</title>
+      <link>http://localhost:61744/ja/tags/azure-sentinel/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/azure-sentinel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CCF</title>
+      <link>http://localhost:61744/ja/tags/ccf/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/ccf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log Integration</title>
+      <link>http://localhost:61744/ja/tags/log-integration/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/log-integration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prisma Cloud</title>
+      <link>http://localhost:61744/ja/tags/prisma-cloud/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/prisma-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure</title>
+      <link>http://localhost:61744/ja/tags/infrastructure/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>http://localhost:61744/ja/tags/network/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:61744/ja/tags/security/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SNMP</title>
+      <link>http://localhost:61744/ja/tags/snmp/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/snmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:61744/ja/tags/blog/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Intro</title>
+      <link>http://localhost:61744/ja/tags/intro/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:61744/ja/tags/intro/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
