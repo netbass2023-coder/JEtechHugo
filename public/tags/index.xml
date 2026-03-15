@@ -2,137 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on JE Tech Holdings</title>
-    <link>http://localhost:61744/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61744/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API</title>
-      <link>http://localhost:61744/tags/api/</link>
+      <link>http://localhost:1313/tags/api/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/api/</guid>
+      <guid>http://localhost:1313/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>CEF</title>
-      <link>http://localhost:61744/tags/cef/</link>
+      <link>http://localhost:1313/tags/cef/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/cef/</guid>
+      <guid>http://localhost:1313/tags/cef/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud-Security</title>
-      <link>http://localhost:61744/tags/cloud-security/</link>
+      <link>http://localhost:1313/tags/cloud-security/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/cloud-security/</guid>
+      <guid>http://localhost:1313/tags/cloud-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Log-Ingestion</title>
-      <link>http://localhost:61744/tags/log-ingestion/</link>
+      <link>http://localhost:1313/tags/log-ingestion/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/log-ingestion/</guid>
+      <guid>http://localhost:1313/tags/log-ingestion/</guid>
       <description></description>
     </item>
     <item>
       <title>SIEM</title>
-      <link>http://localhost:61744/tags/siem/</link>
+      <link>http://localhost:1313/tags/siem/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/siem/</guid>
+      <guid>http://localhost:1313/tags/siem/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering</title>
-      <link>http://localhost:61744/tags/engineering/</link>
+      <link>http://localhost:1313/tags/engineering/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/engineering/</guid>
+      <guid>http://localhost:1313/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>SecOps</title>
-      <link>http://localhost:61744/tags/secops/</link>
+      <link>http://localhost:1313/tags/secops/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/secops/</guid>
+      <guid>http://localhost:1313/tags/secops/</guid>
       <description></description>
     </item>
     <item>
       <title>Syslog</title>
-      <link>http://localhost:61744/tags/syslog/</link>
+      <link>http://localhost:1313/tags/syslog/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/syslog/</guid>
+      <guid>http://localhost:1313/tags/syslog/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure Sentinel</title>
-      <link>http://localhost:61744/tags/azure-sentinel/</link>
+      <link>http://localhost:1313/tags/azure-sentinel/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/azure-sentinel/</guid>
+      <guid>http://localhost:1313/tags/azure-sentinel/</guid>
       <description></description>
     </item>
     <item>
       <title>CCF</title>
-      <link>http://localhost:61744/tags/ccf/</link>
+      <link>http://localhost:1313/tags/ccf/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/ccf/</guid>
+      <guid>http://localhost:1313/tags/ccf/</guid>
       <description></description>
     </item>
     <item>
       <title>Log Management</title>
-      <link>http://localhost:61744/tags/log-management/</link>
+      <link>http://localhost:1313/tags/log-management/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/log-management/</guid>
+      <guid>http://localhost:1313/tags/log-management/</guid>
       <description></description>
     </item>
     <item>
       <title>Prisma Cloud</title>
-      <link>http://localhost:61744/tags/prisma-cloud/</link>
+      <link>http://localhost:1313/tags/prisma-cloud/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/prisma-cloud/</guid>
+      <guid>http://localhost:1313/tags/prisma-cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>http://localhost:61744/tags/infrastructure/</link>
+      <link>http://localhost:1313/tags/infrastructure/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/infrastructure/</guid>
+      <guid>http://localhost:1313/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:61744/tags/network/</link>
+      <link>http://localhost:1313/tags/network/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/network/</guid>
+      <guid>http://localhost:1313/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:61744/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>SNMP</title>
-      <link>http://localhost:61744/tags/snmp/</link>
+      <link>http://localhost:1313/tags/snmp/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/snmp/</guid>
+      <guid>http://localhost:1313/tags/snmp/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:61744/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Intro</title>
-      <link>http://localhost:61744/tags/intro/</link>
+      <link>http://localhost:1313/tags/intro/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/tags/intro/</guid>
+      <guid>http://localhost:1313/tags/intro/</guid>
       <description></description>
     </item>
   </channel>

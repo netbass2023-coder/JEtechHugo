@@ -2,137 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on JE Tech Holdings</title>
-    <link>http://localhost:61744/ko/tags/</link>
+    <link>http://localhost:1313/ko/tags/</link>
     <description>Recent content in Tags on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ko</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61744/ko/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ko/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API</title>
-      <link>http://localhost:61744/ko/tags/api/</link>
+      <link>http://localhost:1313/ko/tags/api/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/api/</guid>
+      <guid>http://localhost:1313/ko/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>CEF</title>
-      <link>http://localhost:61744/ko/tags/cef/</link>
+      <link>http://localhost:1313/ko/tags/cef/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/cef/</guid>
+      <guid>http://localhost:1313/ko/tags/cef/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud-Security</title>
-      <link>http://localhost:61744/ko/tags/cloud-security/</link>
+      <link>http://localhost:1313/ko/tags/cloud-security/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/cloud-security/</guid>
+      <guid>http://localhost:1313/ko/tags/cloud-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Log-Ingestion</title>
-      <link>http://localhost:61744/ko/tags/log-ingestion/</link>
+      <link>http://localhost:1313/ko/tags/log-ingestion/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/log-ingestion/</guid>
+      <guid>http://localhost:1313/ko/tags/log-ingestion/</guid>
       <description></description>
     </item>
     <item>
       <title>SIEM</title>
-      <link>http://localhost:61744/ko/tags/siem/</link>
+      <link>http://localhost:1313/ko/tags/siem/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/siem/</guid>
+      <guid>http://localhost:1313/ko/tags/siem/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering</title>
-      <link>http://localhost:61744/ko/tags/engineering/</link>
+      <link>http://localhost:1313/ko/tags/engineering/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/engineering/</guid>
+      <guid>http://localhost:1313/ko/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>SecOps</title>
-      <link>http://localhost:61744/ko/tags/secops/</link>
+      <link>http://localhost:1313/ko/tags/secops/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/secops/</guid>
+      <guid>http://localhost:1313/ko/tags/secops/</guid>
       <description></description>
     </item>
     <item>
       <title>Syslog</title>
-      <link>http://localhost:61744/ko/tags/syslog/</link>
+      <link>http://localhost:1313/ko/tags/syslog/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/syslog/</guid>
+      <guid>http://localhost:1313/ko/tags/syslog/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure Sentinel</title>
-      <link>http://localhost:61744/ko/tags/azure-sentinel/</link>
+      <link>http://localhost:1313/ko/tags/azure-sentinel/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/azure-sentinel/</guid>
+      <guid>http://localhost:1313/ko/tags/azure-sentinel/</guid>
       <description></description>
     </item>
     <item>
       <title>CCF</title>
-      <link>http://localhost:61744/ko/tags/ccf/</link>
+      <link>http://localhost:1313/ko/tags/ccf/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/ccf/</guid>
+      <guid>http://localhost:1313/ko/tags/ccf/</guid>
       <description></description>
     </item>
     <item>
       <title>Log Integration</title>
-      <link>http://localhost:61744/ko/tags/log-integration/</link>
+      <link>http://localhost:1313/ko/tags/log-integration/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/log-integration/</guid>
+      <guid>http://localhost:1313/ko/tags/log-integration/</guid>
       <description></description>
     </item>
     <item>
       <title>Prisma Cloud</title>
-      <link>http://localhost:61744/ko/tags/prisma-cloud/</link>
+      <link>http://localhost:1313/ko/tags/prisma-cloud/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/prisma-cloud/</guid>
+      <guid>http://localhost:1313/ko/tags/prisma-cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>SNMP</title>
-      <link>http://localhost:61744/ko/tags/snmp/</link>
+      <link>http://localhost:1313/ko/tags/snmp/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/snmp/</guid>
+      <guid>http://localhost:1313/ko/tags/snmp/</guid>
       <description></description>
     </item>
     <item>
       <title>네트워크</title>
-      <link>http://localhost:61744/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
+      <link>http://localhost:1313/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</guid>
+      <guid>http://localhost:1313/ko/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</guid>
       <description></description>
     </item>
     <item>
       <title>보안</title>
-      <link>http://localhost:61744/ko/tags/%EB%B3%B4%EC%95%88/</link>
+      <link>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/%EB%B3%B4%EC%95%88/</guid>
+      <guid>http://localhost:1313/ko/tags/%EB%B3%B4%EC%95%88/</guid>
       <description></description>
     </item>
     <item>
       <title>인프라</title>
-      <link>http://localhost:61744/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</link>
+      <link>http://localhost:1313/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</guid>
+      <guid>http://localhost:1313/ko/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:61744/ko/tags/blog/</link>
+      <link>http://localhost:1313/ko/tags/blog/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/blog/</guid>
+      <guid>http://localhost:1313/ko/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Intro</title>
-      <link>http://localhost:61744/ko/tags/intro/</link>
+      <link>http://localhost:1313/ko/tags/intro/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/tags/intro/</guid>
+      <guid>http://localhost:1313/ko/tags/intro/</guid>
       <description></description>
     </item>
   </channel>

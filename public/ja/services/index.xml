@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>サービス on JE Tech Holdings</title>
-    <link>http://localhost:61744/ja/services/</link>
+    <link>http://localhost:1313/ja/services/</link>
     <description>Recent content in サービス on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61744/ja/services/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ja/services/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>戦略的コンプライアンスとガバナンス</title>
-      <link>http://localhost:61744/ja/services/compliance-governance/</link>
+      <link>http://localhost:1313/ja/services/compliance-governance/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ja/services/compliance-governance/</guid>
+      <guid>http://localhost:1313/ja/services/compliance-governance/</guid>
       <description>単なるチェックリスト遵守を超えて。国際的なセキュリティ基準を技術的に実装する実務的アプローチ。</description>
     </item>
     <item>
       <title>SOC &amp; SIEM エンジニアリング</title>
-      <link>http://localhost:61744/ja/services/soc-siem/</link>
+      <link>http://localhost:1313/ja/services/soc-siem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ja/services/soc-siem/</guid>
+      <guid>http://localhost:1313/ja/services/soc-siem/</guid>
       <description>データ駆動型のセキュリティ運用。グローバルベンダーの知見を活用したセキュリティ基盤の最適化。</description>
     </item>
     <item>
       <title>インテリジェンス駆動の運用 &amp; ハンティング</title>
-      <link>http://localhost:61744/ja/services/threat-hunting/</link>
+      <link>http://localhost:1313/ja/services/threat-hunting/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ja/services/threat-hunting/</guid>
+      <guid>http://localhost:1313/ja/services/threat-hunting/</guid>
       <description>リアクティブな監視ではなく、能動的な防御。実務的なノウハウで隠れた脅威を特定します。</description>
     </item>
     <item>
       <title>技術的プロフェッショナルサービス</title>
-      <link>http://localhost:61744/ja/services/professional-services/</link>
+      <link>http://localhost:1313/ja/services/professional-services/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ja/services/professional-services/</guid>
+      <guid>http://localhost:1313/ja/services/professional-services/</guid>
       <description>実行可能な洞察をもたらす信頼のデプロイ。業界ベストプラクティスに沿った包括的実装サービス。</description>
     </item>
   </channel>

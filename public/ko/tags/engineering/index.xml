@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Engineering on JE Tech Holdings</title>
-    <link>http://localhost:61744/ko/tags/engineering/</link>
+    <link>http://localhost:1313/ko/tags/engineering/</link>
     <description>Recent content in Engineering on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ko</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61744/ko/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ko/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>로그 수집의 미학 (1): 소리 없는 아우성, Syslog를 길들이는 법</title>
-      <link>http://localhost:61744/ko/insights/aesthetics-of-log-collection-1/</link>
+      <link>http://localhost:1313/ko/insights/aesthetics-of-log-collection-1/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/ko/insights/aesthetics-of-log-collection-1/</guid>
+      <guid>http://localhost:1313/ko/insights/aesthetics-of-log-collection-1/</guid>
       <description>&lt;p&gt;보안 부서의 존재 여부나 컴플라이언스 준수라는 외부적 요인을 차치하더라도, 현대 IT 환경에서 로그 수집의 당위성을 논하는 것은 이제 무의미합니다. 로그 수집은 이미 보안 시스템을 구축함에 있어 거부할 수 없는 &lt;strong&gt;디팩토(De facto) 표준&lt;/strong&gt;이자, 인프라의 근간으로 자리 잡았기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;하지만 수많은 현장에서 SecOps 분석가들과 협업하며 느낀 점이 하나 있습니다. 의외로 &amp;lsquo;로그가 어떤 경로로 우리에게 도달하는가&amp;rsquo;라는 근본적인 메커니즘, 즉 **Log Ingestion(로그 인제스션)**의 심층적인 이면을 명확히 이해하는 엔지니어가 드물다는 사실입니다.&lt;/p&gt;&#xA;&lt;p&gt;벤더 가이드에 따라 몇 번의 클릭만으로 수집이 자동화되는 시대이지만, 진정한 전문가의 역량은 수집 과정부터 필드 매핑, 정규화(Normalization)에 이르는 전 과정을 마치 정교한 악기를 조율하듯 다루는 데서 나타납니다. 데이터 흐름의 원리를 꿰뚫고 있어야만 장애 발생 시 트러블슈팅의 지점을 본능적으로 포착할 수 있기 때문입니다.&lt;/p&gt;</description>
     </item>
   </channel>

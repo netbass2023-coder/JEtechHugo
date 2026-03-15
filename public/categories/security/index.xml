@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on JE Tech Holdings</title>
-    <link>http://localhost:61744/categories/security/</link>
+    <link>http://localhost:1313/categories/security/</link>
     <description>Recent content in Security on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61744/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms</title>
-      <link>http://localhost:61744/insights/aesthetics-of-log-collection-2/</link>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-2/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/insights/aesthetics-of-log-collection-2/</guid>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-2/</guid>
       <description>&lt;h2 id=&#34;cef-common-event-format-a-strategic-choice-for-log-standardization&#34;&gt;CEF (Common Event Format): A Strategic Choice for Log Standardization&lt;/h2&gt;&#xA;&lt;p&gt;CEF (Common Event Format), introduced by ArcSight—the longtime leader of the SIEM market—emerged as a powerful solution to the persistent issue of Log Format Inconsistency across different vendors. Standard RFC-defined Syslog specifications often fall short when it comes to fully structuring the complex contexts of modern security events.&lt;/p&gt;&#xA;&lt;p&gt;While formats for general web server logs can be user-defined, it places a massive operational overhead on security engineers to understand the internal logic of every application just to design and deploy custom formats. CEF shifts this paradigm through its structural design. Unlike traditional methods where engineers had to manually calculate the ordinal sequence and offsets of values within raw data, CEF explicitly includes Key-Value Pairs within a &amp;lsquo;One-single Line&amp;rsquo; format.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog</title>
-      <link>http://localhost:61744/insights/aesthetics-of-log-collection-1/</link>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-1/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:61744/insights/aesthetics-of-log-collection-1/</guid>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-1/</guid>
       <description>&lt;p&gt;Regardless of whether a dedicated security department exists or if it&amp;rsquo;s driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the &lt;strong&gt;de facto standard&lt;/strong&gt; in building security systems and a fundamental pillar of infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—&lt;strong&gt;Log Ingestion&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
