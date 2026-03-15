@@ -2,137 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on JE Tech Holdings</title>
-    <link>http://localhost:1313/ja/tags/</link>
+    <link>https://jetechholdings.com/ja/tags/</link>
     <description>Recent content in Tags on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/ja/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jetechholdings.com/ja/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API</title>
-      <link>http://localhost:1313/ja/tags/api/</link>
+      <link>https://jetechholdings.com/ja/tags/api/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/api/</guid>
+      <guid>https://jetechholdings.com/ja/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>CEF</title>
-      <link>http://localhost:1313/ja/tags/cef/</link>
+      <link>https://jetechholdings.com/ja/tags/cef/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/cef/</guid>
+      <guid>https://jetechholdings.com/ja/tags/cef/</guid>
       <description></description>
     </item>
     <item>
-      <title>Cloud-Security</title>
-      <link>http://localhost:1313/ja/tags/cloud-security/</link>
+      <title>Cloud Security</title>
+      <link>https://jetechholdings.com/ja/tags/cloud-security/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/cloud-security/</guid>
+      <guid>https://jetechholdings.com/ja/tags/cloud-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Log-Ingestion</title>
-      <link>http://localhost:1313/ja/tags/log-ingestion/</link>
+      <link>https://jetechholdings.com/ja/tags/log-ingestion/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/log-ingestion/</guid>
+      <guid>https://jetechholdings.com/ja/tags/log-ingestion/</guid>
       <description></description>
     </item>
     <item>
       <title>SIEM</title>
-      <link>http://localhost:1313/ja/tags/siem/</link>
+      <link>https://jetechholdings.com/ja/tags/siem/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/siem/</guid>
+      <guid>https://jetechholdings.com/ja/tags/siem/</guid>
       <description></description>
     </item>
     <item>
       <title>Engineering</title>
-      <link>http://localhost:1313/ja/tags/engineering/</link>
+      <link>https://jetechholdings.com/ja/tags/engineering/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/engineering/</guid>
+      <guid>https://jetechholdings.com/ja/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>SecOps</title>
-      <link>http://localhost:1313/ja/tags/secops/</link>
+      <link>https://jetechholdings.com/ja/tags/secops/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/secops/</guid>
+      <guid>https://jetechholdings.com/ja/tags/secops/</guid>
       <description></description>
     </item>
     <item>
       <title>Syslog</title>
-      <link>http://localhost:1313/ja/tags/syslog/</link>
+      <link>https://jetechholdings.com/ja/tags/syslog/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/syslog/</guid>
+      <guid>https://jetechholdings.com/ja/tags/syslog/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure Sentinel</title>
-      <link>http://localhost:1313/ja/tags/azure-sentinel/</link>
+      <link>https://jetechholdings.com/ja/tags/azure-sentinel/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/azure-sentinel/</guid>
+      <guid>https://jetechholdings.com/ja/tags/azure-sentinel/</guid>
       <description></description>
     </item>
     <item>
       <title>CCF</title>
-      <link>http://localhost:1313/ja/tags/ccf/</link>
+      <link>https://jetechholdings.com/ja/tags/ccf/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/ccf/</guid>
+      <guid>https://jetechholdings.com/ja/tags/ccf/</guid>
       <description></description>
     </item>
     <item>
       <title>Log Integration</title>
-      <link>http://localhost:1313/ja/tags/log-integration/</link>
+      <link>https://jetechholdings.com/ja/tags/log-integration/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/log-integration/</guid>
+      <guid>https://jetechholdings.com/ja/tags/log-integration/</guid>
       <description></description>
     </item>
     <item>
       <title>Prisma Cloud</title>
-      <link>http://localhost:1313/ja/tags/prisma-cloud/</link>
+      <link>https://jetechholdings.com/ja/tags/prisma-cloud/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/prisma-cloud/</guid>
+      <guid>https://jetechholdings.com/ja/tags/prisma-cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>http://localhost:1313/ja/tags/infrastructure/</link>
+      <link>https://jetechholdings.com/ja/tags/infrastructure/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/infrastructure/</guid>
+      <guid>https://jetechholdings.com/ja/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/ja/tags/network/</link>
+      <link>https://jetechholdings.com/ja/tags/network/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/network/</guid>
+      <guid>https://jetechholdings.com/ja/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:1313/ja/tags/security/</link>
+      <link>https://jetechholdings.com/ja/tags/security/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/security/</guid>
+      <guid>https://jetechholdings.com/ja/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>SNMP</title>
-      <link>http://localhost:1313/ja/tags/snmp/</link>
+      <link>https://jetechholdings.com/ja/tags/snmp/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/snmp/</guid>
+      <guid>https://jetechholdings.com/ja/tags/snmp/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/ja/tags/blog/</link>
+      <link>https://jetechholdings.com/ja/tags/blog/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/blog/</guid>
+      <guid>https://jetechholdings.com/ja/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Intro</title>
-      <link>http://localhost:1313/ja/tags/intro/</link>
+      <link>https://jetechholdings.com/ja/tags/intro/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ja/tags/intro/</guid>
+      <guid>https://jetechholdings.com/ja/tags/intro/</guid>
       <description></description>
     </item>
   </channel>

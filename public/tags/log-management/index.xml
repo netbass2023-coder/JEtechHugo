@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Log Management on JE Tech Holdings</title>
-    <link>http://localhost:1313/tags/log-management/</link>
+    <link>https://jetechholdings.com/tags/log-management/</link>
     <description>Recent content in Log Management on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/log-management/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jetechholdings.com/tags/log-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF</title>
-      <link>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</link>
+      <link>https://jetechholdings.com/insights/evolution-of-prisma-log-ingestion/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</guid>
+      <guid>https://jetechholdings.com/insights/evolution-of-prisma-log-ingestion/</guid>
       <description>&lt;p&gt;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
     </item>
   </channel>

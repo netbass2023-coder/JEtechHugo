@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JE Tech Holdings</title>
-    <link>http://localhost:1313/ko/</link>
+    <link>https://jetechholdings.com/ko/</link>
     <description>Recent content on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>ko</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/ko/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jetechholdings.com/ko/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>전략적 컴플라이언스 및 거버넌스</title>
-      <link>http://localhost:1313/ko/services/compliance-governance/</link>
+      <link>https://jetechholdings.com/ko/services/compliance-governance/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/services/compliance-governance/</guid>
+      <guid>https://jetechholdings.com/ko/services/compliance-governance/</guid>
       <description>단순한 체크리스트 통과를 넘어, 실전 중심의 기술적 해석을 제공합니다.</description>
     </item>
     <item>
       <title>SOC 및 SIEM 엔지니어링</title>
-      <link>http://localhost:1313/ko/services/soc-siem/</link>
+      <link>https://jetechholdings.com/ko/services/soc-siem/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/services/soc-siem/</guid>
+      <guid>https://jetechholdings.com/ko/services/soc-siem/</guid>
       <description>데이터 중심의 보안 운영. 글로벌 벤더 기술력과 MSSP/SOC 실무 경험을 결합한 인프라 최적화.</description>
     </item>
     <item>
       <title>지능형 보안 운영 및 위협 헌팅</title>
-      <link>http://localhost:1313/ko/services/threat-hunting/</link>
+      <link>https://jetechholdings.com/ko/services/threat-hunting/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/services/threat-hunting/</guid>
+      <guid>https://jetechholdings.com/ko/services/threat-hunting/</guid>
       <description>수동적 모니터링을 넘어선 능동적 방어. 데이터와 실무 노하우를 통한 위협 식별.</description>
     </item>
     <item>
       <title>기술 전문 서비스</title>
-      <link>http://localhost:1313/ko/services/professional-services/</link>
+      <link>https://jetechholdings.com/ko/services/professional-services/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/services/professional-services/</guid>
+      <guid>https://jetechholdings.com/ko/services/professional-services/</guid>
       <description>통찰력을 담은 신뢰할 수 있는 장비 도입. 업계 베스트 프랙티스에 맞춘 포괄적인 구축 서비스.</description>
     </item>
     <item>
       <title>로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임</title>
-      <link>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</link>
+      <link>https://jetechholdings.com/ko/insights/aesthetics-of-log-collection-2/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</guid>
+      <guid>https://jetechholdings.com/ko/insights/aesthetics-of-log-collection-2/</guid>
       <description>&lt;h2 id=&#34;cefcommon-event-format-로그-표준화를-위한-전략적-선택&#34;&gt;CEF(Common Event Format): 로그 표준화를 위한 전략적 선택&lt;/h2&gt;&#xA;&lt;p&gt;과거 SIEM 마켓의 리더였던 ArcSight가 제안한 **CEF(Common Event Format)**는 서로 다른 벤더 간의 Log Format Inconsistency 문제를 해결하기 위한 강력한 대안이었습니다. 표준 RFC에서 정의한 Syslog 규격만으로는 복잡한 보안 이벤트의 컨텍스트를 완벽히 구조화하기 어렵기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;일반적인 Web Server 로그 등은 사용자가 직접 포맷을 정의할 수 있지만, 보안 엔지니어가 수많은 어플리케이션의 내부 로직을 파악해 매번 Custom Format을 설계하고 배포하는 것은 운영 오버헤드가 매우 큽니다. 하지만 CEF는 데이터의 구조 자체가 다릅니다. 과거에는 엔지니어가 Raw 데이터 내 값의 순서(Ordinal)와 오프셋을 계산해 파싱 로직을 짰다면, CEF는 &amp;lsquo;One-single Line&amp;rsquo; 내에 Key-Value Pair를 명시적으로 포함합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>로그 수집의 미학 (1): 소리 없는 아우성, Syslog를 길들이는 법</title>
-      <link>http://localhost:1313/ko/insights/aesthetics-of-log-collection-1/</link>
+      <link>https://jetechholdings.com/ko/insights/aesthetics-of-log-collection-1/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/aesthetics-of-log-collection-1/</guid>
+      <guid>https://jetechholdings.com/ko/insights/aesthetics-of-log-collection-1/</guid>
       <description>&lt;p&gt;보안 부서의 존재 여부나 컴플라이언스 준수라는 외부적 요인을 차치하더라도, 현대 IT 환경에서 로그 수집의 당위성을 논하는 것은 이제 무의미합니다. 로그 수집은 이미 보안 시스템을 구축함에 있어 거부할 수 없는 &lt;strong&gt;디팩토(De facto) 표준&lt;/strong&gt;이자, 인프라의 근간으로 자리 잡았기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;하지만 수많은 현장에서 SecOps 분석가들과 협업하며 느낀 점이 하나 있습니다. 의외로 &amp;lsquo;로그가 어떤 경로로 우리에게 도달하는가&amp;rsquo;라는 근본적인 메커니즘, 즉 **Log Ingestion(로그 인제스션)**의 심층적인 이면을 명확히 이해하는 엔지니어가 드물다는 사실입니다.&lt;/p&gt;&#xA;&lt;p&gt;벤더 가이드에 따라 몇 번의 클릭만으로 수집이 자동화되는 시대이지만, 진정한 전문가의 역량은 수집 과정부터 필드 매핑, 정규화(Normalization)에 이르는 전 과정을 마치 정교한 악기를 조율하듯 다루는 데서 나타납니다. 데이터 흐름의 원리를 꿰뚫고 있어야만 장애 발생 시 트러블슈팅의 지점을 본능적으로 포착할 수 있기 때문입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure Sentinel, Prisma Cloud 로그 연동의 진화: Function App에서 CCF로</title>
-      <link>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</link>
+      <link>https://jetechholdings.com/ko/insights/evolution-of-prisma-log-ingestion/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/evolution-of-prisma-log-ingestion/</guid>
+      <guid>https://jetechholdings.com/ko/insights/evolution-of-prisma-log-ingestion/</guid>
       <description>&lt;p&gt;Azure Sentinel에 Palo Alto Prisma Cloud(이하 Prisma) 로그를 통합하는 과정은 기술적으로 많은 변화가 있었습니다. 본 포스팅에서는 Prisma의 구조적 이해와 더불어, 최근 도입된 **Codeless Connector Framework(CCF)**를 통한 실무적인 로그 통합 경험을 공유하고자 합니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-prisma-cloud-모듈의-이해-cspm-vs-cwpp&#34;&gt;1. Prisma Cloud 모듈의 이해 (CSPM vs CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;로그 연동에 앞서, Prisma의 주요 모듈(Blades)과 각 로그의 성격을 파악하는 것이 중요합니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud Security (CSPM):&lt;/strong&gt; 인프라, IAM, 네트워킹, 스토리지 등 클라우드 설정 및 제어 평면(Control-plane)의 구성 오류를 탐지합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Runtime Security (CWPP):&lt;/strong&gt; 가상 머신(VM), 컨테이너, 호스트와 같은 워크로드 내부의 실행 단계 보호와 정책 적용에 집중합니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;기타:&lt;/strong&gt; Application Security, Data Security 모듈이 존재합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-과거의-로그-수집-방식-커스텀-개발의-고충&#34;&gt;2. 과거의 로그 수집 방식: 커스텀 개발의 고충&lt;/h2&gt;&#xA;&lt;p&gt;2025년 초까지만 해도 로그 수집 방식은 다소 복잡하고 파편화되어 있었습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈</title>
-      <link>http://localhost:1313/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
+      <link>https://jetechholdings.com/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
+      <guid>https://jetechholdings.com/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
       <description>&lt;p&gt;시스템 모니터링의 세계에는 두 가지 커다란 기둥이 있습니다. 바로 &lt;strong&gt;시스템 로그를 분석하는 것&lt;/strong&gt;, 그리고 **SNMP(Simple Network Management Protocol)**를 이용해 시스템의 상태와 설정값을 확인하는 것이죠.&lt;/p&gt;&#xA;&lt;p&gt;보안 관제 초기에는 리소스 사용량(Resource Usage) 모니터링이 핵심이었습니다. 특정 명령어가 실행된 후 CPU 사용률이 치솟거나, 방화벽의 아웃바운드 트래픽이 비정상적으로 급증하는 것은 침해 사고의 중요한 징후입니다. 우리는 이러한 지표들을 여러 장비와 교차 분석(Correlation)함으로써 보안 사고를 식별하고 대응해 왔습니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;snmp의-보안적-진화와-취약점&#34;&gt;SNMP의 보안적 진화와 취약점&lt;/h2&gt;&#xA;&lt;p&gt;최근 현대적 환경에서는 에이전트 기반의 SIEM을 주로 사용하지만, 서버와 네트워크 장비들은 여전히 SNMP를 기본적으로 지원합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>기술의 홍수 속에서 &#39;기본&#39;과 &#39;경험&#39;을 기록하는 이유</title>
-      <link>http://localhost:1313/ko/insights/intro-bridging-the-gap/</link>
+      <link>https://jetechholdings.com/ko/insights/intro-bridging-the-gap/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ko/insights/intro-bridging-the-gap/</guid>
+      <guid>https://jetechholdings.com/ko/insights/intro-bridging-the-gap/</guid>
       <description>&lt;h2 id=&#34;intro-기술의-홍수-속에서-기본과-경험을-기록하는-이유&#34;&gt;[Intro] 기술의 홍수 속에서 &amp;lsquo;기본&amp;rsquo;과 &amp;lsquo;경험&amp;rsquo;을 기록하는 이유&lt;/h2&gt;&#xA;&lt;p&gt;나는 지금까지 맡은 바 임무를 정확하고 빠르게 완수하는 것을 인생의 신조로 삼아왔습니다. 시간적 여유가 주어지면 계획부터 준비, 적용, 테스트, 그리고 검증에 이르기까지 각 프로세스의 완성도를 높이는 데 집착하곤 했습니다.&lt;/p&gt;&#xA;&lt;p&gt;내가 수행한 모든 작업은 이미 상세한 문서로 남겨두었기에, 굳이 입을 열어 남들에게 설명하는 것은 불필요한 일이라 생각했습니다. &amp;ldquo;결과물과 문서가 모든 것을 말해준다&amp;quot;고 믿었기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;하지만 여러 번의 이직을 거치고, 함께 일하는 동료들과의 세대 차이를 경험하며, 무엇보다 기술이 기하급수적으로 발전하는 과정을 지켜보면서 생각의 변화가 생겼습니다. 정보와 경험의 교류가 단절되고 있다는 것을 피부로 느끼게 된 것입니다. 기술은 눈부시게 변하지만, 소위 &amp;lsquo;옛날 기술&amp;rsquo;이라 치부되는 것들은 사라지는 것이 아니라 새로운 기술의 단단한 근간이 됩니다. 기초가 흔들리면 그 위의 화려한 기술도 모래성에 불과합니다.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Syslog on JE Tech Holdings</title>
-    <link>http://localhost:1313/tags/syslog/</link>
+    <link>https://jetechholdings.com/tags/syslog/</link>
     <description>Recent content in Syslog on JE Tech Holdings</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
     <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/syslog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jetechholdings.com/tags/syslog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog</title>
-      <link>http://localhost:1313/insights/aesthetics-of-log-collection-1/</link>
+      <link>https://jetechholdings.com/insights/aesthetics-of-log-collection-1/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-1/</guid>
+      <guid>https://jetechholdings.com/insights/aesthetics-of-log-collection-1/</guid>
       <description>&lt;p&gt;Regardless of whether a dedicated security department exists or if it&amp;rsquo;s driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the &lt;strong&gt;de facto standard&lt;/strong&gt; in building security systems and a fundamental pillar of infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—&lt;strong&gt;Log Ingestion&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
