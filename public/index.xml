@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JE Tech Holdings</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
+    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strategic Compliance &amp; Governance</title>
+      <link>http://localhost:1313/services/compliance-governance/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/compliance-governance/</guid>
+      <description>Beyond mere check-box compliance. Battle-tested technical interpretation of international security standards.</description>
+    </item>
+    <item>
+      <title>SOC &amp; SIEM Engineering</title>
+      <link>http://localhost:1313/services/soc-siem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/soc-siem/</guid>
+      <description>Data-driven security operations. Optimization of security infrastructure leveraging global vendor insights.</description>
+    </item>
+    <item>
+      <title>Intelligence-Driven Operations &amp; Hunting</title>
+      <link>http://localhost:1313/services/threat-hunting/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/threat-hunting/</guid>
+      <description>Proactive defense, not reactive monitoring. Identifying hidden threats through real-world operational know-how.</description>
+    </item>
+    <item>
+      <title>Technical Professional Services</title>
+      <link>http://localhost:1313/services/professional-services/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/professional-services/</guid>
+      <description>Reliable deployment with actionable insights. Comprehensive implementation services configured to industry best practices.</description>
+    </item>
+    <item>
+      <title>The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms</title>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-2/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-2/</guid>
+      <description>&lt;h2 id=&#34;cef-common-event-format-a-strategic-choice-for-log-standardization&#34;&gt;CEF (Common Event Format): A Strategic Choice for Log Standardization&lt;/h2&gt;&#xA;&lt;p&gt;CEF (Common Event Format), introduced by ArcSight—the longtime leader of the SIEM market—emerged as a powerful solution to the persistent issue of Log Format Inconsistency across different vendors. Standard RFC-defined Syslog specifications often fall short when it comes to fully structuring the complex contexts of modern security events.&lt;/p&gt;&#xA;&lt;p&gt;While formats for general web server logs can be user-defined, it places a massive operational overhead on security engineers to understand the internal logic of every application just to design and deploy custom formats. CEF shifts this paradigm through its structural design. Unlike traditional methods where engineers had to manually calculate the ordinal sequence and offsets of values within raw data, CEF explicitly includes Key-Value Pairs within a &amp;lsquo;One-single Line&amp;rsquo; format.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Aesthetics of Log Collection (1): The Silent Outcry, Mastering the Art of Syslog</title>
+      <link>http://localhost:1313/insights/aesthetics-of-log-collection-1/</link>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/aesthetics-of-log-collection-1/</guid>
+      <description>&lt;p&gt;Regardless of whether a dedicated security department exists or if it&amp;rsquo;s driven by compliance, debating the necessity of log collection in a modern IT environment is no longer productive. Log collection has already established itself as the &lt;strong&gt;de facto standard&lt;/strong&gt; in building security systems and a fundamental pillar of infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;However, through my collaborations with numerous SecOps analysts in the field, I’ve noticed a common gap: surprisingly few engineers deeply understand the underlying mechanism of how logs actually reach us—&lt;strong&gt;Log Ingestion&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Sentinel, The Evolution of Prisma Cloud Log Integration: From Function Apps to CCF</title>
+      <link>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/evolution-of-prisma-log-ingestion/</guid>
+      <description>&lt;p&gt;Integrating Palo Alto Prisma Cloud (hereafter “Prisma”) logs into Azure Sentinel has undergone significant technical shifts. In this post, I will share the structural breakdown of Prisma and my practical experience migrating to the &lt;strong&gt;Codeless Connector Framework (CCF)&lt;/strong&gt; for a more streamlined log integration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understanding-prisma-cloud-modules-cspm-vs-cwpp&#34;&gt;1. Understanding Prisma Cloud Modules (CSPM vs. CWPP)&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into log integration, it is crucial to distinguish between Prisma’s core modules (often called &amp;ldquo;blades&amp;rdquo;), as they dictate the nature of the logs:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SNMP: A Classic Monitoring Tool with Modern Security Depth</title>
+      <link>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
+      <description>&lt;p&gt;In the world of system monitoring, there are two primary pillars: analyzing &lt;strong&gt;system logs&lt;/strong&gt; and utilizing &lt;strong&gt;SNMP (Simple Network Management Protocol)&lt;/strong&gt; to verify system status and configurations.&lt;/p&gt;&#xA;&lt;p&gt;In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents</title>
+      <link>http://localhost:1313/insights/intro-bridging-the-gap/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/insights/intro-bridging-the-gap/</guid>
+      <description>&lt;h2 id=&#34;intro-bridging-the-gap-why-i-am-documenting-fundamentals-and-real-world-incidents&#34;&gt;[Intro] Bridging the Gap: Why I am Documenting Fundamentals and Real-World Incidents&lt;/h2&gt;&#xA;&lt;p&gt;Throughout my career, my primary focus has always been on &lt;strong&gt;precision and speed of execution&lt;/strong&gt;. I have always been a process-driven person—investing heavily in planning, implementation, and rigorous validation whenever the timeline allowed. Because I ensured every project was backed by comprehensive documentation, I used to believe that further explanation was redundant. I let the &lt;strong&gt;deliverables&lt;/strong&gt; speak for themselves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Inventory</title>
+      <link>http://localhost:1313/inventory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/inventory/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

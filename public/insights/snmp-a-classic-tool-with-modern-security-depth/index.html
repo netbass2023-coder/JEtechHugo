@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>SNMP: A Classic Monitoring Tool with Modern Security Depth | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="" />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/insights/snmp-a-classic-tool-with-modern-security-depth/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="SNMP: A Classic Monitoring Tool with Modern Security Depth">
+  <meta property="og:description" content="In the world of system monitoring, there are two primary pillars: analyzing system logs and utilizing SNMP (Simple Network Management Protocol) to verify system status and configurations.
+In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-02-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-13T00:00:00+00:00">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="SNMP">
+    <meta property="article:tag" content="Infrastructure">
+
+    
+  <meta itemprop="name" content="SNMP: A Classic Monitoring Tool with Modern Security Depth">
+  <meta itemprop="description" content="In the world of system monitoring, there are two primary pillars: analyzing system logs and utilizing SNMP (Simple Network Management Protocol) to verify system status and configurations.
+In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.">
+  <meta itemprop="datePublished" content="2026-02-13T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-13T00:00:00+00:00">
+  <meta itemprop="wordCount" content="505">
+  <meta itemprop="keywords" content="Network,Security,SNMP,Infrastructure">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SNMP: A Classic Monitoring Tool with Modern Security Depth">
+  <meta name="twitter:description" content="In the world of system monitoring, there are two primary pillars: analyzing system logs and utilizing SNMP (Simple Network Management Protocol) to verify system status and configurations.
+In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/services/">Services</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/insights/">Insight</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+      <div class="relative">
+        
+        
+        
+        
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              English
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  English
+                </div>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ko/insights/snmp-a-classic-tool-with-modern-security-depth/"
+                >
+                  한국어
+                </a>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ja/insights/snmp-a-classic-tool-with-modern-security-depth/"
+                >
+                  日本語
+                </a>
+              
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">SNMP: A Classic Monitoring Tool with Modern Security Depth</h1>
+        
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Network">
+  Network
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Security">
+  Security
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SNMP">
+  SNMP
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Infrastructure">
+  Infrastructure
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <p>In the world of system monitoring, there are two primary pillars: analyzing <strong>system logs</strong> and utilizing <strong>SNMP (Simple Network Management Protocol)</strong> to verify system status and configurations.</p>
+<p>In the early days of security operations, monitoring resource usage was a critical focus. A sudden spike in CPU usage following a specific command, or an unexpected surge in outbound traffic on a router or firewall, served as key indicators of a potential breach. By correlating these metrics across different devices, we could identify and respond to security incidents.</p>
+<h2 id="the-security-evolution-of-snmp">The Security Evolution of SNMP</h2>
+<p>While many modern environments now use agents provided by SIEM vendors for health checks, virtually every network device—servers, routers, switches, and firewalls—still supports SNMP.</p>
+<ul>
+<li><strong>SNMP v3:</strong> The current standard, providing robust security through authentication and encryption.</li>
+<li><strong>SNMP v2c:</strong> Relies on a simple &ldquo;Community String&rdquo; for access.</li>
+<li><strong>SNMP v1:</strong> Highly vulnerable. The Community String is transmitted in <strong>plaintext</strong>, making it susceptible to sniffing. Without encryption, an attacker can extract sensitive system information or even trigger a system reboot.</li>
+</ul>
+<h3 id="understanding-oids-and-mibs">Understanding OIDs and MIBs</h3>
+<p>Tools like <code>snmpget</code>, <code>snmpwalk</code>, and <code>snmpset</code> allow us to retrieve values from specific memory addresses using a Target IP and an <strong>OID (Object Identifier)</strong>. Although MIB (Management Information Base) sounds &ldquo;old school,&rdquo; its structure is remarkably intuitive:</p>
+<ul>
+<li><strong>OID <code>1.3.6.1.2.1.1.3.0</code> (sysUpTime.0):</strong> Monitors device uptime.</li>
+<li><strong>OID <code>1.3.6.1.2.1.1.5.0</code> (sysName.0):</strong> Identifies the device hostname.</li>
+</ul>
+<hr>
+<h2 id="a-lesson-from-the-field-the-32-bit-rollover-bug">A Lesson from the Field: The 32-bit Rollover Bug</h2>
+<p>How is SNMP applied in practice? Imagine a script collecting CPU utilization, memory usage, and cumulative interface traffic (Octets) every five minutes. This data can monitor real-time bandwidth (bps) and session states—effective for detecting <strong>DDoS attacks</strong>.</p>
+<blockquote>
+<p><strong>The Incident:</strong>
+I once encountered a well-known L4 switch that would periodically suspend, requiring a manual reboot every three months.</p>
+<p>Through SNMP analysis, I discovered that the system crashed whenever the network interface traffic counter, <code>ifOutOctets</code>, reached its <strong>32-bit limit ($2^{32}-1$)</strong> and rolled over to zero (the &lsquo;Rollover&rsquo; or &lsquo;Overflow&rsquo; bug).</p>
+</blockquote>
+<p>Based on this technical evidence, we requested a formal fix from the manufacturer. To address these limitations, <strong>64-bit counters</strong> (such as <code>ifHCInOctets</code>) were introduced as a standard starting with SNMP v2c.</p>
+<hr>
+<h2 id="snmp-classic-tool"><img src="/insights/img/snmp-image.png" alt="SNMP-Classic-Tool"></h2>
+<h2 id="why-we-must-still-understand-snmp">Why We Must Still Understand SNMP</h2>
+<p>Understanding SNMP is, in essence, learning how to read the <strong>&ldquo;heartbeat&rdquo;</strong> of a system. From a practitioner&rsquo;s view, here are three key technical insights:</p>
+<ol>
+<li><strong>The Evolution of Pull vs. Push:</strong> While SNMP operates on a &ldquo;Pull&rdquo; basis, modern large-scale environments are shifting toward <strong>Telemetry (Push)</strong>, where devices proactively stream data.</li>
+<li><strong>The Value of SNMP Traps:</strong> Beyond polling, configuring <strong>Traps</strong>—where a device immediately signals an error—is a cornerstone of real-time security monitoring.</li>
+<li><strong>Security Risks of &lsquo;Write&rsquo; Access:</strong> Exposure of <strong>Write (Private)</strong> permissions allows an attacker to reconfigure your entire infrastructure. This remains a critical checkpoint for any security professional.</li>
+</ol>
+<p>SNMP is often dismissed as a legacy protocol. However, for those with deep experience in security and infrastructure, it remains a vital domain. It is a powerful tool that allows us to look deep into the &ldquo;gut&rdquo; of a system. Understanding its vulnerabilities and its potential is what defines true technical insight.</p>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">© 2026 JE Tech Holding Inc. All rights reserved</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">Contact Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

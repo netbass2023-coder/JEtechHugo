@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <title>Small Inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #111827;
+            --accent: #22c55e;
+            --accent-soft: #16a34a20;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+            --danger: #f97373;
+            --danger-soft: #f9737320;
+            --border: #1f2933;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+            background: radial-gradient(circle at top, #1f2937, #020617);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 16px 12px 32px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 4px 4px 12px;
+        }
+
+        .title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 6px;
+        }
+
+
+
+        button {
+
+            font: inherit;
+
+            border-radius: 999px;
+
+            border: none;
+
+            padding: 6px 14px;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+            transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, opacity 0.1s ease;
+
+        }
+
+
+
+        button:active {
+
+            transform: scale(0.97);
+
+            box-shadow: none;
+
+        }
+
+
+
+        .btn-ghost {
+
+            background: transparent;
+
+            color: var(--text-muted);
+
+            border: 1px solid #1f2937;
+
+        }
+
+
+
+        .btn-ghost:hover {
+
+            background: #111827;
+
+            color: #e5e7eb;
+
+        }
+
+
+
+        .btn-primary {
+
+            background: var(--accent);
+
+            color: #022c22;
+
+            font-weight: 600;
+
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+
+        }
+
+
+
+        .btn-primary:hover {
+
+            background: #16a34a;
+
+        }
+
+
+
+        .btn-secondary {
+
+            background: #1f2937;
+
+            color: #e5e7eb;
+
+            border: 1px solid #374151;
+
+        }
+
+
+
+        .btn-secondary:hover {
+
+            background: #111827;
+
+        }
+
+
+
+        .btn-icon {
+
+            padding: 6px 10px;
+
+            border-radius: 999px;
+
+            background: #0f172a;
+
+            color: var(--text-muted);
+
+            border: 1px solid #1f2937;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .btn-icon:hover {
+
+            background: #111827;
+
+            color: #e5e7eb;
+
+        }
+
+
+
+        .inventory-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 4px 0;
+        }
+
+
+
+        .inventory-header-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 4px 4px;
+
+        }
+
+
+
+        .inventory-header-row span {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.12em;
+
+        }
+
+
+
+        .inventory-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+
+        .inventory-list::-webkit-scrollbar {
+
+            width: 4px;
+
+        }
+
+        .inventory-list::-webkit-scrollbar-track {
+
+            background: #020617;
+
+        }
+
+        .inventory-list::-webkit-scrollbar-thumb {
+
+            background: #4b5563;
+
+            border-radius: 999px;
+
+        }
+
+
+
+        .inventory-item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 8px 4px;
+
+            border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+
+        }
+
+
+
+        .inventory-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+
+        .item-main {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+        }
+
+
+
+        .item-name {
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .item-meta {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+        }
+
+
+
+        .item-qty {
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            padding: 4px 10px;
+
+            border-radius: 999px;
+
+            background: #020617;
+
+            border: 1px solid #1f2937;
+
+            min-width: 42px;
+
+            text-align: center;
+
+        }
+
+
+
+        .footer-hint {
+
+            margin-top: 8px;
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+            text-align: center;
+
+        }
+
+
+
+         
+
+        .sheet-backdrop {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(15, 23, 42, 0.75);
+
+            display: none;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            z-index: 50;
+
+        }
+
+
+
+        .sheet-backdrop.visible {
+
+            display: flex;
+
+        }
+
+
+
+        .sheet {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            max-height: 80vh;
+
+            background: #020617;
+
+            border-radius: 24px 24px 0 0;
+
+            border-top: 1px solid #1f2937;
+
+            padding: 12px 14px 20px;
+
+            box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.8);
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+
+
+        .sheet-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 2px 4px 4px;
+
+        }
+
+
+
+        .sheet-title {
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .sheet-body {
+
+            flex: 1;
+
+            overflow-y: auto;
+
+            margin-top: 6px;
+
+            padding-right: 4px;
+
+        }
+
+
+
+        .sheet-actions {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 8px;
+
+            margin-top: 10px;
+
+        }
+
+
+
+        .sheet-section-title {
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.14em;
+
+            color: var(--text-muted);
+
+            margin-bottom: 4px;
+
+        }
+
+
+
+        .sku-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 6px 4px;
+
+            border-bottom: 1px solid #111827;
+
+            gap: 6px;
+
+        }
+
+
+
+        .sku-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1px;
+
+        }
+
+
+
+        .sku-name {
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .sku-meta {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+        }
+
+
+
+        .qty-input-group {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+        }
+
+
+
+        .qty-label {
+
+            font-size: 12px;
+
+            color: var(--text-muted);
+
+            min-width: 40px;
+
+            text-align: right;
+
+        }
+
+
+
+        .qty-input {
+
+            width: 70px;
+
+            padding: 4px 6px;
+
+            border-radius: 999px;
+
+            border: 1px solid #1f2937;
+
+            background: #020617;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            text-align: center;
+
+            -moz-appearance: textfield;
+
+        }
+
+        .qty-input::-webkit-outer-spin-button,
+
+        .qty-input::-webkit-inner-spin-button {
+
+            -webkit-appearance: none;
+
+            margin: 0;
+
+        }
+
+
+
+        .form-row {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        .form-label {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+        }
+
+
+
+        .text-input {
+
+            width: 100%;
+
+            padding: 6px 10px;
+
+            border-radius: 10px;
+
+            border: 1px solid #1f2937;
+
+            background: #020617;
+
+            color: var(--text);
+
+            font-size: 13px;
+
+        }
+
+
+
+        .delete-btn {
+
+            background: var(--danger-soft);
+
+            color: #fecaca;
+
+            border-radius: 999px;
+
+            border: 1px solid #b91c1c;
+
+            padding: 2px 10px;
+
+            font-size: 11px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .delete-btn:hover {
+
+            background: #7f1d1d;
+
+            color: #fee2e2;
+
+        }
+
+
+
+        .history-group-date {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.12em;
+
+            margin: 10px 0 4px;
+
+        }
+
+
+
+        .history-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 6px 4px;
+
+            border-bottom: 1px solid #111827;
+
+        }
+
+
+
+        .history-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+        }
+
+
+
+        .history-name {
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .history-meta {
+
+            font-size: 11px;
+
+            color: var(--text-muted);
+
+        }
+
+
+
+        .history-change {
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .history-change.add {
+
+            color: #4ade80;
+
+        }
+
+
+
+        .history-change.sell {
+
+            color: #f97373;
+
+        }
+
+
+
+        .badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+            padding: 2px 8px;
+
+            border-radius: 999px;
+
+            background: rgba(15, 118, 110, 0.18);
+
+            border: 1px solid rgba(45, 212, 191, 0.6);
+
+            color: #a5f3fc;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.12em;
+
+        }
+
+
+
+         
+
+        .stepper-group {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 2px;
+
+        }
+
+
+
+        .stepper-btn {
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 50%;
+
+            border: 1px solid #1f2937;
+
+            background: #0f172a;
+
+            color: var(--text);
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            padding: 0;
+
+            user-select: none;
+
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+
+        }
+
+
+
+        .stepper-btn:hover {
+
+            background: #1e293b;
+
+            border-color: #374151;
+
+        }
+
+
+
+        .stepper-btn:active {
+
+            transform: scale(0.9);
+
+        }
+
+
+
+        .stepper-btn.minus {
+
+            color: var(--danger);
+
+            border-color: rgba(249, 115, 115, 0.3);
+
+        }
+
+
+
+        .stepper-btn.minus:hover {
+
+            background: rgba(249, 115, 115, 0.1);
+
+        }
+
+
+
+        .stepper-btn.plus {
+
+            color: var(--accent);
+
+            border-color: rgba(34, 197, 94, 0.3);
+
+        }
+
+
+
+        .stepper-btn.plus:hover {
+
+            background: rgba(34, 197, 94, 0.1);
+
+        }
+
+
+
+        .stepper-value {
+
+            min-width: 32px;
+
+            text-align: center;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            color: var(--text);
+
+        }
+
+
+
+        .stepper-value.has-value {
+
+            color: var(--danger);
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <div class="title-group">
+
+            <div class="title">Inventory</div>
+            <div class="subtitle">Single product · 18 SKUs</div>
+        </div>
+        <div class="btn-row">
+            <button class="btn-ghost" id="editBtn">Edit</button>
+            <button class="btn-primary" id="sellBtn">Sell</button>
+            <button class="btn-secondary" id="addBtn">Add</button>
+            <button class="btn-icon" id="historyBtn">⏱</button>
+            <button class="btn-icon" id="settingsBtn">🔗</button>
+        </div>
+    </header>
+
+    <main class="inventory-card">
+        <div class="inventory-header-row">
+            <span>Current Inventory</span>
+            <div class="badge" id="syncStatus">
+                <span>LOCAL STORAGE</span>
+            </div>
+        </div>
+        <ul class="inventory-list" id="inventoryList"></ul>
+    </main>
+
+
+
+    <div class="footer-hint">
+
+        JE Tech Holdings. All rights reserved.
+
+    </div>
+
+
+
+
+
+    
+
+    <div class="sheet-backdrop" id="sheetBackDrop">
+
+        <div class="sheet" id="sheet">
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        
+
+
+
+        const STORAGE_KEY_PRODUCTS = "simple_inv_products_v1";
+
+        const STORAGE_KEY_TX = "simple_inv_transactions_v1";
+
+        const STORAGE_KEY_GAS_URL = "simple_inv_gas_url_v1";
+
+
+
+        let GAS_WEB_APP_URL = localStorage.getItem(STORAGE_KEY_GAS_URL) || "https://script.google.com/macros/s/AKfycbzuuyykLHbXSQ5Gv-uVyKNRQycOEohDvayq0U2BxI6sn5Y9xl-FT9WH1ntk8WooZpo7/exec";
+
+
+
+        function createDefaultProducts() {
+            const baseNames = ["Main Product A", "Main Product B", "Main Product C"];
+            const now = new Date().toISOString();
+            const products = [];
+            let id = 1;
+            for (const name of baseNames) {
+                products.push({
+                    id: "p" + id++,
+                    name,
+                    quantity: 0,
+                    createdAt: now
+                });
+            }
+            return products;
+        }
+
+
+
+        function loadProducts() {
+
+            try {
+
+                const raw = localStorage.getItem(STORAGE_KEY_PRODUCTS);
+
+                if (!raw) return createDefaultProducts();
+
+                const parsed = JSON.parse(raw);
+
+                if (!Array.isArray(parsed) || parsed.length === 0) {
+
+                    return createDefaultProducts();
+
+                }
+
+                return parsed;
+
+            } catch {
+
+                return createDefaultProducts();
+
+            }
+
+        }
+
+
+
+        function loadTransactions() {
+
+            try {
+
+                const raw = localStorage.getItem(STORAGE_KEY_TX);
+
+                if (!raw) return [];
+
+                const parsed = JSON.parse(raw);
+
+                if (!Array.isArray(parsed)) return [];
+
+                return parsed;
+
+            } catch {
+
+                return [];
+
+            }
+
+        }
+
+
+
+        let products = loadProducts();
+
+        let transactions = loadTransactions();
+
+
+
+        
+
+
+
+        async function syncWithGoogle(forceSave = false) {
+            if (!GAS_WEB_APP_URL) return;
+
+            console.log(`[Sync] Starting ${forceSave ? "Save" : "Load"}...`);
+            updateSyncBadge("SYNCING...", "#f59e0b");
+
+            
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); 
+
+            try {
+                if (forceSave) {
+                    console.log("[Sync] Sending data to Google Sheets...");
+                    await fetch(GAS_WEB_APP_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: JSON.stringify({
+                            action: "saveAll",
+                            products: products,
+                            transactions: transactions
+                        }),
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+                    updateSyncBadge("SYNCED", "var(--accent)");
+                    console.log("[Sync] Save successful (no-cors).");
+                } else {
+                    console.log("[Sync] Fetching data from Google Sheets...");
+                    const res = await fetch(`${GAS_WEB_APP_URL}?action=getData`, {
+                        signal: controller.signal
+                    });
+
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+
+                    const text = await res.text();
+                    console.log("[Sync] Received response from Google.");
+
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.products) {
+                            products = data.products;
+                            transactions = data.transactions || [];
+                            saveProductsLocally(); 
+                            saveTransactionsLocally();
+                            renderInventory();
+                            updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
+                            console.log("[Sync] Data loaded successfully.");
+                        } else {
+                            console.warn("[Sync] No products found in Google response.");
+                            updateSyncBadge("GOOGLE CONNECTED", "var(--accent)");
+                        }
+                    } catch (e) {
+                        console.error("[Sync] Failed to parse JSON. Response might be an error page or HTML.");
+                        console.log("[Sync] Response snippet:", text.slice(0, 200));
+                        throw new Error("Invalid JSON response from Google");
+                    }
+                    clearTimeout(timeoutId);
+                }
+            } catch (err) {
+                clearTimeout(timeoutId);
+                console.error("[Sync] Sync failed:", err);
+                if (err.name === 'AbortError') {
+                    updateSyncBadge("TIMEOUT", "var(--danger)");
+                } else {
+                    updateSyncBadge("SYNC FAILED", "var(--danger)");
+                }
+            }
+        }
+
+        function saveProductsLocally() {
+            localStorage.setItem(STORAGE_KEY_PRODUCTS, JSON.stringify(products));
+        }
+
+        function saveTransactionsLocally() {
+            localStorage.setItem(STORAGE_KEY_TX, JSON.stringify(transactions));
+        }
+
+
+
+        function updateSyncBadge(text, color) {
+
+            const badge = document.getElementById("syncStatus");
+
+            if (!badge) return;
+
+            badge.querySelector("span").textContent = text;
+
+            badge.style.borderColor = color;
+
+            badge.style.color = color;
+
+            badge.style.background = color + "20";
+
+        }
+
+
+
+        function saveProducts() {
+
+            localStorage.setItem(STORAGE_KEY_PRODUCTS, JSON.stringify(products));
+
+            if (GAS_WEB_APP_URL) syncWithGoogle(true);
+
+        }
+
+
+
+        function saveTransactions() {
+
+            localStorage.setItem(STORAGE_KEY_TX, JSON.stringify(transactions));
+
+            if (GAS_WEB_APP_URL) syncWithGoogle(true);
+
+        }
+
+
+
+        function sortProducts() {
+            products.sort((a, b) => {
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+
+
+        
+
+
+
+        function renderInventory() {
+            sortProducts();
+            const list = document.getElementById("inventoryList");
+            list.innerHTML = "";
+            for (const p of products) {
+                const li = document.createElement("li");
+                li.className = "inventory-item";
+                li.innerHTML = `
+        <div class="item-main">
+          <div class="item-name">${escapeHtml(p.name || "Product")}</div>
+        </div>
+        <div class="item-qty">${p.quantity}</div>
+      `;
+                list.appendChild(li);
+            }
+        }
+
+
+
+        function escapeHtml(str) {
+
+            return String(str ?? "")
+
+                .replace(/&/g, "&amp;")
+
+                .replace(/</g, "&lt;")
+
+                .replace(/>/g, "&gt;");
+
+        }
+
+
+
+        
+
+
+
+        const sheetBackdrop = document.getElementById("sheetBackDrop");
+
+        const sheetEl = document.getElementById("sheet");
+
+
+
+        function openSheet(kind) {
+
+            if (kind === "sell") {
+
+                renderSellSheet();
+
+            } else if (kind === "add") {
+
+                renderAddSheet();
+
+            } else if (kind === "edit") {
+
+                renderEditSheet();
+
+            } else if (kind === "history") {
+
+                renderHistorySheet();
+
+            } else if (kind === "settings") {
+
+                renderSettingsSheet();
+
+            }
+
+            sheetBackdrop.classList.add("visible");
+
+        }
+
+
+
+        function closeSheet() {
+
+            sheetBackdrop.classList.remove("visible");
+
+            sheetEl.innerHTML = "";
+
+        }
+
+
+
+        sheetBackdrop.addEventListener("click", e => {
+
+            if (e.target === sheetBackdrop) {
+
+                closeSheet();
+
+            }
+
+        });
+
+
+
+        
+
+
+
+        function renderSellSheet() {
+
+            sortProducts();
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">Sell</div>
+
+        <button class="btn-ghost" id="sellCancelBtn">Cancel</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="sheet-section-title">Select quantities to sell</div>
+
+    `;
+
+            for (const p of products) {
+                html += `
+        <div class="sku-row" data-id="${p.id}" data-max="${p.quantity}">
+          <div class="sku-info">
+            <div class="sku-name">${escapeHtml(p.name)}</div>
+            <div class="sku-meta">In stock: ${p.quantity}</div>
+          </div>
+          <div class="stepper-group">
+            <button class="stepper-btn minus" data-role="sell-minus" type="button">−</button>
+            <span class="stepper-value" data-role="sell-value">0</span>
+            <button class="stepper-btn plus" data-role="sell-plus" type="button">+</button>
+          </div>
+        </div>
+      `;
+            }
+
+            html += `
+
+      </div>
+
+      <div class="sheet-actions">
+
+        <button class="btn-secondary" id="sellResetBtn">Reset</button>
+
+        <button class="btn-primary" id="sellConfirmBtn">Confirm</button>
+
+      </div>
+
+    `;
+
+            sheetEl.innerHTML = html;
+
+
+
+            
+
+            document.getElementById("sellCancelBtn").onclick = closeSheet;
+
+            document.getElementById("sellResetBtn").onclick = () => {
+
+                sheetEl.querySelectorAll('[data-role="sell-value"]').forEach(span => {
+
+                    span.textContent = "0";
+
+                    span.classList.remove("has-value");
+
+                });
+
+            };
+
+            document.getElementById("sellConfirmBtn").onclick = () => {
+
+                const now = new Date().toISOString();
+
+                let changed = false;
+
+                sheetEl.querySelectorAll(".sku-row").forEach(row => {
+
+                    const id = row.getAttribute("data-id");
+
+                    const p = products.find(pp => pp.id === id);
+
+                    if (!p) return;
+
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
+
+                    const qty = Math.max(0, Math.min(p.quantity, Number(valueSpan.textContent) || 0));
+
+                    if (qty > 0) {
+
+                        p.quantity -= qty;
+
+                        transactions.push({
+                            id: "t" + Date.now() + Math.random().toString(16).slice(2),
+                            date: now,
+                            type: "sell",
+                            productName: p.name,
+                            quantityChange: -qty
+                        });
+
+                        changed = true;
+
+                    }
+
+                });
+
+                if (changed) {
+
+                    saveProducts();
+
+                    saveTransactions();
+
+                    renderInventory();
+
+                }
+
+                closeSheet();
+
+            };
+
+
+
+            
+
+            sheetEl.querySelectorAll('[data-role="sell-minus"]').forEach(btn => {
+
+                btn.addEventListener("click", () => {
+
+                    const row = btn.closest(".sku-row");
+
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
+
+                    let v = Number(valueSpan.textContent) || 0;
+
+                    if (v > 0) v--;
+
+                    valueSpan.textContent = String(v);
+
+                    valueSpan.classList.toggle("has-value", v > 0);
+
+                });
+
+            });
+
+
+
+            sheetEl.querySelectorAll('[data-role="sell-plus"]').forEach(btn => {
+
+                btn.addEventListener("click", () => {
+
+                    const row = btn.closest(".sku-row");
+
+                    const max = Number(row.getAttribute("data-max")) || 0;
+
+                    const valueSpan = row.querySelector('[data-role="sell-value"]');
+
+                    let v = Number(valueSpan.textContent) || 0;
+
+                    if (v < max) v++;
+
+                    valueSpan.textContent = String(v);
+
+                    valueSpan.classList.toggle("has-value", v > 0);
+
+                });
+
+            });
+
+        }
+
+
+
+        
+
+
+
+        function renderAddSheet() {
+
+            sortProducts();
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">Add Stock</div>
+
+        <button class="btn-ghost" id="addCancelBtn">Cancel</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="sheet-section-title">Select quantities to add</div>
+
+    `;
+
+            for (const p of products) {
+                html += `
+        <div class="sku-row" data-id="${p.id}">
+          <div class="sku-info">
+            <div class="sku-name">${escapeHtml(p.name)}</div>
+            <div class="sku-meta">In stock: ${p.quantity}</div>
+          </div>
+          <div class="qty-input-group">
+            <span class="qty-label">+<span data-role="qty-label">0</span></span>
+            <input class="qty-input" type="number" min="0" max="9999" value="0" data-role="qty-input" />
+          </div>
+        </div>
+      `;
+            }
+
+            html += `
+
+      </div>
+
+      <div class="sheet-actions">
+
+        <button class="btn-secondary" id="addResetBtn">Reset</button>
+
+        <button class="btn-primary" id="addConfirmBtn">입고완료</button>
+
+      </div>
+
+    `;
+
+            sheetEl.innerHTML = html;
+
+
+
+            document.getElementById("addCancelBtn").onclick = closeSheet;
+
+            document.getElementById("addResetBtn").onclick = () => {
+
+                sheetEl.querySelectorAll('[data-role="qty-input"]').forEach(inp => {
+
+                    inp.value = "0";
+
+                });
+
+                sheetEl.querySelectorAll('[data-role="qty-label"]').forEach(span => {
+
+                    span.textContent = "0";
+
+                });
+
+            };
+
+            document.getElementById("addConfirmBtn").onclick = () => {
+
+                const now = new Date().toISOString();
+
+                let changed = false;
+
+                sheetEl.querySelectorAll(".sku-row").forEach(row => {
+
+                    const id = row.getAttribute("data-id");
+
+                    const p = products.find(pp => pp.id === id);
+
+                    if (!p) return;
+
+                    const input = row.querySelector('[data-role="qty-input"]');
+
+                    const qty = Math.max(0, Math.min(9999, Number(input.value) || 0));
+
+                    if (qty > 0) {
+
+                        p.quantity += qty;
+
+                        transactions.push({
+                            id: "t" + Date.now() + Math.random().toString(16).slice(2),
+                            date: now,
+                            type: "add",
+                            productName: p.name,
+                            quantityChange: qty
+                        });
+
+                        changed = true;
+
+                    }
+
+                });
+
+                if (changed) {
+
+                    saveProducts();
+
+                    saveTransactions();
+
+                    renderInventory();
+
+                }
+
+                closeSheet();
+
+            };
+
+
+
+            sheetEl.querySelectorAll('[data-role="qty-input"]').forEach(inp => {
+
+                inp.addEventListener("input", () => {
+
+                    let v = Number(inp.value) || 0;
+
+                    if (v < 0) v = 0;
+
+                    if (v > 9999) v = 9999;
+
+                    inp.value = String(v);
+
+                    const row = inp.closest(".sku-row");
+
+                    row.querySelector('[data-role="qty-label"]').textContent = String(v);
+
+                });
+
+            });
+
+        }
+
+
+
+        
+
+
+
+        function renderEditSheet() {
+
+            sortProducts();
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">Edit Products</div>
+
+        <button class="btn-ghost" id="editDoneBtn">Done</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="sheet-section-title">Existing products</div>
+
+    `;
+
+            for (const p of products) {
+                html += `
+        <div class="sku-row" data-id="${p.id}">
+          <div class="sku-info" style="flex:1;">
+            <input class="text-input" type="text" data-role="name" value="${escapeHtml(p.name)}" />
+          </div>
+          <button class="delete-btn" data-role="delete">Delete</button>
+        </div>
+      `;
+            }
+
+            html += `
+
+        <div style="height:10px;"></div>
+
+        <div class="form-row">
+          <label class="form-label">Name</label>
+          <input class="text-input" type="text" id="newName" placeholder="Product Name" />
+        </div>
+        <button class="btn-primary" id="addProductBtn" style="width:100%; justify-content:center; margin-top:4px;">Add</button>
+
+      </div>
+
+    `;
+
+            sheetEl.innerHTML = html;
+
+
+
+            document.getElementById("editDoneBtn").onclick = () => {
+
+                
+
+                sheetEl.querySelectorAll(".sku-row").forEach(row => {
+
+                    const id = row.getAttribute("data-id");
+
+                    if (!id) return;
+
+                    const p = products.find(pp => pp.id === id);
+
+                    if (!p) return;
+
+                    const name = row.querySelector('[data-role="name"]').value.trim() || "Product";
+                    p.name = name;
+                });
+
+                saveProducts();
+
+                renderInventory();
+
+                closeSheet();
+
+            };
+
+
+
+            
+
+            sheetEl.querySelectorAll('[data-role="delete"]').forEach(btn => {
+
+                btn.addEventListener("click", () => {
+
+                    const row = btn.closest(".sku-row");
+
+                    const id = row.getAttribute("data-id");
+
+                    products = products.filter(p => p.id !== id);
+
+                    row.remove();
+
+                    saveProducts();
+
+                    renderInventory();
+
+                });
+
+            });
+
+
+
+            
+
+            document.getElementById("addProductBtn").onclick = () => {
+                const nameInput = document.getElementById("newName");
+                const name = nameInput.value.trim();
+                if (!name) return;
+                const now = new Date().toISOString();
+                products.push({
+                    id: "p" + Date.now() + Math.random().toString(16).slice(2),
+                    name,
+                    quantity: 0,
+                    createdAt: now
+                });
+                saveProducts();
+                renderInventory();
+                renderEditSheet(); 
+            };
+
+        }
+
+
+
+        
+
+
+
+        function renderHistorySheet() {
+
+            
+
+            const groupsMap = {};
+
+            for (const tx of transactions) {
+
+                const d = new Date(tx.date || Date.now());
+
+                const key = d.toISOString().slice(0, 10);
+
+                if (!groupsMap[key]) groupsMap[key] = [];
+
+                groupsMap[key].push(tx);
+
+            }
+
+            const keys = Object.keys(groupsMap).sort((a, b) => (a < b ? 1 : -1));
+
+
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">History</div>
+
+        <button class="btn-ghost" id="historyCloseBtn">Close</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+    `;
+
+
+
+            if (keys.length === 0) {
+
+                html += `<div style="font-size:12px; color: var(--text-muted); margin-top:8px;">No transactions yet.</div>`;
+
+            } else {
+
+                for (const key of keys) {
+
+                    const list = groupsMap[key].slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+
+                    const displayDate = new Date(key).toLocaleDateString(undefined, {
+
+                        year: "numeric",
+
+                        month: "short",
+
+                        day: "numeric"
+
+                    });
+
+                    html += `<div class="history-group-date">${displayDate}</div>`;
+
+                    for (const tx of list) {
+
+                        const isAdd = tx.type === "add";
+
+                        const sign = tx.quantityChange >= 0 ? "+" : "";
+
+                        html += `
+
+            <div class="history-row">
+              <div class="history-info">
+                <div class="history-name">${escapeHtml(tx.productName || "Product")}</div>
+              </div>
+              <div class="history-change ${isAdd ? "add" : "sell"}">
+                ${sign}${tx.quantityChange}
+              </div>
+            </div>
+
+          `;
+
+                    }
+
+                }
+
+            }
+
+
+
+            html += `</div>`;
+
+            sheetEl.innerHTML = html;
+
+            document.getElementById("historyCloseBtn").onclick = closeSheet;
+
+        }
+
+
+
+        
+
+
+
+        function renderSettingsSheet() {
+
+            let html = `
+
+      <div class="sheet-header">
+
+        <div class="sheet-title">Google Sheets Sync</div>
+
+        <button class="btn-ghost" id="settingsCloseBtn">Close</button>
+
+      </div>
+
+      <div class="sheet-body">
+
+        <div class="sheet-section-title">Google Apps Script URL</div>
+
+        <div class="form-row">
+
+          <input class="text-input" type="text" id="gasUrlInput" placeholder="https://script.google.com/macros/s/.../exec" value="${GAS_WEB_APP_URL}" />
+
+        </div>
+
+        <p class="subtitle" style="margin-top:8px;">Paste the URL from Depoly > Web App in Apps Script.</p>
+
+        <button class="btn-primary" id="saveSettingsBtn" style="width:100%; justify-content:center; margin-top:12px;">Save & Sync</button>
+
+      </div>
+
+    `;
+
+            sheetEl.innerHTML = html;
+
+
+
+            document.getElementById("settingsCloseBtn").onclick = closeSheet;
+
+            document.getElementById("saveSettingsBtn").onclick = () => {
+
+                const url = document.getElementById("gasUrlInput").value.trim();
+
+                localStorage.setItem(STORAGE_KEY_GAS_URL, url);
+
+                GAS_WEB_APP_URL = url;
+
+                closeSheet();
+
+                syncWithGoogle();
+
+            };
+
+        }
+
+
+
+
+
+        
+
+
+
+        document.getElementById("editBtn").onclick = () => openSheet("edit");
+
+        document.getElementById("sellBtn").onclick = () => openSheet("sell");
+
+        document.getElementById("addBtn").onclick = () => openSheet("add");
+
+        document.getElementById("historyBtn").onclick = () => openSheet("history");
+
+        document.getElementById("settingsBtn").onclick = () => openSheet("settings");
+
+
+
+        
+
+        renderInventory();
+
+
+
+        if (GAS_WEB_APP_URL) {
+
+            syncWithGoogle();
+
+        } else {
+
+            
+
+            console.log("No Google Apps Script URL set.");
+
+        }
+
+
+
+        
+
+        window.setGasUrl = (url) => {
+
+            localStorage.setItem(STORAGE_KEY_GAS_URL, url);
+
+            GAS_WEB_APP_URL = url;
+
+            syncWithGoogle();
+
+        };
+
+    </script>
+
+</body>
+
+</html>

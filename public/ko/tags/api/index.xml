@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on JE Tech Holdings</title>
+    <link>http://localhost:1313/ko/tags/api/</link>
+    <description>Recent content in API on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
+    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ko/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>로그 수집의 미학 (2): 규격화된 소통, CEF와 고도화되는 Ingestion 패러다임</title>
+      <link>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</link>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/insights/aesthetics-of-log-collection-2/</guid>
+      <description>&lt;h2 id=&#34;cefcommon-event-format-로그-표준화를-위한-전략적-선택&#34;&gt;CEF(Common Event Format): 로그 표준화를 위한 전략적 선택&lt;/h2&gt;&#xA;&lt;p&gt;과거 SIEM 마켓의 리더였던 ArcSight가 제안한 **CEF(Common Event Format)**는 서로 다른 벤더 간의 Log Format Inconsistency 문제를 해결하기 위한 강력한 대안이었습니다. 표준 RFC에서 정의한 Syslog 규격만으로는 복잡한 보안 이벤트의 컨텍스트를 완벽히 구조화하기 어렵기 때문입니다.&lt;/p&gt;&#xA;&lt;p&gt;일반적인 Web Server 로그 등은 사용자가 직접 포맷을 정의할 수 있지만, 보안 엔지니어가 수많은 어플리케이션의 내부 로직을 파악해 매번 Custom Format을 설계하고 배포하는 것은 운영 오버헤드가 매우 큽니다. 하지만 CEF는 데이터의 구조 자체가 다릅니다. 과거에는 엔지니어가 Raw 데이터 내 값의 순서(Ordinal)와 오프셋을 계산해 파싱 로직을 짰다면, CEF는 &amp;lsquo;One-single Line&amp;rsquo; 내에 Key-Value Pair를 명시적으로 포함합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

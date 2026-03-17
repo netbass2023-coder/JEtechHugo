@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SNMP on JE Tech Holdings</title>
+    <link>http://localhost:1313/ko/tags/snmp/</link>
+    <description>Recent content in SNMP on JE Tech Holdings</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <copyright>© 2026 JE Tech Holding Inc. All rights reserved</copyright>
+    <lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ko/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SNMP: 고전이라 치부하기엔 너무나 강력한 보안의 눈</title>
+      <link>http://localhost:1313/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ko/insights/snmp-a-classic-tool-with-modern-security-depth/</guid>
+      <description>&lt;p&gt;시스템 모니터링의 세계에는 두 가지 커다란 기둥이 있습니다. 바로 &lt;strong&gt;시스템 로그를 분석하는 것&lt;/strong&gt;, 그리고 **SNMP(Simple Network Management Protocol)**를 이용해 시스템의 상태와 설정값을 확인하는 것이죠.&lt;/p&gt;&#xA;&lt;p&gt;보안 관제 초기에는 리소스 사용량(Resource Usage) 모니터링이 핵심이었습니다. 특정 명령어가 실행된 후 CPU 사용률이 치솟거나, 방화벽의 아웃바운드 트래픽이 비정상적으로 급증하는 것은 침해 사고의 중요한 징후입니다. 우리는 이러한 지표들을 여러 장비와 교차 분석(Correlation)함으로써 보안 사고를 식별하고 대응해 왔습니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;snmp의-보안적-진화와-취약점&#34;&gt;SNMP의 보안적 진화와 취약점&lt;/h2&gt;&#xA;&lt;p&gt;최근 현대적 환경에서는 에이전트 기반의 SIEM을 주로 사용하지만, 서버와 네트워크 장비들은 여전히 SNMP를 기본적으로 지원합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

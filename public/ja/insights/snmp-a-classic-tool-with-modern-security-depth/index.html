@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>SNMP：クラシックな監視ツールと現代のセキュリティ深度 | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="" />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/ja/insights/snmp-a-classic-tool-with-modern-security-depth/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="SNMP：クラシックな監視ツールと現代のセキュリティ深度">
+  <meta property="og:description" content="システム監視の世界では、主に2つの柱があります。システムログの分析と、**SNMP（Simple Network Management Protocol）**を利用したシステム状態と構成の確認です。
+セキュリティ運用の初期には、リソース使用率の監視が重要な焦点でした。特定のコマンド実行後のCPU使用率の急上昇や、ルーターやファイアウォールの送信トラフィックの予期しない急増は、侵害の兆候として重要です。これらの指標を複数のデバイスで相関させることで、セキュリティインシデントを特定し対応することができました。
+SNMPのセキュリティ進化 多くの最新環境では、ヘルスチェックにSIEMベンダーが提供するエージェントが使用されるようになりましたが、サーバー、ルーター、スイッチ、ファイアウォールといったほぼすべてのネットワークデバイスは依然としてSNMPをサポートしています。
+SNMP v3: 認証と暗号化を備えた現在の標準。 SNMP v2c: アクセスにシンプルな「コミュニティストリング」を使用。 SNMP v1: 非常に脆弱。コミュニティストリングがプレーンテキストで送信され、盗聴にさらされます。暗号化がないため、攻撃者は機密システム情報を取り出したり、システム再起動を引き起こしたりできます。 OIDとMIBの理解 snmpget、snmpwalk、snmpsetなどのツールを使うと、ターゲットIPと**OID（Object Identifier）**を指定して特定のメモリアドレスから値を取得できます。MIB（Management Information Base）は「古い仕組み」に見えるかもしれませんが、その構造は非常に直感的です：
+OID 1.3.6.1.2.1.1.3.0（sysUpTime.0）: デバイスの稼働時間を監視。 OID 1.3.6.1.2.1.1.5.0（sysName.0）: デバイスのホスト名を識別。 現場からの教訓：32ビットロールオーバーバグ SNMPは実務でどのように活用されるのか？ 例えば、CPU使用率、メモリ使用量、インターフェースの累積トラフィック（Octets）を5分ごとに収集するスクリプトを考えてみましょう。このデータはリアルタイム帯域幅（bps）やセッション状態を監視するのに有効で、DDoS攻撃の検出にも役立ちます。
+インシデント: あるL4スイッチが3か月ごとに定期的に停止し、手動で再起動が必要になるという問題に直面しました。
+SNMP分析を通じて、ネットワークインターフェースのトラフィックカウンタ ifOutOctets が32ビットの上限 ($2^{32}-1$) に達してロールオーバー（0に戻る）するとシステムがクラッシュすることを発見しました。
+この技術的証拠に基づき、メーカーに正式な修正を依頼しました。このような制限に対応するために、SNMP v2c以降では64ビットカウンタ（例：ifHCInOctets）が標準として導入されました。
+なぜ今でもSNMPを理解する必要があるのか SNMPを理解することは、システムの**「心拍」を読み解く**ことに他なりません。現場の実務者視点から、以下の3つが重要な技術的インサイトです：
+PullとPushの進化: SNMPは「Pull」ベースで動作しますが、大規模環境ではデバイスがデータを積極的に送信する**Telemetry（Push）**への移行が進んでいます。 SNMPトラップの価値: ポーリングだけでなく、デバイスがエラーを即座に通知するトラップの設定はリアルタイム監視の要です。 「Write」アクセスのリスク: **Write（Private）**権限の露出は、攻撃者がインフラ全体を再構成できる重大なリスクとなります。これはセキュリティ専門家にとって重要なチェックポイントです。 SNMPはレガシープロトコルと見なされがちですが、セキュリティとインフラに深い経験を持つ者にとっては依然として重要なドメインです。その脆弱性と可能性を理解することで、真の技術的インサイトが得られます。">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-02-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-13T00:00:00+00:00">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="SNMP">
+    <meta property="article:tag" content="Infrastructure">
+
+    
+  <meta itemprop="name" content="SNMP：クラシックな監視ツールと現代のセキュリティ深度">
+  <meta itemprop="description" content="システム監視の世界では、主に2つの柱があります。システムログの分析と、**SNMP（Simple Network Management Protocol）**を利用したシステム状態と構成の確認です。
+セキュリティ運用の初期には、リソース使用率の監視が重要な焦点でした。特定のコマンド実行後のCPU使用率の急上昇や、ルーターやファイアウォールの送信トラフィックの予期しない急増は、侵害の兆候として重要です。これらの指標を複数のデバイスで相関させることで、セキュリティインシデントを特定し対応することができました。
+SNMPのセキュリティ進化 多くの最新環境では、ヘルスチェックにSIEMベンダーが提供するエージェントが使用されるようになりましたが、サーバー、ルーター、スイッチ、ファイアウォールといったほぼすべてのネットワークデバイスは依然としてSNMPをサポートしています。
+SNMP v3: 認証と暗号化を備えた現在の標準。 SNMP v2c: アクセスにシンプルな「コミュニティストリング」を使用。 SNMP v1: 非常に脆弱。コミュニティストリングがプレーンテキストで送信され、盗聴にさらされます。暗号化がないため、攻撃者は機密システム情報を取り出したり、システム再起動を引き起こしたりできます。 OIDとMIBの理解 snmpget、snmpwalk、snmpsetなどのツールを使うと、ターゲットIPと**OID（Object Identifier）**を指定して特定のメモリアドレスから値を取得できます。MIB（Management Information Base）は「古い仕組み」に見えるかもしれませんが、その構造は非常に直感的です：
+OID 1.3.6.1.2.1.1.3.0（sysUpTime.0）: デバイスの稼働時間を監視。 OID 1.3.6.1.2.1.1.5.0（sysName.0）: デバイスのホスト名を識別。 現場からの教訓：32ビットロールオーバーバグ SNMPは実務でどのように活用されるのか？ 例えば、CPU使用率、メモリ使用量、インターフェースの累積トラフィック（Octets）を5分ごとに収集するスクリプトを考えてみましょう。このデータはリアルタイム帯域幅（bps）やセッション状態を監視するのに有効で、DDoS攻撃の検出にも役立ちます。
+インシデント: あるL4スイッチが3か月ごとに定期的に停止し、手動で再起動が必要になるという問題に直面しました。
+SNMP分析を通じて、ネットワークインターフェースのトラフィックカウンタ ifOutOctets が32ビットの上限 ($2^{32}-1$) に達してロールオーバー（0に戻る）するとシステムがクラッシュすることを発見しました。
+この技術的証拠に基づき、メーカーに正式な修正を依頼しました。このような制限に対応するために、SNMP v2c以降では64ビットカウンタ（例：ifHCInOctets）が標準として導入されました。
+なぜ今でもSNMPを理解する必要があるのか SNMPを理解することは、システムの**「心拍」を読み解く**ことに他なりません。現場の実務者視点から、以下の3つが重要な技術的インサイトです：
+PullとPushの進化: SNMPは「Pull」ベースで動作しますが、大規模環境ではデバイスがデータを積極的に送信する**Telemetry（Push）**への移行が進んでいます。 SNMPトラップの価値: ポーリングだけでなく、デバイスがエラーを即座に通知するトラップの設定はリアルタイム監視の要です。 「Write」アクセスのリスク: **Write（Private）**権限の露出は、攻撃者がインフラ全体を再構成できる重大なリスクとなります。これはセキュリティ専門家にとって重要なチェックポイントです。 SNMPはレガシープロトコルと見なされがちですが、セキュリティとインフラに深い経験を持つ者にとっては依然として重要なドメインです。その脆弱性と可能性を理解することで、真の技術的インサイトが得られます。">
+  <meta itemprop="datePublished" content="2026-02-13T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-13T00:00:00+00:00">
+  <meta itemprop="wordCount" content="48">
+  <meta itemprop="keywords" content="Network,Security,SNMP,Infrastructure">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SNMP：クラシックな監視ツールと現代のセキュリティ深度">
+  <meta name="twitter:description" content="システム監視の世界では、主に2つの柱があります。システムログの分析と、**SNMP（Simple Network Management Protocol）**を利用したシステム状態と構成の確認です。
+セキュリティ運用の初期には、リソース使用率の監視が重要な焦点でした。特定のコマンド実行後のCPU使用率の急上昇や、ルーターやファイアウォールの送信トラフィックの予期しない急増は、侵害の兆候として重要です。これらの指標を複数のデバイスで相関させることで、セキュリティインシデントを特定し対応することができました。
+SNMPのセキュリティ進化 多くの最新環境では、ヘルスチェックにSIEMベンダーが提供するエージェントが使用されるようになりましたが、サーバー、ルーター、スイッチ、ファイアウォールといったほぼすべてのネットワークデバイスは依然としてSNMPをサポートしています。
+SNMP v3: 認証と暗号化を備えた現在の標準。 SNMP v2c: アクセスにシンプルな「コミュニティストリング」を使用。 SNMP v1: 非常に脆弱。コミュニティストリングがプレーンテキストで送信され、盗聴にさらされます。暗号化がないため、攻撃者は機密システム情報を取り出したり、システム再起動を引き起こしたりできます。 OIDとMIBの理解 snmpget、snmpwalk、snmpsetなどのツールを使うと、ターゲットIPと**OID（Object Identifier）**を指定して特定のメモリアドレスから値を取得できます。MIB（Management Information Base）は「古い仕組み」に見えるかもしれませんが、その構造は非常に直感的です：
+OID 1.3.6.1.2.1.1.3.0（sysUpTime.0）: デバイスの稼働時間を監視。 OID 1.3.6.1.2.1.1.5.0（sysName.0）: デバイスのホスト名を識別。 現場からの教訓：32ビットロールオーバーバグ SNMPは実務でどのように活用されるのか？ 例えば、CPU使用率、メモリ使用量、インターフェースの累積トラフィック（Octets）を5分ごとに収集するスクリプトを考えてみましょう。このデータはリアルタイム帯域幅（bps）やセッション状態を監視するのに有効で、DDoS攻撃の検出にも役立ちます。
+インシデント: あるL4スイッチが3か月ごとに定期的に停止し、手動で再起動が必要になるという問題に直面しました。
+SNMP分析を通じて、ネットワークインターフェースのトラフィックカウンタ ifOutOctets が32ビットの上限 ($2^{32}-1$) に達してロールオーバー（0に戻る）するとシステムがクラッシュすることを発見しました。
+この技術的証拠に基づき、メーカーに正式な修正を依頼しました。このような制限に対応するために、SNMP v2c以降では64ビットカウンタ（例：ifHCInOctets）が標準として導入されました。
+なぜ今でもSNMPを理解する必要があるのか SNMPを理解することは、システムの**「心拍」を読み解く**ことに他なりません。現場の実務者視点から、以下の3つが重要な技術的インサイトです：
+PullとPushの進化: SNMPは「Pull」ベースで動作しますが、大規模環境ではデバイスがデータを積極的に送信する**Telemetry（Push）**への移行が進んでいます。 SNMPトラップの価値: ポーリングだけでなく、デバイスがエラーを即座に通知するトラップの設定はリアルタイム監視の要です。 「Write」アクセスのリスク: **Write（Private）**権限の露出は、攻撃者がインフラ全体を再構成できる重大なリスクとなります。これはセキュリティ専門家にとって重要なチェックポイントです。 SNMPはレガシープロトコルと見なされがちですが、セキュリティとインフラに深い経験を持つ者にとっては依然として重要なドメインです。その脆弱性と可能性を理解することで、真の技術的インサイトが得られます。">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="/ja/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/services/">サービス</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/insights/">インサイト</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/contact/">お問い合わせ</a>
+          </li>
+        
+      </ul>
+      <div class="relative">
+        
+        
+        
+        
+          
+          
+            
+          
+        
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              日本語
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/insights/snmp-a-classic-tool-with-modern-security-depth/"
+                >
+                  English
+                </a>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ko/insights/snmp-a-classic-tool-with-modern-security-depth/"
+                >
+                  한국어
+                </a>
+              
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  日本語
+                </div>
+              
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">SNMP：クラシックな監視ツールと現代のセキュリティ深度</h1>
+        
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Network">
+  Network
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Security">
+  Security
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SNMP">
+  SNMP
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Infrastructure">
+  Infrastructure
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <p>システム監視の世界では、主に2つの柱があります。<strong>システムログの分析</strong>と、**SNMP（Simple Network Management Protocol）**を利用したシステム状態と構成の確認です。</p>
+<p>セキュリティ運用の初期には、リソース使用率の監視が重要な焦点でした。特定のコマンド実行後のCPU使用率の急上昇や、ルーターやファイアウォールの送信トラフィックの予期しない急増は、侵害の兆候として重要です。これらの指標を複数のデバイスで相関させることで、セキュリティインシデントを特定し対応することができました。</p>
+<h2 id="snmpのセキュリティ進化">SNMPのセキュリティ進化</h2>
+<p>多くの最新環境では、ヘルスチェックにSIEMベンダーが提供するエージェントが使用されるようになりましたが、サーバー、ルーター、スイッチ、ファイアウォールといったほぼすべてのネットワークデバイスは依然としてSNMPをサポートしています。</p>
+<ul>
+<li><strong>SNMP v3:</strong> 認証と暗号化を備えた現在の標準。</li>
+<li><strong>SNMP v2c:</strong> アクセスにシンプルな「コミュニティストリング」を使用。</li>
+<li><strong>SNMP v1:</strong> 非常に脆弱。コミュニティストリングが<strong>プレーンテキスト</strong>で送信され、盗聴にさらされます。暗号化がないため、攻撃者は機密システム情報を取り出したり、システム再起動を引き起こしたりできます。</li>
+</ul>
+<h3 id="oidとmibの理解">OIDとMIBの理解</h3>
+<p><code>snmpget</code>、<code>snmpwalk</code>、<code>snmpset</code>などのツールを使うと、ターゲットIPと**OID（Object Identifier）**を指定して特定のメモリアドレスから値を取得できます。MIB（Management Information Base）は「古い仕組み」に見えるかもしれませんが、その構造は非常に直感的です：</p>
+<ul>
+<li><strong>OID <code>1.3.6.1.2.1.1.3.0</code>（sysUpTime.0）:</strong> デバイスの稼働時間を監視。</li>
+<li><strong>OID <code>1.3.6.1.2.1.1.5.0</code>（sysName.0）:</strong> デバイスのホスト名を識別。</li>
+</ul>
+<hr>
+<h2 id="現場からの教訓32ビットロールオーバーバグ">現場からの教訓：32ビットロールオーバーバグ</h2>
+<p>SNMPは実務でどのように活用されるのか？ 例えば、CPU使用率、メモリ使用量、インターフェースの累積トラフィック（Octets）を5分ごとに収集するスクリプトを考えてみましょう。このデータはリアルタイム帯域幅（bps）やセッション状態を監視するのに有効で、<strong>DDoS攻撃</strong>の検出にも役立ちます。</p>
+<blockquote>
+<p><strong>インシデント:</strong>
+あるL4スイッチが3か月ごとに定期的に停止し、手動で再起動が必要になるという問題に直面しました。</p>
+<p>SNMP分析を通じて、ネットワークインターフェースのトラフィックカウンタ <code>ifOutOctets</code> が<strong>32ビットの上限 ($2^{32}-1$)</strong> に達してロールオーバー（0に戻る）するとシステムがクラッシュすることを発見しました。</p>
+</blockquote>
+<p>この技術的証拠に基づき、メーカーに正式な修正を依頼しました。このような制限に対応するために、<strong>SNMP v2c以降では64ビットカウンタ</strong>（例：<code>ifHCInOctets</code>）が標準として導入されました。</p>
+<hr>
+<h2 id="snmpクラシックツール"><img src="/insights/img/snmp-image.png" alt="SNMPクラシックツール"></h2>
+<h2 id="なぜ今でもsnmpを理解する必要があるのか">なぜ今でもSNMPを理解する必要があるのか</h2>
+<p>SNMPを理解することは、システムの**「心拍」を読み解く**ことに他なりません。現場の実務者視点から、以下の3つが重要な技術的インサイトです：</p>
+<ol>
+<li><strong>PullとPushの進化:</strong> SNMPは「Pull」ベースで動作しますが、大規模環境ではデバイスがデータを積極的に送信する**Telemetry（Push）**への移行が進んでいます。</li>
+<li><strong>SNMPトラップの価値:</strong> ポーリングだけでなく、デバイスがエラーを即座に通知する<strong>トラップ</strong>の設定はリアルタイム監視の要です。</li>
+<li><strong>「Write」アクセスのリスク:</strong> **Write（Private）**権限の露出は、攻撃者がインフラ全体を再構成できる重大なリスクとなります。これはセキュリティ専門家にとって重要なチェックポイントです。</li>
+</ol>
+<p>SNMPはレガシープロトコルと見なされがちですが、セキュリティとインフラに深い経験を持つ者にとっては依然として重要なドメインです。その脆弱性と可能性を理解することで、真の技術的インサイトが得られます。</p>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">© 2026 JE Tech Holding Inc. All rights reserved</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">Contact Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>Azure Sentinel、Prisma Cloud ログ連携の進化：Function App から CCF へ | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="" />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/ja/insights/evolution-of-prisma-log-ingestion/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="Azure Sentinel、Prisma Cloud ログ連携の進化：Function App から CCF へ">
+  <meta property="og:description" content="Azure Sentinel に Palo Alto Prisma Cloud（以下 Prisma）ログを統合するプロセスは、技術的に大きく変化してきました。本記事では、Prismaの構造的理解と、最近導入された**Codeless Connector Framework（CCF）**を活用した実務的なログ統合の経験を共有します。
+1. Prisma Cloud モジュールの理解（CSPM vs CWPP） ログ連携を始める前に、Prismaの主要モジュール（Blade）と各ログの性質を理解することが重要です。
+Cloud Security（CSPM）: インフラ、IAM、ネットワーキング、ストレージなど、クラウド設定およびコントロールプレーンの誤構成を検出します。 Runtime Security（CWPP）: VMやコンテナ、ホストなどのワークロード内部の実行段階を保護し、ポリシー適用に注力します。 その他: Application Security や Data Security などのモジュールも存在します。 2. 過去のログ収集方式：カスタム開発の苦労 2025年初頭までは、ログ収集方式はかなり複雑で断片化していました。
+CSPM: Azure Function App を自前で開発・運用し、ログを取り込みにくる必要がありました。 CWPP: 公式コネクタが存在せず、Logic Apps で API を呼び出して収集する手間がありました。 特に Function App 方式には以下のような現場のペインポイントがありました。
+データサイズの制限: レコード1行あたり32KBを超えるケースで処理が困難になる。 非定型スキーマ: JSON内にメタデータやポリシー定義が多量に含まれ、フィールドマッピング・正規化に膨大なリソースを要する。 3. Codeless Connector Framework（CCF）の導入とメリット 最近導入された CCF（Codeless Connector Framework） は、これまでの複雑さを劇的に解消しました。私が実務で感じた主な利点は以下のとおりです。
+No-Code &amp; Simplified Auth: コードを書かずに、複雑な認証設定なしでコネクタをセットアップできる。 Vendor-Defined Normalization: ベンダーと Microsoft が事前定義した正規化・マッピングが提供されるため、データ整合性の担保に悩む必要がない。 Pre-canned Content の活用: ネイティブコネクタを利用することで、将来提供される分析ルール（Analytics Rules）や統合コンテンツをすぐに利用可能になる。 4. 実務適用例：DCR を活用した効率的なフィルタリング CCF コネクタでは、DCR（Data Collection Rule） 内でフィルタリングやマッピングを直接行うことができます。">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-02-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-20T00:00:00+00:00">
+    <meta property="article:tag" content="Azure Sentinel">
+    <meta property="article:tag" content="Prisma Cloud">
+    <meta property="article:tag" content="Cloud Security">
+    <meta property="article:tag" content="CCF">
+    <meta property="article:tag" content="Log Integration">
+
+    
+  <meta itemprop="name" content="Azure Sentinel、Prisma Cloud ログ連携の進化：Function App から CCF へ">
+  <meta itemprop="description" content="Azure Sentinel に Palo Alto Prisma Cloud（以下 Prisma）ログを統合するプロセスは、技術的に大きく変化してきました。本記事では、Prismaの構造的理解と、最近導入された**Codeless Connector Framework（CCF）**を活用した実務的なログ統合の経験を共有します。
+1. Prisma Cloud モジュールの理解（CSPM vs CWPP） ログ連携を始める前に、Prismaの主要モジュール（Blade）と各ログの性質を理解することが重要です。
+Cloud Security（CSPM）: インフラ、IAM、ネットワーキング、ストレージなど、クラウド設定およびコントロールプレーンの誤構成を検出します。 Runtime Security（CWPP）: VMやコンテナ、ホストなどのワークロード内部の実行段階を保護し、ポリシー適用に注力します。 その他: Application Security や Data Security などのモジュールも存在します。 2. 過去のログ収集方式：カスタム開発の苦労 2025年初頭までは、ログ収集方式はかなり複雑で断片化していました。
+CSPM: Azure Function App を自前で開発・運用し、ログを取り込みにくる必要がありました。 CWPP: 公式コネクタが存在せず、Logic Apps で API を呼び出して収集する手間がありました。 特に Function App 方式には以下のような現場のペインポイントがありました。
+データサイズの制限: レコード1行あたり32KBを超えるケースで処理が困難になる。 非定型スキーマ: JSON内にメタデータやポリシー定義が多量に含まれ、フィールドマッピング・正規化に膨大なリソースを要する。 3. Codeless Connector Framework（CCF）の導入とメリット 最近導入された CCF（Codeless Connector Framework） は、これまでの複雑さを劇的に解消しました。私が実務で感じた主な利点は以下のとおりです。
+No-Code &amp; Simplified Auth: コードを書かずに、複雑な認証設定なしでコネクタをセットアップできる。 Vendor-Defined Normalization: ベンダーと Microsoft が事前定義した正規化・マッピングが提供されるため、データ整合性の担保に悩む必要がない。 Pre-canned Content の活用: ネイティブコネクタを利用することで、将来提供される分析ルール（Analytics Rules）や統合コンテンツをすぐに利用可能になる。 4. 実務適用例：DCR を活用した効率的なフィルタリング CCF コネクタでは、DCR（Data Collection Rule） 内でフィルタリングやマッピングを直接行うことができます。">
+  <meta itemprop="datePublished" content="2026-02-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="104">
+  <meta itemprop="keywords" content="Azure Sentinel,Prisma Cloud,Cloud Security,CCF,Log Integration">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Azure Sentinel、Prisma Cloud ログ連携の進化：Function App から CCF へ">
+  <meta name="twitter:description" content="Azure Sentinel に Palo Alto Prisma Cloud（以下 Prisma）ログを統合するプロセスは、技術的に大きく変化してきました。本記事では、Prismaの構造的理解と、最近導入された**Codeless Connector Framework（CCF）**を活用した実務的なログ統合の経験を共有します。
+1. Prisma Cloud モジュールの理解（CSPM vs CWPP） ログ連携を始める前に、Prismaの主要モジュール（Blade）と各ログの性質を理解することが重要です。
+Cloud Security（CSPM）: インフラ、IAM、ネットワーキング、ストレージなど、クラウド設定およびコントロールプレーンの誤構成を検出します。 Runtime Security（CWPP）: VMやコンテナ、ホストなどのワークロード内部の実行段階を保護し、ポリシー適用に注力します。 その他: Application Security や Data Security などのモジュールも存在します。 2. 過去のログ収集方式：カスタム開発の苦労 2025年初頭までは、ログ収集方式はかなり複雑で断片化していました。
+CSPM: Azure Function App を自前で開発・運用し、ログを取り込みにくる必要がありました。 CWPP: 公式コネクタが存在せず、Logic Apps で API を呼び出して収集する手間がありました。 特に Function App 方式には以下のような現場のペインポイントがありました。
+データサイズの制限: レコード1行あたり32KBを超えるケースで処理が困難になる。 非定型スキーマ: JSON内にメタデータやポリシー定義が多量に含まれ、フィールドマッピング・正規化に膨大なリソースを要する。 3. Codeless Connector Framework（CCF）の導入とメリット 最近導入された CCF（Codeless Connector Framework） は、これまでの複雑さを劇的に解消しました。私が実務で感じた主な利点は以下のとおりです。
+No-Code &amp; Simplified Auth: コードを書かずに、複雑な認証設定なしでコネクタをセットアップできる。 Vendor-Defined Normalization: ベンダーと Microsoft が事前定義した正規化・マッピングが提供されるため、データ整合性の担保に悩む必要がない。 Pre-canned Content の活用: ネイティブコネクタを利用することで、将来提供される分析ルール（Analytics Rules）や統合コンテンツをすぐに利用可能になる。 4. 実務適用例：DCR を活用した効率的なフィルタリング CCF コネクタでは、DCR（Data Collection Rule） 内でフィルタリングやマッピングを直接行うことができます。">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="/ja/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/services/">サービス</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/insights/">インサイト</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/ja/contact/">お問い合わせ</a>
+          </li>
+        
+      </ul>
+      <div class="relative">
+        
+        
+        
+        
+          
+          
+            
+          
+        
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              日本語
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/insights/evolution-of-prisma-log-ingestion/"
+                >
+                  English
+                </a>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ko/insights/evolution-of-prisma-log-ingestion/"
+                >
+                  한국어
+                </a>
+              
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  日本語
+                </div>
+              
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">Azure Sentinel、Prisma Cloud ログ連携の進化：Function App から CCF へ</h1>
+        
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Azure%20Sentinel">
+  Azure Sentinel
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Prisma%20Cloud">
+  Prisma Cloud
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Cloud%20Security">
+  Cloud Security
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/CCF">
+  CCF
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log%20Integration">
+  Log Integration
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <p>Azure Sentinel に Palo Alto Prisma Cloud（以下 Prisma）ログを統合するプロセスは、技術的に大きく変化してきました。本記事では、Prismaの構造的理解と、最近導入された**Codeless Connector Framework（CCF）**を活用した実務的なログ統合の経験を共有します。</p>
+<h2 id="1-prisma-cloud-モジュールの理解cspm-vs-cwpp">1. Prisma Cloud モジュールの理解（CSPM vs CWPP）</h2>
+<p>ログ連携を始める前に、Prismaの主要モジュール（Blade）と各ログの性質を理解することが重要です。</p>
+<ul>
+<li><strong>Cloud Security（CSPM）:</strong> インフラ、IAM、ネットワーキング、ストレージなど、クラウド設定およびコントロールプレーンの誤構成を検出します。</li>
+<li><strong>Runtime Security（CWPP）:</strong> VMやコンテナ、ホストなどのワークロード内部の実行段階を保護し、ポリシー適用に注力します。</li>
+<li><strong>その他:</strong> Application Security や Data Security などのモジュールも存在します。</li>
+</ul>
+<h2 id="2-過去のログ収集方式カスタム開発の苦労">2. 過去のログ収集方式：カスタム開発の苦労</h2>
+<p>2025年初頭までは、ログ収集方式はかなり複雑で断片化していました。</p>
+<ul>
+<li><strong>CSPM:</strong> Azure Function App を自前で開発・運用し、ログを取り込みにくる必要がありました。</li>
+<li><strong>CWPP:</strong> 公式コネクタが存在せず、Logic Apps で API を呼び出して収集する手間がありました。</li>
+</ul>
+<p>特に <strong>Function App 方式</strong>には以下のような現場のペインポイントがありました。</p>
+<ol>
+<li><strong>データサイズの制限:</strong> レコード1行あたり32KBを超えるケースで処理が困難になる。</li>
+<li><strong>非定型スキーマ:</strong> JSON内にメタデータやポリシー定義が多量に含まれ、フィールドマッピング・正規化に膨大なリソースを要する。</li>
+</ol>
+<hr>
+<h2 id="prisma-ccf"><img src="/insights/img/prisma-ccf.png" alt="Prisma CCF"></h2>
+<h2 id="3-codeless-connector-frameworkccfの導入とメリット">3. Codeless Connector Framework（CCF）の導入とメリット</h2>
+<p>最近導入された <strong>CCF（Codeless Connector Framework）</strong> は、これまでの複雑さを劇的に解消しました。私が実務で感じた主な利点は以下のとおりです。</p>
+<ul>
+<li><strong>No-Code &amp; Simplified Auth:</strong> コードを書かずに、複雑な認証設定なしでコネクタをセットアップできる。</li>
+<li><strong>Vendor-Defined Normalization:</strong> ベンダーと Microsoft が事前定義した正規化・マッピングが提供されるため、データ整合性の担保に悩む必要がない。</li>
+<li><strong>Pre-canned Content の活用:</strong> ネイティブコネクタを利用することで、将来提供される分析ルール（Analytics Rules）や統合コンテンツをすぐに利用可能になる。</li>
+</ul>
+<h2 id="4-実務適用例dcr-を活用した効率的なフィルタリング">4. 実務適用例：DCR を活用した効率的なフィルタリング</h2>
+<p>CCF コネクタでは、<strong>DCR（Data Collection Rule）</strong> 内でフィルタリングやマッピングを直接行うことができます。</p>
+<blockquote>
+<p><strong>💡 実務Tip:</strong>
+Prisma 内で QA 環境と本番環境が分かれていない場合、<strong>DCR 内で環境識別子を使ってフィルタリング</strong>する方法が有効です。これにより、必要なデータだけを選択的に収集し、コストと運用効率の両方を改善できます。</p>
+</blockquote>
+<hr>
+<h2 id="5-まとめ">5. まとめ</h2>
+<p>2026年1月時点で、CSPM コネクタはプレビュー提供中であり、CCF 方式が採用されています。</p>
+<p>アプリケーションログ収集は常に課題を伴いますが、API ベースの CCF を積極的に活用することで、Sentinel の使い勝手は大きく向上します。これは単なるログ収集にとどまらず、セキュリティ担当者がより高度な検出コンテンツ開発に専念できる環境を実現するものです。</p>
+<hr>
+<h3 id="copyright-notice">Copyright Notice</h3>
+<p>本投稿に記載された製品名、ロゴおよびブランドは、それぞれの権利者に帰属します。本内容は筆者の実務経験に基づくガイドであり、公式ドキュメントの代替ではありません。</p>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">© 2026 JE Tech Holding Inc. All rights reserved</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">Contact Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

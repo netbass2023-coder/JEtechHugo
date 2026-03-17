@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+      <title>The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms | JE Tech Holdings</title>
+    
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    
+    
+      
+    
+    <meta name="description" content="Mastering CEF for standardization and the transition to Agent/API-based ingestion." />
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/insights/aesthetics-of-log-collection-2/">
+  <meta property="og:site_name" content="JE Tech Holdings">
+  <meta property="og:title" content="The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms">
+  <meta property="og:description" content="Mastering CEF for standardization and the transition to Agent/API-based ingestion.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="insights">
+    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:tag" content="CEF">
+    <meta property="article:tag" content="SIEM">
+    <meta property="article:tag" content="Log-Ingestion">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="Cloud Security">
+
+    
+  <meta itemprop="name" content="The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms">
+  <meta itemprop="description" content="Mastering CEF for standardization and the transition to Agent/API-based ingestion.">
+  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="wordCount" content="740">
+  <meta itemprop="keywords" content="CEF,SIEM,Log-Ingestion,API,Cloud Security">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms">
+  <meta name="twitter:description" content="Mastering CEF for standardization and the transition to Agent/API-based ingestion.">
+
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+      <link rel="manifest" href="http://localhost:1313/site.webmanifest" />
+    
+
+    
+
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    
+    
+    
+      
+        
+          
+          
+            <link
+              rel="stylesheet"
+              href="/css/styles.6f3afb57d705ebabf4acebff365219a4f6c5a92919c38f5063d4cd28fd56804a.css"
+              integrity="sha256-bzr7V9cF66v0rOv/NlIZpPbFqSkZw49QY9TNKP1WgEo="
+              crossorigin="anonymous"
+            />
+          
+        
+      
+    
+
+
+    
+    
+      
+        
+        
+          <link
+            rel="stylesheet"
+            href="/css/fonts.eef09ca694034955e6e4acbc2d5eeef89825aab2d12858163c5848a3b6a4898b.css"
+            integrity="sha256-7vCcppQDSVXm5Ky8LV7u&#43;JglqrLRKFgWPFhIo7akiYs="
+            crossorigin="anonymous"
+          />
+        
+      
+    
+
+    
+    
+
+    
+    
+
+
+    
+      <script src="/js/main.7b57960741aab0c5345ed2de96e3271beece68496732534388fb608dad5f5490.js" defer></script>
+    
+  </head>
+  <body class="">
+    <div class="flex min-h-screen flex-col">
+      <nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="/">
+      
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+  />
+</svg>
+
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="http://localhost:1313/">
+          
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">JE Tech Holdings</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  
+    class="size-6"
+  
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        
+          <li class="text-center">
+            <a class="text-primary" href="/services/">Services</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/insights/">Insight</a>
+          </li>
+        
+          <li class="text-center">
+            <a class="text-primary" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+      <div class="relative">
+        
+        
+        
+        
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            
+              English
+            
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            
+              
+              
+              
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  English
+                </div>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ko/insights/aesthetics-of-log-collection-2/"
+                >
+                  한국어
+                </a>
+              
+            
+              
+              
+              
+                
+                
+                  
+                  
+                    
+                    
+                  
+                
+                
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="/ja/insights/aesthetics-of-log-collection-2/"
+                >
+                  日本語
+                </a>
+              
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <div class="grow">
+  <section class="py-16">
+    <div class="container mx-auto px-4 mb-24">
+      <div class="mx-auto xl:max-w-1/2 mb-16">
+        
+          <h1 class="markdown-title text-center text-4xl xl:text-5xl font-bold xl:leading-normal mb-10">The Aesthetics of Log Collection (2): Standardized Communication, CEF, and the Evolution of Ingestion Paradigms</h1>
+        
+        
+          <p class="text-xl xl:leading-loose font-medium text-center text-[#777777]">Mastering CEF for standardization and the transition to Agent/API-based ingestion.</p>
+        
+      </div>
+      
+        <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/CEF">
+  CEF
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/SIEM">
+  SIEM
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Log-Ingestion">
+  Log-Ingestion
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/API">
+  API
+</a>
+
+          
+            <a class="bg-primary/10 hover:bg-primary/30 rounded-full px-14 py-2 text-primary duration-500" href="http://localhost:1313//tags/Cloud-Security">
+  Cloud-Security
+</a>
+
+          
+        </div>
+      
+    </div>
+
+    
+    
+    <div class="container mx-auto px-4 mb-28">
+      <div class="prose-lg prose mx-auto">
+        <h2 id="cef-common-event-format-a-strategic-choice-for-log-standardization">CEF (Common Event Format): A Strategic Choice for Log Standardization</h2>
+<p>CEF (Common Event Format), introduced by ArcSight—the longtime leader of the SIEM market—emerged as a powerful solution to the persistent issue of Log Format Inconsistency across different vendors. Standard RFC-defined Syslog specifications often fall short when it comes to fully structuring the complex contexts of modern security events.</p>
+<p>While formats for general web server logs can be user-defined, it places a massive operational overhead on security engineers to understand the internal logic of every application just to design and deploy custom formats. CEF shifts this paradigm through its structural design. Unlike traditional methods where engineers had to manually calculate the ordinal sequence and offsets of values within raw data, CEF explicitly includes Key-Value Pairs within a &lsquo;One-single Line&rsquo; format.</p>
+<p>SIEM platforms use this metadata to immediately map values to their respective columns. Today, CEF has established itself as an industry Standard Format, with major security vendors providing it as a default option or Recommended Format. This provides security teams with a clear, authoritative &ldquo;CEF Guide&rdquo; when requesting log changes from network or infrastructure teams, serving as a practical foundation for building technical trust across departments.</p>
+<p><strong>Technical Insight:</strong>
+CEF is not a change in communication protocols, but rather a standardization of the payload carried by Syslog. For devices like Palo Alto Firewalls, where OS updates may introduce new fields, the CEF format must be managed dynamically. Since some SIEM configurations might bundle undefined new fields into a catch-all &lsquo;Additional Field,&rsquo; constant monitoring is required to prevent data loss.</p>
+<hr>
+<h2 id="aesthetics-of-log-collection-2"><img src="/insights/img/Aesthetics-of-Log-Collection2.png" alt="Aesthetics of Log Collection 2"></h2>
+<h2 id="appliances-hardware-evolution-and-log-transmission-mechanisms">Appliances: Hardware Evolution and Log Transmission Mechanisms</h2>
+<p>During the early expansion of TCP/IP, Appliances were primarily routers and switches. Firewalls at the time were essentially software running on general server OSs equipped with multiple network interfaces. It wasn&rsquo;t until the early 2000s that security appliances matured into dedicated embedded platforms powered by specialized Network Processors and Switch Fabrics.</p>
+<p>While these devices offer superior performance in packet and frame handling, their closed, embedded architecture makes installing third-party agents virtually impossible. Consequently, they still rely on the classic method of inputting Remote Syslog Collector information via a UI or CLI.</p>
+<p>Internally, however, these &ldquo;boxes&rdquo; have evolved into Next-Gen Firewalls, integrating a dense stack of modules including IDS/IPS, AV, and URL Filtering. Threat intelligence is updated in real-time, IOCs are extracted from suspicious files for cloud-based sandboxing, and in many cases, the management console itself is delivered as a SaaS. Despite these radical internal shifts, the foundation of logging remains anchored in Agentless Syslog transmission.</p>
+<hr>
+<h2 id="agents-and-apis-technical-sophistication-and-the-modernization-of-ingestion">Agents and APIs: Technical Sophistication and the Modernization of Ingestion</h2>
+<p>As not all logs can be captured via Syslog, engineers must tackle domains that demand higher technical proficiency.</p>
+<ul>
+<li><strong>Agent-based Collection:</strong> The primary driver for early agents was the Windows Event Log. Because Windows logs are incompatible with the Syslog format and utilize a complex XML-based multi-line structure, early approaches involved collectors logging into Windows servers using credentials to pull log files remotely. This has since evolved into vendor-specific agent models that provide granular control over system resource utilization while ensuring the secure delivery of event logs.</li>
+<li><strong>The Sophistication of API-based Ingestion:</strong> In the past, API-based collection was considered an Advanced Engineering domain that required high-level technical expertise. It went far beyond simple URL calls; SOC teams had to internally develop logic for passkey management, query design for pagination, and complex post-processing of received data. This often required building dedicated serverless architectures, such as Azure Function Apps or Logic Apps.</li>
+</ul>
+<p>Recently, the trend has shifted toward packaging and abstracting these complex ingestion processes. As seen in cases like Prisma Cloud’s CCF (Cloud Connector Framework), log integration—once the exclusive domain of skilled developers—is evolving through vendor partnerships that abstract and simplify the entire ingestion pipeline.</p>
+<hr>
+<h3 id="trademarks--disclaimer">Trademarks &amp; Disclaimer</h3>
+<blockquote>
+<p><strong>Trademarks:</strong></p>
+<ul>
+<li>Microsoft, Azure, Sentinel, Windows, and Azure Function Apps are registered trademarks of Microsoft Corporation.</li>
+<li>Palo Alto Networks, Prisma Cloud, and CCF (Cloud Connector Framework) are registered trademarks of Palo Alto Networks, Inc.</li>
+<li>ArcSight and CEF (Common Event Format) are trademarks or registered trademarks of OpenText (formerly Hewlett Packard Enterprise).</li>
+<li>All other product names, logos, and brands mentioned in this post are the property of their respective owners.</li>
+</ul>
+<p><strong>Disclaimer:</strong> The views and opinions expressed in this post are those of the author and do not necessarily reflect the official policy or position of any featured companies. This content is provided for informational purposes based on hands-on technical experience and does not replace official product documentation.</p>
+</blockquote>
+
+      </div>
+    </div>
+  </section>
+</div>
+      
+
+<footer class="pt-20 pb-8">
+  <div class="container mx-auto px-4 grid xl:grid-cols-12 gap-16">
+    <div class="xl:col-span-4">
+      <h1 class="text-primary font-bold uppercase mb-6 text-center xl:text-start">JE Tech Holdings</h1>
+      <p class=" text-center xl:text-start">© 2026 JE Tech Holding Inc. All rights reserved</p>
+    </div>
+    <div class="xl:col-span-2">
+      <h1 class="font-medium mb-6 text-center xl:text-start">Contact Us</h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <h1 class="font-medium mb-6 text-center xl:text-start"></h1>
+      <ul class="">
+        
+      </ul>
+    </div>
+    <div class="xl:col-span-3">
+      <div class="flex items-center justify-center xl:justify-end h-full gap-4">
+        
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+  </body>
+</html>
