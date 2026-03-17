@@ -1,0 +1,107 @@
+<nav class="z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="{{ "/" | relLangURL }}">
+      {{ with site.Params.logo }}
+        {{ partial "utilities/image.html" (dict "src" . "class" "h-6 w-auto") }}
+      {{ end }}
+      <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">{{ .Site.Title }}</span>
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      {{ partial "heroicons/bars-4" }}
+
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden bg-white">
+        <a class="flex items-center xl:hidden" href="{{ .Site.BaseURL }}">
+          {{ with site.Params.logo }}
+            {{ partial "utilities/image.html" (dict "src" . "class" "h-6 w-auto") }}
+          {{ end }}
+          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">{{ .Site.Title }}</span>
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          {{ partial "heroicons/x-mark" }}
+        </button>
+      </div>
+      <ul class="flex flex-col gap-8 xl:flex-row">
+        {{ range site.Menus.main }}
+          <li class="text-center">
+            <a class="text-primary" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      <div class="relative">
+        {{ $currentLang := .Site.Language.Lang }}
+        {{ $baseRel := .RelPermalink }}
+        {{/* Hugo default content language is assumed to be English. */}}
+        {{ if ne $currentLang "en" }}
+          {{ $prefix := printf "/%s" $currentLang }}
+          {{ if strings.HasPrefix $baseRel $prefix }}
+            {{ $baseRel = strings.TrimPrefix $baseRel $prefix }}
+          {{ end }}
+        {{ end }}
+
+        <details class="relative">
+          <summary
+            class="flex cursor-pointer items-center rounded-lg bg-primary/10 px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          >
+            {{ with (index (where .Site.Languages "Lang" $currentLang) 0) }}
+              {{ .LanguageName }}
+            {{ end }}
+            <span class="ms-2 text-base">&#x25BC;</span>
+          </summary>
+
+          <div
+            class="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded border border-neutral-300 bg-neutral text-left text-base shadow dark:border-neutral-600 dark:bg-neutral-800"
+          >
+            {{ range .Site.Languages }}
+              {{ $lang := .Lang }}
+              {{ $label := .LanguageName }}
+              {{ if eq $lang $currentLang }}
+                <div class="px-4 py-2 text-sm font-semibold text-primary">
+                  {{ $label }}
+                </div>
+              {{ else }}
+                {{ $targetUrl := "" }}
+                {{ with $.Page }}
+                  {{ $translations := where .Translations "Lang" $lang }}
+                  {{ if gt (len $translations) 0 }}
+                    {{ $t := index (first 1 $translations) 0 }}
+                    {{ $targetUrl = $t.RelPermalink }}
+                  {{ end }}
+                {{ end }}
+                {{ if not $targetUrl }}
+                  {{ if eq $lang "en" }}
+                    {{ $targetUrl = $baseRel }}
+                  {{ else }}
+                    {{ $targetUrl = printf "/%s%s" $lang $baseRel }}
+                  {{ end }}
+                {{ end }}
+                <a
+                  class="block px-4 py-2 text-sm hover:bg-primary/10 dark:hover:bg-primary/20"
+                  href="{{ $targetUrl }}"
+                >
+                  {{ $label }}
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</nav>
