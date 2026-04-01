@@ -9,13 +9,14 @@
           <p class="text-xl xl:leading-loose font-medium text-center text-[#777777]">{{ . }}</p>
         {{ end }}
       </div>
-      {{ if site.Taxonomies.tags }}
+      {{/* Keywords/Tags hidden for cleaner layout */}}
+      {{/* {{ if site.Taxonomies.tags }}
         <div class="flex flex-wrap items-center justify-center gap-8 max-w-3/4 mx-auto">
           {{ range site.Taxonomies.tags }}
             {{ partial "components/button/pill" (dict "label" .Page.Title "href" .Page.RelPermalink)}}
           {{ end }}
         </div>
-      {{ end }}
+      {{ end }} */}}
     </div>
 
     <!--Highlighted Post-->
